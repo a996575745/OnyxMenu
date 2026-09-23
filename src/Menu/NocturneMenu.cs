@@ -802,7 +802,7 @@ public sealed class NocturneMenu : MonoBehaviour
             Color oc = _brand.normal.textColor;
             _brand.normal.textColor = Color.white;
             GUI.color = new Color(1f, 1f, 1f, hc.a * 0.55f);
-            Lab(new Rect(brandR.x - bx, 0f, brandR.width, brandR.height), "Nocturne", _brand);
+            Lab(new Rect(brandR.x - bx, 0f, brandR.width, brandR.height), "Nocturne - 96辅助游戏论坛", _brand);
             _brand.normal.textColor = oc;
             GUI.color = hc;
             GUI.EndGroup();
@@ -2800,10 +2800,8 @@ public sealed class NocturneMenu : MonoBehaviour
         Lab(new Rect(b.x, b.y, b.width, ah), about, _wrapLabel);
         float by = b.y + ah + 8f;
         InfoRow(b.x, ref by, b.width, NocturneText.T("版本", "Version"), "v" + NocturnePlugin.PluginVersion);
-        InfoRow(b.x, ref by, b.width, NocturneText.T("作者", "Author"), "Kawasaki");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("共同开发", "Co-Developer"), "Zahraa");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("贡献者", "Contributor"), "YosefUME");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("测试", "Tester"), "LITAFOM");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("作者", "Author"), "卢大侠");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("共同开发", "Co-Developer"), "Struggle");
 
         Grp(1);
         b = Card(x, ref y, w, NocturneText.T("快捷键", "Hotkeys"), 12f * 30f, true);
@@ -2829,15 +2827,14 @@ public sealed class NocturneMenu : MonoBehaviour
         b = Card(x, ref y, w, NocturneText.T("重要", "Important"), ih);
         Lab(b, imp, _wrapLabel);
 
-        Grp(0);
-        DrawUpdate(x, ref y, w);
+        //Grp(0);
+        //DrawUpdate(x, ref y, w);
 
         Grp(0);
         b = Card(x, ref y, w, NocturneText.T("链接", "Links"), 3f * RowH);
         by = b.y;
-        LinkRow(b.x, ref by, b.width, NocturneText.T("网站", "Website"), "https://onyxmenu.kawas-set.workers.dev");
-        LinkRow(b.x, ref by, b.width, "Discord", "https://discord.gg/cP4MrVUfM7");
-        LinkRow(b.x, ref by, b.width, "GitHub", "https://github.com/Veltrix-s/OnyxMenu");
+        LinkRow(b.x, ref by, b.width, NocturneText.T("网站", "Website"), "https://www.96fuzhu.com/");
+        LinkRow(b.x, ref by, b.width, "我的主页", "https://www.96fuzhu.com/space-uid-8612.html");
 
         Grp(2);
         b = Card(x, ref y, w, NocturneText.T("快捷操作", "Quick actions"), 48f, true);
