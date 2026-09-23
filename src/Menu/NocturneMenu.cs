@@ -35,15 +35,15 @@ public sealed class NocturneMenu : MonoBehaviour
 
     private static readonly TabDef[] Tabs =
     {
-        new TabDef(NocturneIcon.Home, "Главная", "Home"),
-        new TabDef(NocturneIcon.Star, "Удобства", "QoL"),
-        new TabDef(NocturneIcon.Door, "Лобби", "Lobby"),
-        new TabDef(NocturneIcon.Eye, "Визуальные", "Visual"),
-        new TabDef(NocturneIcon.Crew, "Игроки", "Players"),
-        new TabDef(NocturneIcon.Bolt, "Читы", "Cheats"),
-        new TabDef(NocturneIcon.Shield, "Защита", "Guard"),
-        new TabDef(NocturneIcon.Wifi, "Спуф", "Spoof"),
-        new TabDef(NocturneIcon.Tune, "Хост", "Host"),
+        new TabDef(NocturneIcon.Home, "主页", "Home"),
+        new TabDef(NocturneIcon.Star, "便利功能", "QoL"),
+        new TabDef(NocturneIcon.Door, "大厅", "Lobby"),
+        new TabDef(NocturneIcon.Eye, "视觉", "Visual"),
+        new TabDef(NocturneIcon.Crew, "玩家", "Players"),
+        new TabDef(NocturneIcon.Bolt, "作弊", "Cheats"),
+        new TabDef(NocturneIcon.Shield, "防护", "Guard"),
+        new TabDef(NocturneIcon.Wifi, "伪装", "Spoof"),
+        new TabDef(NocturneIcon.Tune, "房主", "Host"),
     };
 
     private static readonly string[] MapsShort = { "Skeld", "Mira HQ", "Polus", "Dleks", "Airship", "Fungle" };
@@ -51,37 +51,37 @@ public sealed class NocturneMenu : MonoBehaviour
     private static readonly string[] MapsAlt = { "The Skeld", "Mira HQ", "Polus", "dlekS", "Airship", "The Fungle" };
     private static readonly string[] BmVals = { "Disabled", "Horse", "Seeker", "Long", "LongHorse" };
 
-    private static readonly string[] VentModesRu = { "Все", "Только мирные", "Только преды", "Никто" };
+    private static readonly string[] VentModesRu = { "全部", "仅船员", "仅内鬼", "无人" };
     private static readonly string[] VentModesEn = { "Everyone", "Crew only", "Impostors only", "Nobody" };
 
-    private static readonly string[] DistsRu = { "Короткая", "Средняя", "Длинная" };
+    private static readonly string[] DistsRu = { "短", "中", "长" };
     private static readonly string[] DistsEn = { "Short", "Medium", "Long" };
 
-    private static readonly string[] TaskBarsRu = { "Постоянно", "Только собрания", "Скрыто" };
+    private static readonly string[] TaskBarsRu = { "始终显示", "仅会议", "隐藏" };
     private static readonly string[] TaskBarsEn = { "Always", "Meetings only", "Hidden" };
 
-    private static readonly string[] WeatherRu = { "Выкл", "Снег", "Дождь", "Листья", "Конфетти" };
+    private static readonly string[] WeatherRu = { "关闭", "雪", "雨", "落叶", "彩纸" };
     private static readonly string[] WeatherEn = { "Off", "Snow", "Rain", "Leaves", "Confetti" };
 
-    private static readonly string[] OcWhereRu = { "Лобби и матч", "Только матч", "Только лобби" };
+    private static readonly string[] OcWhereRu = { "大厅和对局", "仅对局", "仅大厅" };
     private static readonly string[] OcWhereEn = { "Lobby and match", "Match only", "Lobby only" };
 
-    private static readonly string[] NoModesRu = { "Радуга", "По роли", "Цвет игрока" };
+    private static readonly string[] NoModesRu = { "彩虹", "按角色", "玩家颜色" };
     private static readonly string[] NoModesEn = { "Rainbow", "By role", "Player color" };
 
-    private static readonly string[] BmDispRu = { "Выкл", "Лошадь", "Сикер", "Длинный", "Длинная лошадь" };
+    private static readonly string[] BmDispRu = { "关闭", "马", "搜寻者", "长", "长马" };
     private static readonly string[] BmDispEn = { "Off", "Horse", "Seeker", "Long", "Long horse" };
 
-    private static readonly string[] FrameSysRu = { "Sabotage (надёжно)", "Reactor (16 или 128)", "Электрика (>5)" };
+    private static readonly string[] FrameSysRu = { "破坏（可靠）", "反应堆（16 或 128）", "电力（>5）" };
     private static readonly string[] FrameSysEn = { "Sabotage (reliable)", "Reactor (16 or 128)", "Electrical (>5)" };
     private static readonly SystemTypes[] FrameSysVals = { SystemTypes.Sabotage, SystemTypes.Reactor, SystemTypes.Electrical };
 
     private static readonly string[] FormNamesRu =
     {
-        "Линия", "Круг", "Треугольник", "Звезда", "Сердце", "Ромб", "Спираль", "Крест", "Волна", "Дракон",
-        "Персонаж", "Бесконечность", "Стрела", "Корона", "Молния", "Цветок", "Полумесяц", "Клевер", "Ёлка",
-        "Квадрат", "Смайл", "Бабочка", "Солнце", "Пятиугольник", "Икс", "Сетка", "Пакман", "Атом", "Нота",
-        "Знак вопроса", "Пульс"
+        "线条", "圆形", "三角形", "星星", "心形", "菱形", "螺旋", "十字", "波浪", "龙",
+        "人物", "无限", "箭头", "皇冠", "闪电", "花", "月牙", "四叶草", "树",
+        "正方形", "笑脸", "蝴蝶", "太阳", "五边形", "X", "网格", "吃豆人", "原子", "音符",
+        "问号", "心跳"
     };
 
     private static readonly string[] FormNamesEn =
@@ -568,7 +568,7 @@ public sealed class NocturneMenu : MonoBehaviour
             int nn = Tabs.Length + 2;
             for (int i = 0; i < nn; i++)
             {
-                string nm = i < Tabs.Length ? Tabs[i].Name : (i == Tabs.Length ? NocturneText.T("Настройки", "Settings") : NocturneText.T("Избранное", "Favorites"));
+                string nm = i < Tabs.Length ? Tabs[i].Name : (i == Tabs.Length ? NocturneText.T("设置", "Settings") : NocturneText.T("收藏", "Favorites"));
                 Color bg = GUI.backgroundColor;
                 if (_tab == i)
                     GUI.backgroundColor = new Color(0.5f, 0.5f, 0.5f);
@@ -596,7 +596,7 @@ public sealed class NocturneMenu : MonoBehaviour
             float cxL = railW + 12f;
             if (NocturneStyle.Painting)
             {
-                string secName = _tab == FavTab ? NocturneText.T("Избранное", "Favorites") : _tab < Tabs.Length ? Tabs[_tab].Name : NocturneText.T("Настройки", "Settings");
+                string secName = _tab == FavTab ? NocturneText.T("收藏", "Favorites") : _tab < Tabs.Length ? Tabs[_tab].Name : NocturneText.T("设置", "Settings");
                 _secTitle.normal.textColor = p.Text;
                 Lab(new Rect(cxL, colTop - 1f, w - cxL - 52f, 28f), Up(secName), _secTitle);
             }
@@ -722,7 +722,7 @@ public sealed class NocturneMenu : MonoBehaviour
                     DrawSettings(cx, ref cy, cw);
                     break;
                 default:
-                    DrawEmpty(localArea, NocturneIcon.Star, NocturneText.T("Раздел в разработке", "Section in progress"));
+                    DrawEmpty(localArea, NocturneIcon.Star, NocturneText.T("模块开发中", "Section in progress"));
                     break;
             }
         if (_layCols > 1)
@@ -816,7 +816,7 @@ public sealed class NocturneMenu : MonoBehaviour
         float pl = 0.55f + 0.45f * Mathf.Sin(NocturneStyle.Now * 2.4f);
         NocturneStyle.FillRounded(new Rect(chip.x + 11f, chip.y + chip.height / 2f - 3f, 6f, 6f), new Color(dot.r, dot.g, dot.b, inRoom ? 0.55f + 0.45f * pl : 0.8f), 3);
         _status.normal.textColor = Color.Lerp(dot, Color.white, 0.25f);
-        Lab(new Rect(chip.x + 24f, chip.y, chip.width - 26f, chip.height), inRoom ? "online" : NocturneText.T("меню", "menu"), _status);
+        Lab(new Rect(chip.x + 24f, chip.y, chip.width - 26f, chip.height), inRoom ? "online" : NocturneText.T("菜单", "menu"), _status);
 
         var ver = new Rect(w - 154f, 11f, 58f, 22f);
         NocturneStyle.FillRounded(ver, A(p.Accent, 0.14f), 8);
@@ -1188,14 +1188,14 @@ public sealed class NocturneMenu : MonoBehaviour
             for (int i = 0; i < keys.Count; i++)
                 if (_favSet.Remove(keys[i]))
                     _favOrder.Remove(keys[i]);
-            NocturneToast.Push(NocturneText.T("Избранное", "Favorites"), NocturneText.T("Карточка убрана", "Card removed"), 1.8f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("收藏", "Favorites"), NocturneText.T("卡片已移除", "Card removed"), 1.8f, NocturneNotifyKind.Info);
         }
         else
         {
             for (int i = 0; i < keys.Count; i++)
                 if (_favSet.Add(keys[i]))
                     _favOrder.Add(keys[i]);
-            NocturneToast.Push(NocturneText.T("Избранное", "Favorites"), NocturneText.T("Карточка в избранном", "Card added"), 1.8f, NocturneNotifyKind.Success);
+            NocturneToast.Push(NocturneText.T("收藏", "Favorites"), NocturneText.T("卡片已收藏", "Card added"), 1.8f, NocturneNotifyKind.Success);
         }
         FavSave();
     }
@@ -1212,13 +1212,13 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_favSet.Remove(key))
             {
                 _favOrder.Remove(key);
-                NocturneToast.Push(NocturneText.T("Избранное", "Favorites"), NocturneText.T("Убрано из избранного", "Removed from favorites"), 1.6f, NocturneNotifyKind.Info);
+                NocturneToast.Push(NocturneText.T("收藏", "Favorites"), NocturneText.T("已从收藏移除", "Removed from favorites"), 1.6f, NocturneNotifyKind.Info);
             }
             else
             {
                 _favSet.Add(key);
                 _favOrder.Add(key);
-                NocturneToast.Push(NocturneText.T("Избранное", "Favorites"), NocturneText.T("Добавлено в избранное", "Added to favorites"), 1.6f, NocturneNotifyKind.Success);
+                NocturneToast.Push(NocturneText.T("收藏", "Favorites"), NocturneText.T("已加入收藏", "Added to favorites"), 1.6f, NocturneNotifyKind.Success);
             }
             FavSave();
         }
@@ -1238,7 +1238,7 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_favSet.Contains(key) || !_favReg.TryGetValue(key, out FavItem it) || it.Label == null) continue;
 
             if (shown == 0)
-                Sub(x, ref y, w, NocturneText.T("Недавние", "Recent"));
+                Sub(x, ref y, w, NocturneText.T("最近使用", "Recent"));
             shown++;
             FeatureRow(x, ref y, w, it);
         }
@@ -1248,12 +1248,12 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         FavLoad();
         Lab(new Rect(x + 2f, y, w - 4f, 22f),
-            NocturneText.T("Правый клик по строке или заголовку карточки — добавить/убрать.", "Right-click a row or card header to add/remove."), _muted);
+            NocturneText.T("右键点击行或卡片标题可添加/移除收藏。", "Right-click a row or card header to add/remove."), _muted);
         y += 28f;
 
         if (_favOrder.Count == 0)
         {
-            Lab(new Rect(x + 2f, y, w - 4f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(x + 2f, y, w - 4f, 24f), NocturneText.T("空。", "Empty."), _muted);
             y += 26f;
             DrawRecent(x, ref y, w);
             return;
@@ -1289,7 +1289,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (missing > 0)
         {
             Lab(new Rect(x + 2f, y, w - 4f, 22f),
-                NocturneText.T($"Ещё {missing} — откройте их разделы, чтобы подгрузить.", $"{missing} more — open their tabs to load."), _muted);
+                NocturneText.T($"还有 {missing} 项——打开对应分页以加载。", $"{missing} more — open their tabs to load."), _muted);
             y += 24f;
         }
 
@@ -1321,9 +1321,9 @@ public sealed class NocturneMenu : MonoBehaviour
 
     private static string GroupName(int g) => g switch
     {
-        0 => NocturneText.T("Игра", "Game"),
-        1 => NocturneText.T("Фичи", "Features"),
-        _ => NocturneText.T("Система", "System"),
+        0 => NocturneText.T("游戏", "Game"),
+        1 => NocturneText.T("功能", "Features"),
+        _ => NocturneText.T("系统", "System"),
     };
 
     private void DrawRail(Rect area)
@@ -1357,7 +1357,7 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         if (paint)
-            Lab(new Rect(area.x + 12f, y, area.width - 16f, 16f), Up(NocturneText.T("Мод", "Mod")), _railGroup);
+            Lab(new Rect(area.x + 12f, y, area.width - 16f, 16f), Up(NocturneText.T("模组", "Mod")), _railGroup);
         y += 18f;
         RailItem(area, ref y, Tabs.Length + 1);
         RailItem(area, ref y, Tabs.Length);
@@ -1383,7 +1383,7 @@ public sealed class NocturneMenu : MonoBehaviour
 
             string nm = i < Tabs.Length
                 ? Tabs[i].Name
-                : (i == Tabs.Length ? NocturneText.T("Настройки", "Settings") : NocturneText.T("Избранное", "Favorites"));
+                : (i == Tabs.Length ? NocturneText.T("设置", "Settings") : NocturneText.T("收藏", "Favorites"));
             _railLabel.normal.textColor = Color.Lerp(hover ? A(p.Text, 0.92f) : A(p.Text, 0.66f), p.Text, act);
             Lab(new Rect(r.x + 34f, r.y, r.width - 42f, r.height), nm, _railLabel);
         }
@@ -1657,8 +1657,8 @@ public sealed class NocturneMenu : MonoBehaviour
         if (_kickBanDisp != null && ru == _dispRu)
             return;
         _dispRu = ru;
-        _kickBanDisp = new[] { NocturneText.T("Кик", "Kick"), NocturneText.T("Бан", "Ban") };
-        _voteDisp = new[] { NocturneText.T("Нулл", "Null"), NocturneText.T("Варн", "Warn"), NocturneText.T("Кик", "Kick"), NocturneText.T("Бан", "Ban") };
+        _kickBanDisp = new[] { NocturneText.T("踢出", "Kick"), NocturneText.T("封禁", "Ban") };
+        _voteDisp = new[] { NocturneText.T("无", "Null"), NocturneText.T("警告", "Warn"), NocturneText.T("踢出", "Kick"), NocturneText.T("封禁", "Ban") };
     }
 
     private static string[] KickBanDisp
@@ -1678,7 +1678,7 @@ public sealed class NocturneMenu : MonoBehaviour
         }
     }
 
-    private static readonly string[] GuardSubsRu = { "Списки", "Фильтры", "Защита" };
+    private static readonly string[] GuardSubsRu = { "名单", "过滤", "防护" };
     private static readonly string[] GuardSubsEn = { "Lists", "Filters", "Shield" };
 
     private void DrawGuard(float x, ref float y, float w)
@@ -1686,57 +1686,57 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, GuardSubsRu, GuardSubsEn);
 
         Grp(0);
-        Rect b = Card(x, ref y, w, NocturneText.T("Списки доступа", "Access lists"), 2f * RowH + 62f, true);
+        Rect b = Card(x, ref y, w, NocturneText.T("访问名单", "Access lists"), 2f * RowH + 62f, true);
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Бан-лист (кик по заходу)", "Ban list (kick on join)"), NocturneConfig.AccessBanEnabled);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Только вайтлист", "Whitelist only"), NocturneConfig.AccessWhitelistOnly);
-        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("Бан", "Ban")}: <b>{NocturneAccess.BanCount}</b>   {NocturneText.T("Вайт", "White")}: <b>{NocturneAccess.WhiteCount}</b>", _muted);
-        if (SmallButton(new Rect(b.x + b.width - 174f, by + 1f, 82f, 24f), NocturneText.T("ОЧ. БАН", "CLR BAN"), new Color(0.9f, 0.36f, 0.36f)))
+        Toggle(b.x, ref by, b.width, NocturneText.T("封禁名单（进入时踢出）", "Ban list (kick on join)"), NocturneConfig.AccessBanEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("仅白名单", "Whitelist only"), NocturneConfig.AccessWhitelistOnly);
+        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("封禁", "Ban")}: <b>{NocturneAccess.BanCount}</b>   {NocturneText.T("白名单", "White")}: <b>{NocturneAccess.WhiteCount}</b>", _muted);
+        if (SmallButton(new Rect(b.x + b.width - 174f, by + 1f, 82f, 24f), NocturneText.T("清空封禁", "CLR BAN"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneAccess.ClearBans();
-        if (SmallButton(new Rect(b.x + b.width - 86f, by + 1f, 82f, 24f), NocturneText.T("ОЧ. ВАЙТ", "CLR WHITE"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + b.width - 86f, by + 1f, 82f, 24f), NocturneText.T("清空白名单", "CLR WHITE"), NocturneStyle.Current.Accent))
             NocturneAccess.ClearWhites();
         by += 32f;
-        if (SmallButton(new Rect(b.x + 2f, by, 112f, 24f), NocturneText.T("ИМПОРТ TXT", "IMPORT TXT"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + 2f, by, 112f, 24f), NocturneText.T("导入 TXT", "IMPORT TXT"), NocturneStyle.Current.Accent))
             NocturneAccess.ImportTxt();
         Lab(new Rect(b.x + 122f, by, b.width - 122f, 24f), "Among Us/Nocturne/BanList.txt · WhiteList.txt", _muted);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Ник-бан и история", "Nick ban & history"), 4f * RowH + 62f, true);
+        b = Card(x, ref y, w, NocturneText.T("昵称封禁和历史", "Nick ban & history"), 4f * RowH + 62f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ник-бан (кик по нику)", "Nick ban (kick by name)"), NocturneConfig.AccessNickBanEnabled);
-        Toggle(b.x, ref by, b.width, NocturneText.T("История ников по FriendCode", "Nick history by FriendCode"), NocturneConfig.NameHistory);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Уведомлять о знакомых", "Notify about known players"), NocturneConfig.NotifyKnownPlayer);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать заход ботов", "Show bot joins"), NocturneConfig.ShowBotJoins);
+        Toggle(b.x, ref by, b.width, NocturneText.T("昵称封禁（按昵称踢出）", "Nick ban (kick by name)"), NocturneConfig.AccessNickBanEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("按 FriendCode 记录昵称历史", "Nick history by FriendCode"), NocturneConfig.NameHistory);
+        Toggle(b.x, ref by, b.width, NocturneText.T("通知熟悉的玩家", "Notify about known players"), NocturneConfig.NotifyKnownPlayer);
+        Toggle(b.x, ref by, b.width, NocturneText.T("显示机器人进入", "Show bot joins"), NocturneConfig.ShowBotJoins);
         _nickText = CustomText(new Rect(b.x + 2f, by, b.width - 168f, 26f), _nickText ?? "", "nickBan");
-        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("＋ НИК В БАН", "＋ NICK TO BAN"), NocturneStyle.Current.Accent) && !string.IsNullOrWhiteSpace(_nickText))
+        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("＋ 添加昵称封禁", "＋ NICK TO BAN"), NocturneStyle.Current.Accent) && !string.IsNullOrWhiteSpace(_nickText))
         {
             NocturneAccess.AddNickBan(_nickText);
             _nickText = "";
         }
         by += 32f;
-        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("Ников", "Nicks")}: <b>{NocturneAccess.NickBanCount}</b>", _muted);
-        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
+        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("昵称数", "Nicks")}: <b>{NocturneAccess.NickBanCount}</b>", _muted);
+        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneAccess.ClearNickBans();
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Платформ-бан", "Platform ban"), 2f * RowH + 32f, true);
+        b = Card(x, ref y, w, NocturneText.T("平台封禁", "Platform ban"), 2f * RowH + 32f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Бан по имени платформы", "Ban by platform name"), NocturneConfig.AccessPlatformBanEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("按平台名封禁", "Ban by platform name"), NocturneConfig.AccessPlatformBanEnabled);
         _platformText = CustomText(new Rect(b.x + 2f, by, b.width - 168f, 26f), _platformText ?? "", "platformBan");
-        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("＋ В БАН", "＋ TO BAN"), NocturneStyle.Current.Accent) && !string.IsNullOrWhiteSpace(_platformText))
+        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("＋ 加入封禁", "＋ TO BAN"), NocturneStyle.Current.Accent) && !string.IsNullOrWhiteSpace(_platformText))
         {
             NocturneAccess.AddPlatformBan(_platformText);
             _platformText = "";
         }
         by += 32f;
-        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("Платформ", "Platforms")}: <b>{NocturneAccess.PlatformBanCount}</b>", _muted);
-        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
+        Lab(new Rect(b.x + 2f, by, b.width * 0.5f, 26f), $"{NocturneText.T("平台数", "Platforms")}: <b>{NocturneAccess.PlatformBanCount}</b>", _muted);
+        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneAccess.ClearPlatformBans();
 
         Grp(0);
-        ListCard(x, ref y, w, NocturneText.T("Бан-лист", "Ban list"), NocturneAccess.BanEntries, NocturneAccess.RemoveBan);
+        ListCard(x, ref y, w, NocturneText.T("封禁名单", "Ban list"), NocturneAccess.BanEntries, NocturneAccess.RemoveBan);
         Grp(0);
-        ListCard(x, ref y, w, NocturneText.T("Вайтлист", "Whitelist"), NocturneAccess.WhiteEntries, NocturneAccess.RemoveWhite);
+        ListCard(x, ref y, w, NocturneText.T("白名单", "Whitelist"), NocturneAccess.WhiteEntries, NocturneAccess.RemoveWhite);
         Grp(0);
         RecentPlayersCard(x, ref y, w);
         Grp(0);
@@ -1750,74 +1750,74 @@ public sealed class NocturneMenu : MonoBehaviour
             + (NocturneConfig.MinLevelEnabled.Value ? 50f + RowH : 0f)
             + (NocturneConfig.MaxLevelEnabled.Value ? 50f + RowH : 0f);
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Уровень", "Level"), lvlBody);
+        b = Card(x, ref y, w, NocturneText.T("等级", "Level"), lvlBody);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Реакция на низкий уровень", "React to low level"), NocturneConfig.MinLevelEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对低等级做出反应", "React to low level"), NocturneConfig.MinLevelEnabled);
         if (NocturneConfig.MinLevelEnabled.Value)
         {
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Мин. уровень", "Min level"), NocturneConfig.MinLevel, 1, 500);
-            ActionCycle(b.x, ref by, b.width, NocturneText.T("Действие", "Action"), NocturneConfig.MinLevelAction, KickBanVals, KickBanDisp);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("最低等级", "Min level"), NocturneConfig.MinLevel, 1, 500);
+            ActionCycle(b.x, ref by, b.width, NocturneText.T("操作", "Action"), NocturneConfig.MinLevelAction, KickBanVals, KickBanDisp);
         }
-        Toggle(b.x, ref by, b.width, NocturneText.T("Реакция на высокий уровень", "React to high level"), NocturneConfig.MaxLevelEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对高等级做出反应", "React to high level"), NocturneConfig.MaxLevelEnabled);
         if (NocturneConfig.MaxLevelEnabled.Value)
         {
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Макс. уровень", "Max level"), NocturneConfig.MaxLevel, 1, 999);
-            ActionCycle(b.x, ref by, b.width, NocturneText.T("Действие", "Action"), NocturneConfig.MaxLevelAction, KickBanVals, KickBanDisp);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("最高等级", "Max level"), NocturneConfig.MaxLevel, 1, 999);
+            ActionCycle(b.x, ref by, b.width, NocturneText.T("操作", "Action"), NocturneConfig.MaxLevelAction, KickBanVals, KickBanDisp);
         }
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Соединение", "Connection"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("连接", "Connection"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Форс DTLS (шифрование)", "Force DTLS (encryption)"), NocturneConfig.ForceDtls);
+        Toggle(b.x, ref by, b.width, NocturneText.T("强制 DTLS（加密）", "Force DTLS (encryption)"), NocturneConfig.ForceDtls);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Войт-кик", "Vote-kick"), 2f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("投票踢人", "Vote-kick"), 2f * RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Блокировать войт-кики", "Block vote-kicks"), NocturneConfig.VoteKickProtect);
-        ActionCycle(b.x, ref by, b.width, NocturneText.T("Реакция на голосующего", "React to voter"), NocturneConfig.VoteKickAction, VoteVals, VoteDisp);
+        Toggle(b.x, ref by, b.width, NocturneText.T("阻止投票踢人", "Block vote-kicks"), NocturneConfig.VoteKickProtect);
+        ActionCycle(b.x, ref by, b.width, NocturneText.T("对投票者做出反应", "React to voter"), NocturneConfig.VoteKickAction, VoteVals, VoteDisp);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Античит RPC (хост)", "RPC anticheat (host)"), 2f * RowH + 42f);
+        b = Card(x, ref y, w, NocturneText.T("RPC 反作弊（房主）", "RPC anticheat (host)"), 2f * RowH + 42f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ловить невозможные RPC", "Catch impossible RPCs"), NocturneConfig.RpcGuard);
-        ActionCycle(b.x, ref by, b.width, NocturneText.T("Реакция на читера", "React to cheater"), NocturneConfig.RpcGuardAction, VoteVals, VoteDisp);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("Саботаж мирным, вент без права и через систему, скан/анимация импостером, репорт/двери в H&S.", "Crew sabotage, illegal vent (both paths), impostor scan/anim, report/doors in H&S."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("拦截不可能的 RPC", "Catch impossible RPCs"), NocturneConfig.RpcGuard);
+        ActionCycle(b.x, ref by, b.width, NocturneText.T("对作弊者做出反应", "React to cheater"), NocturneConfig.RpcGuardAction, VoteVals, VoteDisp);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("船员破坏、无权限及系统穿管、内鬼扫描/动画、Hide&Seek 中的报告/门。", "Crew sabotage, illegal vent (both paths), impostor scan/anim, report/doors in H&S."), _muted);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Анти-бан", "Anti-ban"), 2f * RowH + 42f);
+        b = Card(x, ref y, w, NocturneText.T("反封禁", "Anti-ban"), 2f * RowH + 42f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("На хосте: банить отправителя", "As host: punish sender"), NocturneConfig.AntiBanHost);
-        ActionCycle(b.x, ref by, b.width, NocturneText.T("Реакция", "Action"), NocturneConfig.AntiBanHostAction, VoteVals, VoteDisp);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("Гасит краш-бан (vent-kick) пакет. Вне хоста работает всегда.", "Kills the crash-ban (vent-kick) packet. Off-host it is always on."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("作为房主：处罚发送者", "As host: punish sender"), NocturneConfig.AntiBanHost);
+        ActionCycle(b.x, ref by, b.width, NocturneText.T("操作", "Action"), NocturneConfig.AntiBanHostAction, VoteVals, VoteDisp);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("拦截崩溃封禁（vent-kick）包。非房主时始终开启。", "Kills the crash-ban (vent-kick) packet. Off-host it is always on."), _muted);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Цвета", "Colors"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("颜色", "Colors"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кик Fortegreen", "Kick Fortegreen"), NocturneConfig.KickFortegreen);
+        Toggle(b.x, ref by, b.width, NocturneText.T("踢出 Fortegreen", "Kick Fortegreen"), NocturneConfig.KickFortegreen);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Анти-флуд", "Anti-flood"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("反刷屏", "Anti-flood"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Блок фейк-собраний и спавн-флуда", "Block fake meetings & spawn floods"), NocturneConfig.BlockFakeMeetings);
+        Toggle(b.x, ref by, b.width, NocturneText.T("阻止假会议和刷屏生成", "Block fake meetings & spawn floods"), NocturneConfig.BlockFakeMeetings);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Анти-форс", "Anti-force"), 2f * RowH + 26f);
+        b = Card(x, ref y, w, NocturneText.T("反强制", "Anti-force"), 2f * RowH + 26f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Блок форс-вент-ТП", "Block forced vent TP"), NocturneConfig.VentTpProtect);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Блок форс-зиплайна", "Block forced zipline"), NocturneConfig.ZiplineProtect);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Режет чужие попытки катать/выбивать тебя.", "Drops others' attempts to ride/boot you."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("阻止强制穿管传送", "Block forced vent TP"), NocturneConfig.VentTpProtect);
+        Toggle(b.x, ref by, b.width, NocturneText.T("阻止强制滑索", "Block forced zipline"), NocturneConfig.ZiplineProtect);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("拦截他人试图带你或踢你的行为。", "Drops others' attempts to ride/boot you."), _muted);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Модерация", "Moderation"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("管理", "Moderation"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кик/бан в матче (хост)", "Kick/ban in match (host)"), NocturneConfig.UnlockMatchKickBan);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对局中踢/封（房主）", "Kick/ban in match (host)"), NocturneConfig.UnlockMatchKickBan);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Детект входящих", "Join detect"), 2f * RowH + 26f);
+        b = Card(x, ref y, w, NocturneText.T("进入检测", "Join detect"), 2f * RowH + 26f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать платформу/ур./raw", "Show platform/lvl/raw"), NocturneConfig.JoinDetect);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть своих (Nocturne)", "See other Nocturne users"), NocturneConfig.ModHandshake);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Тост при заходе; ⚠ на подозрит. raw-имя.", "Toast on join; ⚠ on suspicious raw name."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("显示平台/等级/raw", "Show platform/lvl/raw"), NocturneConfig.JoinDetect);
+        Toggle(b.x, ref by, b.width, NocturneText.T("识别同类（Nocturne）", "See other Nocturne users"), NocturneConfig.ModHandshake);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("进入时弹提示；可疑 raw 名称显示 ⚠。", "Toast on join; ⚠ on suspicious raw name."), _muted);
     }
 
     private void ReserveSelectedColor()
@@ -1825,17 +1825,17 @@ public sealed class NocturneMenu : MonoBehaviour
         PlayerControl sel = NocturneMouseTools.Selected;
         if (sel == null || sel.Data == null || sel.Data.DefaultOutfit == null)
         {
-            NocturneToast.Push(NocturneText.T("Резерв цвета", "Color reserve"), NocturneText.T("Выбери игрока (ЛКМ).", "Select a player (LMB)."), 2.5f, NocturneNotifyKind.Warning);
+            NocturneToast.Push(NocturneText.T("颜色保留", "Color reserve"), NocturneText.T("选择一名玩家（左键）。", "Select a player (LMB)."), 2.5f, NocturneNotifyKind.Warning);
             return;
         }
         string fc = NocturneColorReservations.Fc(sel);
         if (string.IsNullOrWhiteSpace(fc))
         {
-            NocturneToast.Push(NocturneText.T("Резерв цвета", "Color reserve"), NocturneText.T("Нет FriendCode.", "No FriendCode."), 2.5f, NocturneNotifyKind.Warning);
+            NocturneToast.Push(NocturneText.T("颜色保留", "Color reserve"), NocturneText.T("无 FriendCode。", "No FriendCode."), 2.5f, NocturneNotifyKind.Warning);
             return;
         }
         NocturneColorReservations.AddOrUpdate(fc, sel.Data.DefaultOutfit.ColorId, sel.Data.PlayerName);
-        NocturneToast.Push(NocturneText.T("Резерв цвета", "Color reserve"), sel.Data.PlayerName, 2.5f, NocturneNotifyKind.Success);
+        NocturneToast.Push(NocturneText.T("颜色保留", "Color reserve"), sel.Data.PlayerName, 2.5f, NocturneNotifyKind.Success);
     }
 
     private void DrawSnipe(float x, ref float y, float w)
@@ -1845,9 +1845,9 @@ public sealed class NocturneMenu : MonoBehaviour
         int cols = Mathf.Max(1, Mathf.FloorToInt((w - 36f + 6f) / 32f));
         int rows = Mathf.CeilToInt((max + 1f) / cols);
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Перехват цвета", "Color snipe"), RowH + (on ? rows * 32f + 24f : 0f));
+        Rect b = Card(x, ref y, w, NocturneText.T("抢颜色", "Color snipe"), RowH + (on ? rows * 32f + 24f : 0f));
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ловить цвет в лобби", "Snipe color in lobby"), NocturneConfig.SnipeColor);
+        Toggle(b.x, ref by, b.width, NocturneText.T("在大厅抢颜色", "Snipe color in lobby"), NocturneConfig.SnipeColor);
         if (!on) return;
 
         PlayerControl me = PlayerControl.LocalPlayer;
@@ -1868,7 +1868,7 @@ public sealed class NocturneMenu : MonoBehaviour
 
         bool free = me != null && !NocturneColorSnipe.Taken(want, me);
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f),
-            free ? NocturneText.T("Цвет свободен — беру.", "Color is free — taking it.") : NocturneText.T("Занят — жду, пока освободится.", "Taken — waiting for it to free up."), _muted);
+            free ? NocturneText.T("颜色空闲——正在获取。", "Color is free — taking it.") : NocturneText.T("已被占用——等待空出。", "Taken — waiting for it to free up."), _muted);
     }
 
     private void DrawColorAll(float x, ref float y, float w)
@@ -1878,12 +1878,12 @@ public sealed class NocturneMenu : MonoBehaviour
         int cols = Mathf.Max(1, Mathf.FloorToInt((w - 36f + 6f) / 32f));
         int rows = Mathf.CeilToInt((max + 1f) / cols);
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Цвет всем (хост)", "Color all (host)"), RowH + (on ? rows * 32f + 22f : 22f));
+        Rect b = Card(x, ref y, w, NocturneText.T("全员同色（房主）", "Color all (host)"), RowH + (on ? rows * 32f + 22f : 22f));
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Красить всех в один цвет", "Force one color on all"), NocturneConfig.ColorAll);
+        Toggle(b.x, ref by, b.width, NocturneText.T("强制所有人同一颜色", "Force one color on all"), NocturneConfig.ColorAll);
         if (!on)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Хостом. Красит и новозашедших.", "Host only. Colors new joiners too."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("房主专用。新进入者也会被上色。", "Host only. Colors new joiners too."), _muted);
             return;
         }
 
@@ -1898,7 +1898,7 @@ public sealed class NocturneMenu : MonoBehaviour
                 NocturneConfig.ColorAllId.Value = i;
         }
         by += rows * 32f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Красит и новозашедших. Выкл — вернут свои цвета.", "Colors new joiners. Off — they repick colors."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("新进入者也会被上色。关闭后恢复各自颜色。", "Colors new joiners. Off — they repick colors."), _muted);
     }
 
     private static Color[] _dotCols;
@@ -1952,20 +1952,20 @@ public sealed class NocturneMenu : MonoBehaviour
         if (NocturneStyle.Painting)
         {
             int nk = NocturneNameHistory.KnownNickCount(c.Character);
-            string note = nk > 1 ? "  " + NocturneText.T($"·{nk} ников", $"·{nk} nicks") : string.Empty;
+            string note = nk > 1 ? "  " + NocturneText.T($"·{nk} 个昵称", $"·{nk} nicks") : string.Empty;
             Lab(new Rect(r.x + 10f, r.y, r.width - 200f, r.height),
                 $"<b>{NocturneAccess.SafeName(c)}</b>   <color=#8A94AC><size=11>{ClientInfo(c)}{note}</size></color>", _rowName);
         }
         float cy = r.y + (r.height - 24f) / 2f;
         string mfc = NocturneColorReservations.Fc(c.Character);
         bool muted = NocturneMuteList.IsMuted(mfc);
-        if (SmallButton(new Rect(r.xMax - 188f, cy, 44f, 24f), NocturneText.T("МУТ", "MUTE"), muted ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.5f, 0.55f, 0.62f)))
+        if (SmallButton(new Rect(r.xMax - 188f, cy, 44f, 24f), NocturneText.T("静音", "MUTE"), muted ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.5f, 0.55f, 0.62f)))
             NocturneMuteList.Toggle(mfc);
-        if (SmallButton(new Rect(r.xMax - 142f, cy, 44f, 24f), NocturneText.T("НИК", "NICK"), new Color(0.86f, 0.5f, 0.28f)))
+        if (SmallButton(new Rect(r.xMax - 142f, cy, 44f, 24f), NocturneText.T("昵称", "NICK"), new Color(0.86f, 0.5f, 0.28f)))
             NocturneAccess.NickBanClient(net, c);
-        if (SmallButton(new Rect(r.xMax - 96f, cy, 44f, 24f), NocturneText.T("БАН", "BAN"), new Color(0.9f, 0.36f, 0.36f)))
+        if (SmallButton(new Rect(r.xMax - 96f, cy, 44f, 24f), NocturneText.T("封禁", "BAN"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneAccess.BanClient(net, c);
-        if (SmallButton(new Rect(r.xMax - 50f, cy, 44f, 24f), NocturneText.T("ВАЙТ", "WHITE"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(r.xMax - 50f, cy, 44f, 24f), NocturneText.T("白名单", "WHITE"), NocturneStyle.Current.Accent))
             NocturneAccess.WhiteClient(c);
         y += RowH + 6f;
     }
@@ -1974,11 +1974,11 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         IReadOnlyList<string> nicks = NocturneAccess.NickBanEntries;
         float body = nicks.Count > 0 ? nicks.Count * 30f : 26f;
-        Rect b = Card(x, ref y, w, $"{NocturneText.T("Ник-бан список", "Nick ban list")} ({nicks.Count})", body, true);
+        Rect b = Card(x, ref y, w, $"{NocturneText.T("昵称封禁列表", "Nick ban list")} ({nicks.Count})", body, true);
         float by = b.y;
         if (nicks.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。", "Empty."), _muted);
             return;
         }
 
@@ -2001,16 +2001,16 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         IReadOnlyList<RecentEntry> recent = NocturneRecent.Entries;
         float body = 30f + (recent.Count > 0 ? recent.Count * 46f : 26f);
-        Rect b = Card(x, ref y, w, $"{NocturneText.T("Кто уходил", "Who left")} ({recent.Count})", body, true);
+        Rect b = Card(x, ref y, w, $"{NocturneText.T("谁离开了", "Who left")} ({recent.Count})", body, true);
         float by = b.y;
 
-        if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
+        if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneRecent.Clear();
         by += 30f;
 
         if (recent.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。", "Empty."), _muted);
             return;
         }
 
@@ -2022,9 +2022,9 @@ public sealed class NocturneMenu : MonoBehaviour
             Lab(new Rect(r.x + 8f, r.y + 1f, r.width - 162f, 22f), e.Title, _rowName);
             Lab(new Rect(r.x + 8f, r.y + 21f, r.width - 162f, 20f), e.Info, _rowInfo);
 
-            if (SmallButton(new Rect(r.xMax - 144f, r.y + 10f, 66f, 24f), NocturneText.T("БАН", "BAN"), new Color(0.9f, 0.4f, 0.4f)))
+            if (SmallButton(new Rect(r.xMax - 144f, r.y + 10f, 66f, 24f), NocturneText.T("封禁", "BAN"), new Color(0.9f, 0.4f, 0.4f)))
                 NocturneAccess.AddBan(e.Name, e.Fc, e.Puid);
-            if (SmallButton(new Rect(r.xMax - 74f, r.y + 10f, 70f, 24f), NocturneText.T("НИК-БАН", "NICK"), NocturneStyle.Current.Accent))
+            if (SmallButton(new Rect(r.xMax - 74f, r.y + 10f, 70f, 24f), NocturneText.T("昵称封禁", "NICK"), NocturneStyle.Current.Accent))
                 NocturneAccess.AddNickBan(e.Name);
             by += 46f;
         }
@@ -2034,11 +2034,11 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         IReadOnlyList<string> plats = NocturneAccess.PlatformBanEntries;
         float body = plats.Count > 0 ? plats.Count * 30f : 26f;
-        Rect b = Card(x, ref y, w, $"{NocturneText.T("Платформ-бан список", "Platform ban list")} ({plats.Count})", body, true);
+        Rect b = Card(x, ref y, w, $"{NocturneText.T("平台封禁列表", "Platform ban list")} ({plats.Count})", body, true);
         float by = b.y;
         if (plats.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。", "Empty."), _muted);
             return;
         }
 
@@ -2065,7 +2065,7 @@ public sealed class NocturneMenu : MonoBehaviour
         float by = b.y;
         if (entries.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。", "Empty."), _muted);
             return;
         }
 
@@ -2074,7 +2074,7 @@ public sealed class NocturneMenu : MonoBehaviour
             AccessEntry e = entries[i];
             var r = new Rect(b.x, by, b.width, 28f);
             HoverFill(r);
-            string name = string.IsNullOrEmpty(e.Name) ? (string.IsNullOrEmpty(e.Code) ? NocturneText.T("гость", "guest") : e.Code) : e.Name;
+            string name = string.IsNullOrEmpty(e.Name) ? (string.IsNullOrEmpty(e.Code) ? NocturneText.T("访客", "guest") : e.Code) : e.Name;
             Lab(new Rect(r.x + 8f, r.y, r.width - 46f, r.height),
                 $"<b>{name}</b>   <color=#8A94AC><size=11>{EntrySub(e)}</size></color>", _rowName);
             if (SmallButton(new Rect(r.xMax - 38f, r.y + 3f, 34f, 22f), "✕", new Color(0.9f, 0.4f, 0.4f)))
@@ -2090,18 +2090,18 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         List<RecentRow> rows = NocturneRecentPlayers.Rows;
         float body = 26f + (rows.Count > 0 ? rows.Count * 30f : 26f);
-        Rect b = Card(x, ref y, w, $"{NocturneText.T("Недавние игроки", "Recent players")} ({rows.Count})", body, true);
+        Rect b = Card(x, ref y, w, $"{NocturneText.T("最近玩家", "Recent players")} ({rows.Count})", body, true);
         float by = b.y;
 
         Lab(new Rect(b.x + 2f, by, b.width - 100f, 24f),
-            NocturneText.T("Кого игра запомнила по прошлым лобби — с ФК и PUID.", "Whom the game remembers from past lobbies — with FC and PUID."), _muted);
-        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
+            NocturneText.T("游戏记住的过去大厅中的玩家——含 FC 和 PUID。", "Whom the game remembers from past lobbies — with FC and PUID."), _muted);
+        if (SmallButton(new Rect(b.x + b.width - 96f, by + 1f, 92f, 24f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.36f, 0.36f)))
             NocturneRecentPlayers.Clear();
         by += 26f;
 
         if (rows.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто — сыграй хотя бы одно лобби.", "Empty — play at least one lobby."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空——至少玩过一个大厅。", "Empty — play at least one lobby."), _muted);
             return;
         }
 
@@ -2117,9 +2117,9 @@ public sealed class NocturneMenu : MonoBehaviour
 
             bool banned = NocturneAccess.IsBanned(e.Code, e.Puid);
             bool white = NocturneAccess.IsWhite(e.Code, e.Puid);
-            if (SmallButton(new Rect(r.xMax - 182f, r.y + 3f, 88f, 22f), banned ? NocturneText.T("В БАНЕ ✓", "BANNED ✓") : NocturneText.T("В БАН", "BAN"), banned ? new Color(0.5f, 0.5f, 0.58f) : new Color(0.9f, 0.4f, 0.4f)) && !banned)
+            if (SmallButton(new Rect(r.xMax - 182f, r.y + 3f, 88f, 22f), banned ? NocturneText.T("已封禁 ✓", "BANNED ✓") : NocturneText.T("封禁", "BAN"), banned ? new Color(0.5f, 0.5f, 0.58f) : new Color(0.9f, 0.4f, 0.4f)) && !banned)
                 NocturneRecentPlayers.Ban(e);
-            if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 88f, 22f), white ? NocturneText.T("В ВАЙТЕ ✓", "WHITE ✓") : NocturneText.T("В ВАЙТ", "WHITE"), white ? new Color(0.5f, 0.5f, 0.58f) : NocturneStyle.Current.Accent) && !white)
+            if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 88f, 22f), white ? NocturneText.T("在白名单 ✓", "WHITE ✓") : NocturneText.T("白名单", "WHITE"), white ? new Color(0.5f, 0.5f, 0.58f) : NocturneStyle.Current.Accent) && !white)
                 NocturneRecentPlayers.White(e);
             by += 30f;
         }
@@ -2290,7 +2290,7 @@ public sealed class NocturneMenu : MonoBehaviour
         HoverFill(r);
         DrawColorDot(new Rect(r.x + 6f, r.y + 9f, 12f, 12f), pc);
         Lab(new Rect(r.x + 26f, r.y, r.width - 120f, r.height), pc.Data != null ? pc.Data.PlayerName : "?", _rowName);
-        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("ШЕПНУТЬ", "WHISPER"), new Color(0.55f, 0.7f, 1f)))
+        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("私聊", "WHISPER"), new Color(0.55f, 0.7f, 1f)))
             NocturneWhisper.Prefill(pc.PlayerId.ToString());
         y += 32f;
     }
@@ -2305,11 +2305,11 @@ public sealed class NocturneMenu : MonoBehaviour
         float tw = VoteW(r.width);
         float gw = AutoW(r.width) + 6f;
         Lab(new Rect(r.x + 26f, r.y, Mathf.Max(24f, r.width - 40f - gw - tw), r.height), pc.Data != null ? pc.Data.PlayerName : "?", _rowName);
-        if (SmallButton(new Rect(r.xMax - tw - gw - 8f, r.y + 3f, gw, 24f), NocturneText.T("К НЕМУ", "GO"), new Color(0.5f, 0.78f, 0.92f)))
+        if (SmallButton(new Rect(r.xMax - tw - gw - 8f, r.y + 3f, gw, 24f), NocturneText.T("去他那", "GO"), new Color(0.5f, 0.78f, 0.92f)))
             TpTo(pc);
         bool follow = NocturneFollow.IsTarget(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - tw - 4f, r.y + 3f, tw, 24f), follow ? NocturneText.T("СТОП", "STOP") : NocturneText.T("ИДТИ ЗА", "FOLLOW"), follow ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.55f, 0.7f, 1f)))
-            NocturneToast.Push(NocturneText.T("Слежка", "Follow"), NocturneFollow.Toggle(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - tw - 4f, r.y + 3f, tw, 24f), follow ? NocturneText.T("停止", "STOP") : NocturneText.T("跟随", "FOLLOW"), follow ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.55f, 0.7f, 1f)))
+            NocturneToast.Push(NocturneText.T("跟随", "Follow"), NocturneFollow.Toggle(pc), 2f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2345,9 +2345,9 @@ public sealed class NocturneMenu : MonoBehaviour
         float vw = VoteW(r.width);
         float aw = AutoW(r.width);
         bool sel = NocturneVotekick.IsTarget(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - vw - aw - 8f, r.y + 3f, aw, 24f), sel ? NocturneText.T("АВТО ✓", "AUTO ✓") : NocturneText.T("АВТО", "AUTO"), sel ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
+        if (SmallButton(new Rect(r.xMax - vw - aw - 8f, r.y + 3f, aw, 24f), sel ? NocturneText.T("自动 ✓", "AUTO ✓") : NocturneText.T("自动", "AUTO"), sel ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
             NocturneVotekick.ToggleTarget(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - vw - 4f, r.y + 3f, vw, 24f), NocturneText.T("ЗАЯВИТЬ", "VOTE"), new Color(0.78f, 0.42f, 0.95f)))
+        if (SmallButton(new Rect(r.xMax - vw - 4f, r.y + 3f, vw, 24f), NocturneText.T("投票", "VOTE"), new Color(0.78f, 0.42f, 0.95f)))
             NocturneVotekick.VoteOne(pc);
         y += 32f;
     }
@@ -2368,9 +2368,9 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         bool run = NocturneLobbyPranks.LoopTarget == pc.PlayerId && NocturneLobbyPranks.LoopLeft > 0;
-        string lbl = run ? NocturneText.T("СТОП ", "STOP ") + NocturneLobbyPranks.LoopLeft : NocturneText.T("УБИТЬ ×20", "KILL ×20");
+        string lbl = run ? NocturneText.T("停止 ", "STOP ") + NocturneLobbyPranks.LoopLeft : NocturneText.T("杀死 ×20", "KILL ×20");
         if (SmallButton(new Rect(r.xMax - 110f, r.y + 3f, 106f, 24f), lbl, run ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.78f, 0.42f, 0.95f)))
-            NocturneToast.Push(NocturneText.T("Цикл смерти", "Murder loop"), NocturneLobbyPranks.MurderLoop(pc, 20), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("死亡循环", "Murder loop"), NocturneLobbyPranks.MurderLoop(pc, 20), 2f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2388,14 +2388,14 @@ public sealed class NocturneMenu : MonoBehaviour
                 nm += "  <size=80%>†</size>";
             Lab(new Rect(r.x + 26f, r.y, r.width - 322f, r.height), nm, _rowName);
         }
-        if (SmallButton(new Rect(r.xMax - 316f, r.y + 3f, 62f, 24f), NocturneText.T("КИЛЛ", "KILL"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Килл", "Kill"), NocturneKillTools.KillOne(pc), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 250f, r.y + 3f, 62f, 24f), NocturneText.T("ТЕЛЕ", "TELE"), new Color(0.78f, 0.42f, 0.95f)))
-            NocturneToast.Push(NocturneText.T("Телекилл", "Telekill"), NocturneKillTools.Telekill(pc), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 184f, r.y + 3f, 78f, 24f), NocturneText.T("ЭНДЕР", "ENDER"), new Color(0.35f, 0.75f, 0.55f)))
-            NocturneToast.Push(NocturneText.T("Эндермен", "Enderman"), NocturneEnderman.Kill(pc), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 102f, r.y + 3f, 98f, 24f), NocturneText.T("ВЫГНАТЬ", "EJECT"), new Color(0.5f, 0.78f, 0.92f)))
-            NocturneToast.Push(NocturneText.T("Эжект", "Eject"), NocturneMeetingTools.Eject(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 316f, r.y + 3f, 62f, 24f), NocturneText.T("击杀", "KILL"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillOne(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 250f, r.y + 3f, 62f, 24f), NocturneText.T("远程", "TELE"), new Color(0.78f, 0.42f, 0.95f)))
+            NocturneToast.Push(NocturneText.T("远程击杀", "Telekill"), NocturneKillTools.Telekill(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 184f, r.y + 3f, 78f, 24f), NocturneText.T("末影", "ENDER"), new Color(0.35f, 0.75f, 0.55f)))
+            NocturneToast.Push(NocturneText.T("末影人", "Enderman"), NocturneEnderman.Kill(pc), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 102f, r.y + 3f, 98f, 24f), NocturneText.T("弹出", "EJECT"), new Color(0.5f, 0.78f, 0.92f)))
+            NocturneToast.Push(NocturneText.T("弹出", "Eject"), NocturneMeetingTools.Eject(pc), 2f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2411,8 +2411,8 @@ public sealed class NocturneMenu : MonoBehaviour
             string nm = pc.Data != null ? pc.Data.PlayerName : "?";
             Lab(new Rect(r.x + 26f, r.y, r.width - 120f, r.height), nm, _rowName);
         }
-        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("ПОДСТАВИТЬ", "FRAME"), new Color(0.85f, 0.45f, 0.2f)))
-            NocturneToast.Push(NocturneText.T("Подстава", "Frame"), NocturneFrameSabotage.Send(pc, system, (byte)_frameValue), 2.4f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("栽赃", "FRAME"), new Color(0.85f, 0.45f, 0.2f)))
+            NocturneToast.Push(NocturneText.T("栽赃", "Frame"), NocturneFrameSabotage.Send(pc, system, (byte)_frameValue), 2.4f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2423,33 +2423,33 @@ public sealed class NocturneMenu : MonoBehaviour
         CollectPlayers(_shieldPlayers);
         int n = ready ? _shieldPlayers.Count : 0;
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Щит игрокам (хост)", "Shield players (host)"),
+        Rect b = Card(x, ref y, w, NocturneText.T("玩家护盾（房主）", "Shield players (host)"),
             ready ? 28f + 30f + RowH + (n > 0 ? n * 32f : 26f) : 26f, true);
         float by = b.y;
 
         if (!ready)
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-                Utils.Host ? NocturneText.T("Только в матче.", "In match only.") : NocturneText.T("Только хост.", "Host only."), _muted);
+                Utils.Host ? NocturneText.T("仅对局中可用。", "In match only.") : NocturneText.T("仅房主可用。", "Host only."), _muted);
             return;
         }
 
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-            NocturneText.T("Щит Ангела: не убить, пока держится.", "Angel shield: unkillable while held."), _muted);
+            NocturneText.T("天使护盾：持盾期间不会被击杀。", "Angel shield: unkillable while held."), _muted);
         by += 28f;
 
         float half = (b.width - 8f) / 2f;
-        if (SmallButton(new Rect(b.x, by, half, 26f), NocturneText.T("ЩИТ ВСЕМ", "SHIELD ALL"), new Color(0.35f, 0.75f, 0.55f)))
-            NocturneToast.Push(NocturneText.T("Щит", "Shield"), NocturneShield.GiveAll(), 2.2f, NocturneNotifyKind.Success);
-        if (SmallButton(new Rect(b.x + half + 8f, by, half, 26f), NocturneText.T("СНЯТЬ ОТМЕТКИ", "CLEAR MARKS"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(b.x, by, half, 26f), NocturneText.T("全员护盾", "SHIELD ALL"), new Color(0.35f, 0.75f, 0.55f)))
+            NocturneToast.Push(NocturneText.T("护盾", "Shield"), NocturneShield.GiveAll(), 2.2f, NocturneNotifyKind.Success);
+        if (SmallButton(new Rect(b.x + half + 8f, by, half, 26f), NocturneText.T("清除标记", "CLEAR MARKS"), new Color(0.9f, 0.4f, 0.4f)))
             NocturneShield.ClearMarks();
         by += 30f;
 
-        Toggle(b.x, ref by, b.width, NocturneText.T("Держать щит на всех", "Keep everyone shielded"), NocturneConfig.ShieldAll);
+        Toggle(b.x, ref by, b.width, NocturneText.T("保持全员有盾", "Keep everyone shielded"), NocturneConfig.ShieldAll);
 
         if (n == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет игроков.", "No players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("无玩家。", "No players."), _muted);
             return;
         }
 
@@ -2481,8 +2481,8 @@ public sealed class NocturneMenu : MonoBehaviour
                 nm += "  [H]";
             Lab(new Rect(r.x + 50f, r.y, r.width - 140f, r.height), nm, _rowName);
         }
-        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("ЩИТ", "SHIELD"), new Color(0.35f, 0.75f, 0.55f)))
-            NocturneToast.Push(NocturneText.T("Щит", "Shield"), NocturneShield.Give(pc), 2.2f, NocturneNotifyKind.Success);
+        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("护盾", "SHIELD"), new Color(0.35f, 0.75f, 0.55f)))
+            NocturneToast.Push(NocturneText.T("护盾", "Shield"), NocturneShield.Give(pc), 2.2f, NocturneNotifyKind.Success);
         y += 32f;
     }
 
@@ -2510,8 +2510,8 @@ public sealed class NocturneMenu : MonoBehaviour
                 nm += "  [H]";
             Lab(new Rect(r.x + 50f, r.y, r.width - 140f, r.height), nm, _rowName);
         }
-        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("КИК", "KICK"), new Color(0.95f, 0.5f, 0.25f)))
-            NocturneToast.Push(NocturneText.T("Вент кик", "Vent kick"), NocturneVentKick.Kick(pc), 2.4f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneText.T("踢出", "KICK"), new Color(0.95f, 0.5f, 0.25f)))
+            NocturneToast.Push(NocturneText.T("穿管踢出", "Vent kick"), NocturneVentKick.Kick(pc), 2.4f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2569,7 +2569,7 @@ public sealed class NocturneMenu : MonoBehaviour
 
         Color sc = NocturneBlind.IsDark(pc.PlayerId) ? new Color(0.4f, 0.42f, 0.48f) : NocturneBlind.IsBright(pc.PlayerId) ? new Color(0.95f, 0.85f, 0.35f) : new Color(0.5f, 0.55f, 0.62f);
         if (SmallButton(new Rect(r.xMax - 90f, r.y + 3f, 86f, 24f), NocturneBlind.StateName(pc.PlayerId), sc))
-            NocturneToast.Push(NocturneText.T("Свет", "Vision"), NocturneBlind.Cycle(pc), 2.2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("光照", "Vision"), NocturneBlind.Cycle(pc), 2.2f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2592,13 +2592,13 @@ public sealed class NocturneMenu : MonoBehaviour
 
         bool fol = NocturnePet.IsFollow(pc.PlayerId);
         Color fc = fol ? new Color(0.4f, 0.7f, 0.95f) : new Color(0.5f, 0.55f, 0.62f);
-        if (SmallButton(new Rect(r.xMax - 190f, r.y + 3f, 92f, 24f), fol ? NocturneText.T("СЛЕДОМ ✓", "FOLLOW ✓") : NocturneText.T("СЛЕДОМ", "FOLLOW"), fc))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), fol ? NocturnePet.Stop2() : NocturnePet.Chase(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 190f, r.y + 3f, 92f, 24f), fol ? NocturneText.T("跟随 ✓", "FOLLOW ✓") : NocturneText.T("跟随", "FOLLOW"), fc))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), fol ? NocturnePet.Stop2() : NocturnePet.Chase(pc), 2f, NocturneNotifyKind.Info);
 
         bool on = NocturnePet.IsTarget(pc.PlayerId);
         Color c = on ? new Color(0.4f, 0.7f, 0.95f) : NocturneStyle.Current.Accent;
-        if (SmallButton(new Rect(r.xMax - 94f, r.y + 3f, 90f, 24f), on ? NocturneText.T("ГЛАЖУ ✓", "PETTING ✓") : NocturneText.T("ГЛАДИТЬ", "PET"), c))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), on ? NocturnePet.Stop2() : NocturnePet.Grab(pc), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 94f, r.y + 3f, 90f, 24f), on ? NocturneText.T("抚摸 ✓", "PETTING ✓") : NocturneText.T("抚摸", "PET"), c))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), on ? NocturnePet.Stop2() : NocturnePet.Grab(pc), 2f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2619,12 +2619,12 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         float bw = 78f;
-        if (SmallButton(new Rect(r.xMax - 3 * bw - 8f, r.y + 3f, bw, 24f), NocturneText.T("ОБНУЛИТЬ", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Задания", "Tasks"), TaskTools.Clear(pc), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 2 * bw - 4f, r.y + 3f, bw, 24f), NocturneText.T("НОРМА", "NORMAL"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Задания", "Tasks"), TaskTools.Normal(pc), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - bw, r.y + 3f, bw, 24f), NocturneText.T("ЗАВАЛИТЬ", "FLOOD"), new Color(0.95f, 0.5f, 0.25f)))
-            NocturneToast.Push(NocturneText.T("Задания", "Tasks"), TaskTools.Flood(pc), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 3 * bw - 8f, r.y + 3f, bw, 24f), NocturneText.T("清零", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Clear(pc), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - 2 * bw - 4f, r.y + 3f, bw, 24f), NocturneText.T("正常", "NORMAL"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Normal(pc), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(r.xMax - bw, r.y + 3f, bw, 24f), NocturneText.T("灌满", "FLOOD"), new Color(0.95f, 0.5f, 0.25f)))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Flood(pc), 2.5f, NocturneNotifyKind.Info);
         y += 32f;
     }
 
@@ -2653,10 +2653,10 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         Color ac = NocturneStyle.Current.Accent;
-        string tag = NocturneText.T("Зиплайн", "Zipline");
-        if (SmallButton(new Rect(r.xMax - 132f, r.y + 3f, 62f, 24f), NocturneText.T("ВНИЗ ↓", "DOWN ↓"), ac))
+        string tag = NocturneText.T("滑索", "Zipline");
+        if (SmallButton(new Rect(r.xMax - 132f, r.y + 3f, 62f, 24f), NocturneText.T("向下 ↓", "DOWN ↓"), ac))
             NocturneToast.Push(tag, Zipline.Ride(pc, true), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 66f, r.y + 3f, 62f, 24f), NocturneText.T("ВВЕРХ ↑", "UP ↑"), ac))
+        if (SmallButton(new Rect(r.xMax - 66f, r.y + 3f, 62f, 24f), NocturneText.T("向上 ↑", "UP ↑"), ac))
             NocturneToast.Push(tag, Zipline.Ride(pc, false), 2.5f, NocturneNotifyKind.Info);
         y += 32f;
     }
@@ -2693,7 +2693,7 @@ public sealed class NocturneMenu : MonoBehaviour
         Color col = idx == 0 ? new Color(0.5f, 0.55f, 0.62f) : NocturneStyle.Current.Accent;
         if (SmallButton(new Rect(r.xMax - 178f, r.y + 3f, 122f, 24f), NocturneForceRoles.Name(idx) + "  ▸", col))
             NocturneForceRoles.Cycle(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - 52f, r.y + 3f, 48f, 24f), NocturneText.T("ФОРС", "SET"), new Color(0.4f, 0.8f, 0.5f)))
+        if (SmallButton(new Rect(r.xMax - 52f, r.y + 3f, 48f, 24f), NocturneText.T("设置", "SET"), new Color(0.4f, 0.8f, 0.5f)))
             NocturneForceRoles.ForceNow(pc.PlayerId);
         y += 32f;
     }
@@ -2724,14 +2724,14 @@ public sealed class NocturneMenu : MonoBehaviour
 
         if (me)
         {
-            Lab(new Rect(r.xMax - 158f, r.y, 154f, r.height), NocturneText.T("это ты", "you"), _muted);
+            Lab(new Rect(r.xMax - 158f, r.y, 154f, r.height), NocturneText.T("这是你", "you"), _muted);
         }
         else
         {
-            if (SmallButton(new Rect(r.xMax - 158f, r.y + 3f, 96f, 24f), on ? NocturneText.T("СНЯТЬ", "REMOVE") : NocturneText.T("БЕСС.", "GOD"), on ? new Color(0.95f, 0.78f, 0.3f) : new Color(0.5f, 0.55f, 0.62f)))
-                NocturneToast.Push(NocturneText.T("Бессмертие", "Immortality"), NocturneGodMode.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(r.xMax - 58f, r.y + 3f, 54f, 24f), NocturneText.T("ВЕНТ", "VENT"), new Color(0.55f, 0.7f, 1f)))
-                NocturneToast.Push(NocturneText.T("Вент-ТП", "Vent TP"), NocturneVentTp.Send(pc, ventId), 2.2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(r.xMax - 158f, r.y + 3f, 96f, 24f), on ? NocturneText.T("移除", "REMOVE") : NocturneText.T("无敌", "GOD"), on ? new Color(0.95f, 0.78f, 0.3f) : new Color(0.5f, 0.55f, 0.62f)))
+                NocturneToast.Push(NocturneText.T("无敌", "Immortality"), NocturneGodMode.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(r.xMax - 58f, r.y + 3f, 54f, 24f), NocturneText.T("穿管", "VENT"), new Color(0.55f, 0.7f, 1f)))
+                NocturneToast.Push(NocturneText.T("穿管传送", "Vent TP"), NocturneVentTp.Send(pc, ventId), 2.2f, NocturneNotifyKind.Info);
         }
 
         y += 32f;
@@ -2749,7 +2749,7 @@ public sealed class NocturneMenu : MonoBehaviour
         {
             string lvl = Patches.NocturneJoinLevels.Display(c);
             if (lvl != "?")
-                s = NocturneText.T("ур.", "lvl") + lvl;
+                s = NocturneText.T("等级", "lvl") + lvl;
         }
         catch { }
         try
@@ -2791,64 +2791,64 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, HomeSubsRu, HomeSubsEn);
 
         string about = NocturneText.T(
-            "<b>Nocturne</b> — клиент-сайд мод-меню для Among Us.",
+            "<b>Nocturne</b> — 客户端 Among Us 模组菜单。",
             "<b>Nocturne</b> — a client-side mod menu for Among Us.");
         MeasureHome(about, CardW(w));
         float ah = _homeAboutH;
         Grp(0);
-        Rect b = Card(x, ref y, w, NocturneText.T("О моде", "About"), ah + 5f * 30f + 8f);
+        Rect b = Card(x, ref y, w, NocturneText.T("关于", "About"), ah + 5f * 30f + 8f);
         Lab(new Rect(b.x, b.y, b.width, ah), about, _wrapLabel);
         float by = b.y + ah + 8f;
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Версия", "Version"), "v" + NocturnePlugin.PluginVersion);
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Автор", "Author"), "Kawasaki");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Со-разработчик", "Co-Developer"), "Zahraa");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Контрибьютор", "Contributor"), "YosefUME");
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Тестер", "Tester"), "LITAFOM");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("版本", "Version"), "v" + NocturnePlugin.PluginVersion);
+        InfoRow(b.x, ref by, b.width, NocturneText.T("作者", "Author"), "Kawasaki");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("共同开发", "Co-Developer"), "Zahraa");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("贡献者", "Contributor"), "YosefUME");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("测试", "Tester"), "LITAFOM");
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Горячие клавиши", "Hotkeys"), 12f * 30f, true);
+        b = Card(x, ref y, w, NocturneText.T("快捷键", "Hotkeys"), 12f * 30f, true);
         by = b.y;
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Меню", "Menu"), KeyDisp(NocturneConfig.MenuKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Код лобби", "Lobby code"), KeyDisp(NocturneConfig.CopyCodeKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Завершить матч", "End match"), KeyDisp(NocturneConfig.EndMatchKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Досчитать голоса", "Tally votes"), KeyDisp(NocturneConfig.CloseVotingKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Закрыть собрание", "Close meeting"), KeyDisp(NocturneConfig.CloseMeetingKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Открыть плеер", "Open player"), KeyDisp(NocturneConfig.MusicToggleKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Предыдущий трек", "Previous track"), KeyDisp(NocturneConfig.MusicPrevKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Следующий трек", "Next track"), KeyDisp(NocturneConfig.MusicNextKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Играть / Пауза", "Play / Pause"), KeyDisp(NocturneConfig.MusicPlayPauseKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Стоп", "Stop"), KeyDisp(NocturneConfig.MusicStopKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Громкость +", "Volume up"), KeyDisp(NocturneConfig.MusicVolumeUpKey));
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Громкость -", "Volume down"), KeyDisp(NocturneConfig.MusicVolumeDownKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("菜单", "Menu"), KeyDisp(NocturneConfig.MenuKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("大厅代码", "Lobby code"), KeyDisp(NocturneConfig.CopyCodeKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("结束对局", "End match"), KeyDisp(NocturneConfig.EndMatchKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("结算票数", "Tally votes"), KeyDisp(NocturneConfig.CloseVotingKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("关闭会议", "Close meeting"), KeyDisp(NocturneConfig.CloseMeetingKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("打开播放器", "Open player"), KeyDisp(NocturneConfig.MusicToggleKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("上一首", "Previous track"), KeyDisp(NocturneConfig.MusicPrevKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("下一首", "Next track"), KeyDisp(NocturneConfig.MusicNextKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("播放 / 暂停", "Play / Pause"), KeyDisp(NocturneConfig.MusicPlayPauseKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("停止", "Stop"), KeyDisp(NocturneConfig.MusicStopKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("音量 +", "Volume up"), KeyDisp(NocturneConfig.MusicVolumeUpKey));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("音量 -", "Volume down"), KeyDisp(NocturneConfig.MusicVolumeDownKey));
 
         string imp = NocturneText.T(
-            "<color=#FFD166>Мод может конфликтовать с другими модами. Перед запуском отключи или удали остальные — меньше вылетов и багов.</color>",
+            "<color=#FFD166>模组可能与其他模组冲突。启动前请关闭或删除其他模组——减少闪退和 bug。</color>",
             "<color=#FFD166>The mod may conflict with other mods. Disable or remove other mods before launching to avoid crashes and bugs.</color>");
         float ih = _homeImpH;
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Важно", "Important"), ih);
+        b = Card(x, ref y, w, NocturneText.T("重要", "Important"), ih);
         Lab(b, imp, _wrapLabel);
 
         Grp(0);
         DrawUpdate(x, ref y, w);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Ссылки", "Links"), 3f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("链接", "Links"), 3f * RowH);
         by = b.y;
-        LinkRow(b.x, ref by, b.width, NocturneText.T("Сайт", "Website"), "https://onyxmenu.kawas-set.workers.dev");
+        LinkRow(b.x, ref by, b.width, NocturneText.T("网站", "Website"), "https://onyxmenu.kawas-set.workers.dev");
         LinkRow(b.x, ref by, b.width, "Discord", "https://discord.gg/cP4MrVUfM7");
         LinkRow(b.x, ref by, b.width, "GitHub", "https://github.com/Veltrix-s/OnyxMenu");
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Быстрые действия", "Quick actions"), 48f, true);
-        if (ActionRow(b, NocturneIcon.Bell, NocturneText.T("Тест уведомления", "Test notification"), NocturneText.T("Проверить", "Test")))
-            NocturneToast.Push(NocturneText.T("Nocturne на связи ✓", "Nocturne is live ✓"));
+        b = Card(x, ref y, w, NocturneText.T("快捷操作", "Quick actions"), 48f, true);
+        if (ActionRow(b, NocturneIcon.Bell, NocturneText.T("测试通知", "Test notification"), NocturneText.T("测试", "Test")))
+            NocturneToast.Push(NocturneText.T("Nocturne 在线 ✓", "Nocturne is live ✓"));
     }
 
     private void MeasureHome(string about, float w)
     {
         string imp = NocturneText.T(
-            "<color=#FFD166>Мод может конфликтовать с другими модами. Перед запуском отключи или удали остальные — меньше вылетов и багов.</color>",
+            "<color=#FFD166>模组可能与其他模组冲突。启动前请关闭或删除其他模组——减少闪退和 bug。</color>",
             "<color=#FFD166>The mod may conflict with other mods. Disable or remove other mods before launching to avoid crashes and bugs.</color>");
         if (Mathf.Abs(w - _homeTextW) < 0.5f && ReferenceEquals(about, _homeAbout) && ReferenceEquals(imp, _homeImp))
             return;
@@ -2863,29 +2863,29 @@ public sealed class NocturneMenu : MonoBehaviour
     private void DrawUpdate(float x, ref float y, float w)
     {
         UpState st = NocturneUpdateCheck.State;
-        Rect b = Card(x, ref y, w, NocturneText.T("Обновление", "Update"), 30f + 30f);
+        Rect b = Card(x, ref y, w, NocturneText.T("更新", "Update"), 30f + 30f);
         float by = b.y;
 
         string info;
         switch (st)
         {
             case UpState.Checking:
-                info = NocturneText.T("Проверяю…", "Checking…");
+                info = NocturneText.T("检查中……", "Checking…");
                 break;
             case UpState.Found:
-                info = NocturneText.T("Доступна v", "Version v") + NocturneUpdateCheck.Latest;
+                info = NocturneText.T("可用 v", "Version v") + NocturneUpdateCheck.Latest;
                 break;
             case UpState.Loading:
-                info = NocturneText.T("Качаю…", "Downloading…");
+                info = NocturneText.T("下载中……", "Downloading…");
                 break;
             case UpState.Done:
-                info = NocturneText.T("Готово — перезапусти игру", "Done — restart the game");
+                info = NocturneText.T("完成——请重启游戏", "Done — restart the game");
                 break;
             case UpState.Fail:
-                info = NocturneText.T("Ошибка: ", "Error: ") + NocturneUpdateCheck.Err;
+                info = NocturneText.T("错误： ", "Error: ") + NocturneUpdateCheck.Err;
                 break;
             default:
-                info = NocturneText.T("Установлена последняя: v", "Up to date: v") + NocturnePlugin.PluginVersion;
+                info = NocturneText.T("已是最新：v", "Up to date: v") + NocturnePlugin.PluginVersion;
                 break;
         }
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), info, _muted);
@@ -2893,15 +2893,15 @@ public sealed class NocturneMenu : MonoBehaviour
 
         float cw = (b.width - 10f) / 2f;
         bool busy = st == UpState.Checking || st == UpState.Loading;
-        if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("ПРОВЕРИТЬ", "CHECK"), busy ? new Color(0.5f, 0.5f, 0.58f) : NocturneStyle.Current.Accent) && !busy)
+        if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("检查", "CHECK"), busy ? new Color(0.5f, 0.5f, 0.58f) : NocturneStyle.Current.Accent) && !busy)
             NocturneUpdateCheck.Recheck();
 
         if (st == UpState.Done)
         {
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("ВЫЙТИ ИЗ ИГРЫ", "QUIT GAME"), new Color(0.9f, 0.4f, 0.4f)))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("退出游戏", "QUIT GAME"), new Color(0.9f, 0.4f, 0.4f)))
                 NocturneUpdateCheck.Restart();
         }
-        else if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("СКАЧАТЬ", "DOWNLOAD"), st == UpState.Found ? new Color(0.30f, 0.72f, 0.40f) : new Color(0.5f, 0.5f, 0.58f)) && st == UpState.Found)
+        else if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("下载", "DOWNLOAD"), st == UpState.Found ? new Color(0.30f, 0.72f, 0.40f) : new Color(0.5f, 0.5f, 0.58f)) && st == UpState.Found)
             NocturneUpdateCheck.Download();
     }
 
@@ -2924,57 +2924,57 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, QolSubsRu, QolSubsEn);
 
         Grp(0);
-        Rect b = Card(x, ref y, w, NocturneText.T("Отображение", "Display"), 5f * RowH + 108f);
+        Rect b = Card(x, ref y, w, NocturneText.T("显示", "Display"), 5f * RowH + 108f);
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Счётчик FPS", "FPS counter"), NocturneConfig.ShowFps);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Хост под FPS", "Host under FPS"), NocturneConfig.ShowHostLine);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Таймер лобби", "Lobby timer"), NocturneConfig.ShowLobbyTimer);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Уведомления", "Notifications"), NocturneConfig.Toasts);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Лок FPS на 30", "Lock FPS to 30"), NocturneConfig.FpsLock30);
-        FpsSlider(b.x, ref by, b.width, NocturneText.T("Лимит FPS (при анлоке)", "FPS limit (unlocked)"), NocturneConfig.FpsCap);
-        Slider(b.x, ref by, b.width, NocturneText.T("Масштаб HUD", "HUD scale"), NocturneConfig.HudScale, 0.6f, 2f, "0.00");
+        Toggle(b.x, ref by, b.width, NocturneText.T("FPS 计数器", "FPS counter"), NocturneConfig.ShowFps);
+        Toggle(b.x, ref by, b.width, NocturneText.T("FPS 下方显示房主", "Host under FPS"), NocturneConfig.ShowHostLine);
+        Toggle(b.x, ref by, b.width, NocturneText.T("大厅计时", "Lobby timer"), NocturneConfig.ShowLobbyTimer);
+        Toggle(b.x, ref by, b.width, NocturneText.T("通知", "Notifications"), NocturneConfig.Toasts);
+        Toggle(b.x, ref by, b.width, NocturneText.T("锁定 FPS 到 30", "Lock FPS to 30"), NocturneConfig.FpsLock30);
+        FpsSlider(b.x, ref by, b.width, NocturneText.T("FPS 上限（解锁后）", "FPS limit (unlocked)"), NocturneConfig.FpsCap);
+        Slider(b.x, ref by, b.width, NocturneText.T("HUD 缩放", "HUD scale"), NocturneConfig.HudScale, 0.6f, 2f, "0.00");
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Чат", "Chat"), 9f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("聊天", "Chat"), 9f * RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Улучшенный чат", "Better chat"), NocturneConfig.BetterChat);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Инфо над пузырями (ур./платформа)", "Info above bubbles (lvl/platform)"), NocturneConfig.ChatBubbleSenderInfo);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Время под сообщением", "Timestamp under message"), NocturneConfig.ChatTimestamps);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Тёмный чат под тему", "Dark chat theme"), NocturneConfig.DarkChatTheme);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Чат всегда виден", "Chat always visible"), NocturneConfig.VisualAlwaysShowChat);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть чат мёртвых", "See dead chat"), NocturneConfig.GhostChat);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без лимита длины", "No length limit"), NocturneConfig.UnlimitedChatLength);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без задержки чата", "No chat cooldown"), NocturneConfig.SkipChatCooldown);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Окно чата (перетаскиваемое)", "Chat window (draggable)"), NocturneConfig.ChatWindow);
+        Toggle(b.x, ref by, b.width, NocturneText.T("增强聊天", "Better chat"), NocturneConfig.BetterChat);
+        Toggle(b.x, ref by, b.width, NocturneText.T("气泡上方信息（等级/平台）", "Info above bubbles (lvl/platform)"), NocturneConfig.ChatBubbleSenderInfo);
+        Toggle(b.x, ref by, b.width, NocturneText.T("消息下方时间", "Timestamp under message"), NocturneConfig.ChatTimestamps);
+        Toggle(b.x, ref by, b.width, NocturneText.T("深色聊天主题", "Dark chat theme"), NocturneConfig.DarkChatTheme);
+        Toggle(b.x, ref by, b.width, NocturneText.T("聊天始终可见", "Chat always visible"), NocturneConfig.VisualAlwaysShowChat);
+        Toggle(b.x, ref by, b.width, NocturneText.T("看到死者聊天", "See dead chat"), NocturneConfig.GhostChat);
+        Toggle(b.x, ref by, b.width, NocturneText.T("不限制长度", "No length limit"), NocturneConfig.UnlimitedChatLength);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无聊天冷却", "No chat cooldown"), NocturneConfig.SkipChatCooldown);
+        Toggle(b.x, ref by, b.width, NocturneText.T("聊天窗口（可拖动）", "Chat window (draggable)"), NocturneConfig.ChatWindow);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Лог и фильтр чата", "Chat log & filter"), 6f * RowH + 46f);
+        b = Card(x, ref y, w, NocturneText.T("聊天日志和过滤", "Chat log & filter"), 6f * RowH + 46f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Лог чата в файл", "Log chat to file"), NocturneConfig.ChatLog);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Цензура бан-слов", "Censor banned words"), NocturneConfig.BanWords);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Команда /xmas (хост)", "/xmas command (host)"), NocturneConfig.ChatCmdXmas);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Колор-команды /c /color", "Color commands /c /color"), NocturneConfig.ColorCmd);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать кто вписал", "Notify who used it"), NocturneConfig.ColorCmdNotify);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Хост красит любого, не-хост — себя. Пример: /c red", "Host colors anyone, non-host colors self. e.g. /c red"), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("聊天记录到文件", "Log chat to file"), NocturneConfig.ChatLog);
+        Toggle(b.x, ref by, b.width, NocturneText.T("审查禁用词", "Censor banned words"), NocturneConfig.BanWords);
+        Toggle(b.x, ref by, b.width, NocturneText.T("命令 /xmas（房主）", "/xmas command (host)"), NocturneConfig.ChatCmdXmas);
+        Toggle(b.x, ref by, b.width, NocturneText.T("颜色命令 /c /color", "Color commands /c /color"), NocturneConfig.ColorCmd);
+        Toggle(b.x, ref by, b.width, NocturneText.T("通知是谁使用的", "Notify who used it"), NocturneConfig.ColorCmdNotify);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("房主可给任何人上色，非房主只能给自己。示例：/c red", "Host colors anyone, non-host colors self. e.g. /c red"), _muted);
         by += 22f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Команды хоста (/kick /role /start…)", "Host commands (/kick /role /start…)"), NocturneConfig.ChatCmds);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Пиши /help в чат — список команд.", "Type /help in chat for the list."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("房主命令（/kick /role /start…）", "Host commands (/kick /role /start…)"), NocturneConfig.ChatCmds);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("聊天中输入 /help 查看命令列表。", "Type /help in chat for the list."), _muted);
 
         bool ev = NocturneConfig.EventNotify.Value;
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Уведомления о событиях", "Event notifications"), (ev ? 9f : 2f) * RowH);
+        b = Card(x, ref y, w, NocturneText.T("事件通知", "Event notifications"), (ev ? 9f : 2f) * RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать уведомления", "Show notifications"), NocturneConfig.EventNotify);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Консоль событий (окно)", "Event console (window)"), NocturneConfig.EventConsole);
+        Toggle(b.x, ref by, b.width, NocturneText.T("显示通知", "Show notifications"), NocturneConfig.EventNotify);
+        Toggle(b.x, ref by, b.width, NocturneText.T("事件控制台（窗口）", "Event console (window)"), NocturneConfig.EventConsole);
         if (ev)
         {
-            Toggle(b.x, ref by, b.width, NocturneText.T("Дублировать в чат", "Also in chat"), NocturneConfig.EventNotifyChat);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Войткики", "Votekicks"), NocturneConfig.NotifyVotekick);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Саботаж", "Sabotage"), NocturneConfig.NotifySabotage);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Убийства", "Kills"), NocturneConfig.NotifyKill);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Собрания", "Meetings"), NocturneConfig.NotifyMeeting);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Изгнания", "Ejections"), NocturneConfig.NotifyEject);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Защита (блоки)", "Guard (blocks)"), NocturneConfig.SecurityNotify);
+            Toggle(b.x, ref by, b.width, NocturneText.T("同时发到聊天", "Also in chat"), NocturneConfig.EventNotifyChat);
+            Toggle(b.x, ref by, b.width, NocturneText.T("投票踢人", "Votekicks"), NocturneConfig.NotifyVotekick);
+            Toggle(b.x, ref by, b.width, NocturneText.T("破坏", "Sabotage"), NocturneConfig.NotifySabotage);
+            Toggle(b.x, ref by, b.width, NocturneText.T("击杀", "Kills"), NocturneConfig.NotifyKill);
+            Toggle(b.x, ref by, b.width, NocturneText.T("会议", "Meetings"), NocturneConfig.NotifyMeeting);
+            Toggle(b.x, ref by, b.width, NocturneText.T("放逐", "Ejections"), NocturneConfig.NotifyEject);
+            Toggle(b.x, ref by, b.width, NocturneText.T("防护（拦截）", "Guard (blocks)"), NocturneConfig.SecurityNotify);
         }
 
         _roleClients.Clear();
@@ -2984,12 +2984,12 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 wsCount++;
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Шепот", "Whisper"), 26f + (wsCount > 0 ? wsCount * 32f : 26f), true);
+        b = Card(x, ref y, w, NocturneText.T("私聊", "Whisper"), 26f + (wsCount > 0 ? wsCount * 32f : 26f), true);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Или в чате: /w [ник или ID] сообщение", "Or in chat: /w [name or ID] message"), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("或在聊天输入：/w [昵称或 ID] 消息", "Or in chat: /w [name or ID] message"), _muted);
         by += 26f;
         if (wsCount == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
         else
             for (int i = 0; i < _roleClients.Count; i++)
                 if (_roleClients[i] != Me())
@@ -3014,16 +3014,16 @@ public sealed class NocturneMenu : MonoBehaviour
 
     private static readonly RoleDef[] HostRoles =
     {
-        new RoleDef("Учёный", "Scientist", RoleTypes.Scientist, false, 100f),
-        new RoleDef("Инженер", "Engineer", RoleTypes.Engineer, false, 100f),
-        new RoleDef("Ангел", "Guardian Angel", RoleTypes.GuardianAngel, false, 134f),
-        new RoleDef("Следопыт", "Tracker", RoleTypes.Tracker, false, 150f),
-        new RoleDef("Паникёр", "Noisemaker", RoleTypes.Noisemaker, false, 84f),
-        new RoleDef("Детектив", "Detective", RoleTypes.Detective, false, 50f),
-        new RoleDef("Судья", "Judge", RoleTypes.Judge, false, 50f),
-        new RoleDef("Оборотень", "Shapeshifter", RoleTypes.Shapeshifter, true, 134f),
-        new RoleDef("Фантом", "Phantom", RoleTypes.Phantom, true, 100f),
-        new RoleDef("Гадюка", "Viper", RoleTypes.Viper, true, 50f),
+        new RoleDef("科学家", "Scientist", RoleTypes.Scientist, false, 100f),
+        new RoleDef("工程师", "Engineer", RoleTypes.Engineer, false, 100f),
+        new RoleDef("守护天使", "Guardian Angel", RoleTypes.GuardianAngel, false, 134f),
+        new RoleDef("追踪者", "Tracker", RoleTypes.Tracker, false, 150f),
+        new RoleDef("鸣笛者", "Noisemaker", RoleTypes.Noisemaker, false, 84f),
+        new RoleDef("侦探", "Detective", RoleTypes.Detective, false, 50f),
+        new RoleDef("法官", "Judge", RoleTypes.Judge, false, 50f),
+        new RoleDef("变形者", "Shapeshifter", RoleTypes.Shapeshifter, true, 134f),
+        new RoleDef("幻影", "Phantom", RoleTypes.Phantom, true, 100f),
+        new RoleDef("蝰蛇", "Viper", RoleTypes.Viper, true, 50f),
     };
 
     private void DrawHostTab(float x, ref float y, float w)
@@ -3035,24 +3035,24 @@ public sealed class NocturneMenu : MonoBehaviour
             _subTab[_tab] = 0;
 
         Grp(0);
-        Rect rb = Card(x, ref y, w, NocturneText.T("Власть хоста", "Host powers"), 38f + RowH * 3f);
+        Rect rb = Card(x, ref y, w, NocturneText.T("房主权限", "Host powers"), 38f + RowH * 3f);
         float rby = rb.y;
         Lab(new Rect(rb.x + 2f, rby, rb.width - 2f, 34f),
-            NocturneText.T("Только хост, для своей катки.", "Host only, for your own game."), _muted);
+            NocturneText.T("仅房主对自己的房间可用。", "Host only, for your own game."), _muted);
         rby += 38f;
-        Toggle(rb.x, ref rby, rb.width, NocturneText.T("Меня нельзя выгнать", "Immune to voting"), NocturneConfig.VoteImmune);
-        Toggle(rb.x, ref rby, rb.width, NocturneText.T("Без репортов и собраний", "No reports & meetings"), NocturneConfig.NoReports);
+        Toggle(rb.x, ref rby, rb.width, NocturneText.T("无法被投票踢出", "Immune to voting"), NocturneConfig.VoteImmune);
+        Toggle(rb.x, ref rby, rb.width, NocturneText.T("无举报和会议", "No reports & meetings"), NocturneConfig.NoReports);
         string[] ventModes = NocturneText.IsRussian ? VentModesRu : VentModesEn;
 
         int vm = Mathf.Clamp(NocturneConfig.VentMode.Value, 0, 3);
-        if (CycleRow(rb.x, ref rby, rb.width, NocturneText.T("Кто может вентить", "Who may vent"), ventModes[vm]))
+        if (CycleRow(rb.x, ref rby, rb.width, NocturneText.T("谁可以穿管", "Who may vent"), ventModes[vm]))
             NocturneConfig.VentMode.Value = (vm + 1) % 4;
 
         if (!hostReady)
         {
-            Rect hb = Card(x, ref y, w, NocturneText.T("Правила лобби", "Lobby rules"), RowH + 24f);
+            Rect hb = Card(x, ref y, w, NocturneText.T("大厅规则", "Lobby rules"), RowH + 24f);
             Lab(new Rect(hb.x + 4f, hb.y, hb.width - 8f, 44f),
-                NocturneText.T("Доступно только хосту в лобби. Создай комнату и стань хостом.",
+                NocturneText.T("仅房主在大厅中可用。创建一个房间并成为房主。",
                            "Host in lobby only. Create a room and become host."), _muted);
             return;
         }
@@ -3061,109 +3061,109 @@ public sealed class NocturneMenu : MonoBehaviour
         DrawPresets(x, ref y, w);
 
         Grp(1);
-        Rect b = Card(x, ref y, w, NocturneText.T("Основное", "Basics"), 2f * RowH + 302f);
+        Rect b = Card(x, ref y, w, NocturneText.T("基本", "Basics"), 2f * RowH + 302f);
         float by = b.y;
 
         string[] maps = MapsShort;
         int mp = Mathf.Clamp(NocturneLobbySettings.Map(), 0, 5);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Карта", "Map"), maps[mp]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("地图", "Map"), maps[mp]))
             NocturneLobbySettings.SetMap((mp + 1) % 6);
 
         int pl = NocturneLobbySettings.Players();
-        int nPl = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Игроки", "Players"), pl, 4, 15, "");
+        int nPl = SliderIntVal(b.x, ref by, b.width, NocturneText.T("玩家数", "Players"), pl, 4, 15, "");
         if (nPl != pl)
             NocturneLobbySettings.SetPlayers(nPl);
 
         int im = NocturneLobbySettings.Imps();
-        int nIm = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Импостеры", "Impostors"), im, 1, 3, "");
+        int nIm = SliderIntVal(b.x, ref by, b.width, NocturneText.T("内鬼数", "Impostors"), im, 1, 3, "");
         if (nIm != im)
             NocturneLobbySettings.SetImps(nIm);
 
         float kc = NocturneLobbySettings.KillCd();
-        float nKc = SliderFloatVal(b.x, ref by, b.width, NocturneText.T("Кулдаун убийства", "Kill cooldown"), kc, 0f, 60f, 0.1f, "0.0", NocturneText.T("с", "s"));
+        float nKc = SliderFloatVal(b.x, ref by, b.width, NocturneText.T("击杀冷却", "Kill cooldown"), kc, 0f, 60f, 0.1f, "0.0", NocturneText.T("秒", "s"));
         if (Mathf.Abs(nKc - kc) > 0.001f)
             NocturneLobbySettings.SetKillCd(nKc);
 
         string[] dists = NocturneText.IsRussian ? DistsRu : DistsEn;
         int kd = Mathf.Clamp(NocturneLobbySettings.KillDist(), 0, 2);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Дистанция убийств", "Kill distance"), dists[kd]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("击杀距离", "Kill distance"), dists[kd]))
             NocturneLobbySettings.SetKillDist((kd + 1) % 3);
 
         int sp = Mathf.RoundToInt(NocturneLobbySettings.Speed() * 100f);
-        int nSp = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Скорость", "Speed"), sp, 25, 300, "%");
+        int nSp = SliderIntVal(b.x, ref by, b.width, NocturneText.T("速度", "Speed"), sp, 25, 300, "%");
         if (nSp != sp)
             NocturneLobbySettings.SetSpeed(nSp / 100f);
 
         int cv = Mathf.RoundToInt(NocturneLobbySettings.CrewVis() * 100f);
-        int nCv = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Обзор мирных", "Crew vision"), cv, 25, 500, "%");
+        int nCv = SliderIntVal(b.x, ref by, b.width, NocturneText.T("船员视野", "Crew vision"), cv, 25, 500, "%");
         if (nCv != cv)
             NocturneLobbySettings.SetCrewVis(nCv / 100f);
 
         int iv = Mathf.RoundToInt(NocturneLobbySettings.ImpVis() * 100f);
-        int nIv = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Обзор предов", "Impostor vision"), iv, 25, 500, "%");
+        int nIv = SliderIntVal(b.x, ref by, b.width, NocturneText.T("内鬼视野", "Impostor vision"), iv, 25, 500, "%");
         if (nIv != iv)
             NocturneLobbySettings.SetImpVis(nIv / 100f);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Собрания и голосование", "Meetings & voting"), 2f * RowH + 210f);
+        b = Card(x, ref y, w, NocturneText.T("会议和投票", "Meetings & voting"), 2f * RowH + 210f);
         by = b.y;
 
         int me = NocturneLobbySettings.Meetings();
-        int nMe = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Экстренных собраний", "Emergency meetings"), me, 0, 15, "");
+        int nMe = SliderIntVal(b.x, ref by, b.width, NocturneText.T("紧急会议次数", "Emergency meetings"), me, 0, 15, "");
         if (nMe != me)
             NocturneLobbySettings.SetMeetings(nMe);
 
         int mc = NocturneLobbySettings.MeetingCd();
-        int nMc = SliderIntVal(b.x, ref by, b.width, NocturneText.T("КД собрания", "Meeting cd"), mc, 0, 60, NocturneText.T("с", "s"));
+        int nMc = SliderIntVal(b.x, ref by, b.width, NocturneText.T("会议冷却", "Meeting cd"), mc, 0, 60, NocturneText.T("秒", "s"));
         if (nMc != mc)
             NocturneLobbySettings.SetMeetingCd(nMc);
 
         int di = NocturneLobbySettings.Discuss();
-        int nDi = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Обсуждение", "Discussion"), di, 0, 120, NocturneText.T("с", "s"));
+        int nDi = SliderIntVal(b.x, ref by, b.width, NocturneText.T("讨论时间", "Discussion"), di, 0, 120, NocturneText.T("秒", "s"));
         if (nDi != di)
             NocturneLobbySettings.SetDiscuss(nDi);
 
         int vo = NocturneLobbySettings.Voting();
-        int nVo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Голосование", "Voting"), vo, 0, 300, NocturneText.T("с", "s"));
+        int nVo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("投票时间", "Voting"), vo, 0, 300, NocturneText.T("秒", "s"));
         if (nVo != vo)
             NocturneLobbySettings.SetVoting(nVo);
 
         bool an = NocturneLobbySettings.Anon();
-        bool nAn = ToggleVal(b.x, ref by, b.width, NocturneText.T("Анонимные голоса", "Anonymous votes"), an);
+        bool nAn = ToggleVal(b.x, ref by, b.width, NocturneText.T("匿名投票", "Anonymous votes"), an);
         if (nAn != an)
             NocturneLobbySettings.SetAnon(nAn);
 
         bool cf = NocturneLobbySettings.Confirm();
-        bool nCf = ToggleVal(b.x, ref by, b.width, NocturneText.T("Подтверждать выброс", "Confirm ejects"), cf);
+        bool nCf = ToggleVal(b.x, ref by, b.width, NocturneText.T("确认放逐", "Confirm ejects"), cf);
         if (nCf != cf)
             NocturneLobbySettings.SetConfirm(nCf);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Задания", "Tasks"), RowH + 194f);
+        b = Card(x, ref y, w, NocturneText.T("任务", "Tasks"), RowH + 194f);
         by = b.y;
 
         string[] taskBars = NocturneText.IsRussian ? TaskBarsRu : TaskBarsEn;
         int tb = Mathf.Clamp(NocturneLobbySettings.TaskBar(), 0, 2);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Шкала заданий", "Task bar"), taskBars[tb]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("任务进度条", "Task bar"), taskBars[tb]))
             NocturneLobbySettings.SetTaskBar((tb + 1) % 3);
 
         int co = NocturneLobbySettings.Common();
-        int nCo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Общие задания", "Common tasks"), co, 0, 8, "");
+        int nCo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("常见任务", "Common tasks"), co, 0, 8, "");
         if (nCo != co)
             NocturneLobbySettings.SetCommon(nCo);
 
         int lo = NocturneLobbySettings.Long();
-        int nLo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Длинные задания", "Long tasks"), lo, 0, 8, "");
+        int nLo = SliderIntVal(b.x, ref by, b.width, NocturneText.T("长任务", "Long tasks"), lo, 0, 8, "");
         if (nLo != lo)
             NocturneLobbySettings.SetLong(nLo);
 
         int sh = NocturneLobbySettings.Short();
-        int nSh = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Короткие задания", "Short tasks"), sh, 0, 12, "");
+        int nSh = SliderIntVal(b.x, ref by, b.width, NocturneText.T("短任务", "Short tasks"), sh, 0, 12, "");
         if (nSh != sh)
             NocturneLobbySettings.SetShort(nSh);
 
         bool vi = NocturneLobbySettings.Visual();
-        bool nVi = ToggleVal(b.x, ref by, b.width, NocturneText.T("Визуальные задания", "Visual tasks"), vi);
+        bool nVi = ToggleVal(b.x, ref by, b.width, NocturneText.T("视觉任务", "Visual tasks"), vi);
         if (nVi != vi)
             NocturneLobbySettings.SetVisual(nVi);
 
@@ -3172,10 +3172,10 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleOpen.Contains((int)d.Role))
                 rolesBody += d.DetailH;
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Роли (кол-во/шанс)", "Roles (count/chance)"), rolesBody, true);
+        b = Card(x, ref y, w, NocturneText.T("角色（数量/概率）", "Roles (count/chance)"), rolesBody, true);
         by = b.y;
-        Lab(new Rect(b.x + b.width - 190f, by, 76f, 20f), NocturneText.T("Кол-во", "Count"), _centerMuted);
-        Lab(new Rect(b.x + b.width - 100f, by, 96f, 20f), NocturneText.T("Шанс", "Chance"), _centerMuted);
+        Lab(new Rect(b.x + b.width - 190f, by, 76f, 20f), NocturneText.T("数量", "Count"), _centerMuted);
+        Lab(new Rect(b.x + b.width - 100f, by, 96f, 20f), NocturneText.T("概率", "Chance"), _centerMuted);
         by += 24f;
         Color crew = new Color(0.42f, 0.80f, 0.72f);
         Color imp = new Color(0.92f, 0.38f, 0.38f);
@@ -3191,15 +3191,15 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         var names = NocturneLobbyPresets.Names();
         int pn = names.Count;
-        Rect b = Card(x, ref y, w, NocturneText.T("Пресеты", "Presets"), 34f + (pn > 0 ? pn * RowH : RowH) + 6f, true);
+        Rect b = Card(x, ref y, w, NocturneText.T("预设", "Presets"), 34f + (pn > 0 ? pn * RowH : RowH) + 6f, true);
         float by = b.y;
 
         _presetName = CustomText(new Rect(b.x + 2f, by, b.width - 128f, 26f), _presetName ?? "", "nocturnePreset");
         if (string.IsNullOrEmpty(_presetName) && _textFocus != "nocturnePreset")
-            Lab(new Rect(b.x + 10f, by, b.width - 140f, 26f), NocturneText.T("Имя пресета…", "Preset name…"), _muted);
-        if (SmallButton(new Rect(b.x + b.width - 120f, by + 1f, 118f, 24f), NocturneText.T("СОХРАНИТЬ", "SAVE"), NocturneStyle.Current.Accent))
+            Lab(new Rect(b.x + 10f, by, b.width - 140f, 26f), NocturneText.T("预设名称……", "Preset name…"), _muted);
+        if (SmallButton(new Rect(b.x + b.width - 120f, by + 1f, 118f, 24f), NocturneText.T("保存", "SAVE"), NocturneStyle.Current.Accent))
         {
-            NocturneToast.Push(NocturneText.T("Пресет", "Preset"), NocturneLobbyPresets.Save(_presetName), 2.5f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("预设", "Preset"), NocturneLobbyPresets.Save(_presetName), 2.5f, NocturneNotifyKind.Info);
             _presetName = "";
             _textFocus = null;
         }
@@ -3207,7 +3207,7 @@ public sealed class NocturneMenu : MonoBehaviour
 
         if (pn == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто. Задай имя и сохрани текущие настройки.", "Empty. Name it and save current settings."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。填写名称并保存当前设置。", "Empty. Name it and save current settings."), _muted);
             return;
         }
 
@@ -3217,7 +3217,7 @@ public sealed class NocturneMenu : MonoBehaviour
             var r = new Rect(b.x, by, b.width, RowH - 4f);
             HoverFill(r);
             if (GUI.Button(new Rect(r.x, r.y, r.width - 34f, r.height), GUIContent.none, _invisible))
-                NocturneToast.Push(NocturneText.T("Пресет", "Preset"), NocturneLobbyPresets.Apply(name), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push(NocturneText.T("预设", "Preset"), NocturneLobbyPresets.Apply(name), 2f, NocturneNotifyKind.Success);
             NocturneStyle.FillRounded(new Rect(r.x + 10f, r.y + (r.height - 8f) / 2f, 8f, 8f), NocturneStyle.Current.Accent, 4);
             Lab(new Rect(r.x + 26f, r.y, r.width - 70f, r.height), name, _rowLabel);
             Lab(new Rect(r.x + r.width - 80f, r.y, 44f, r.height), "▸", _value);
@@ -3261,44 +3261,44 @@ public sealed class NocturneMenu : MonoBehaviour
         switch (role)
         {
             case RoleTypes.Scientist:
-                RoleFloat(role, x, ref y, w, "Перезарядка сканера", "Scan cooldown", NocturneLobbySettings.SciCd, NocturneLobbySettings.SetSciCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Время батареи", "Battery time", NocturneLobbySettings.SciBat, NocturneLobbySettings.SetSciBat, 0, 30, NocturneText.T("с", "s"));
+                RoleFloat(role, x, ref y, w, "扫描冷却", "Scan cooldown", NocturneLobbySettings.SciCd, NocturneLobbySettings.SetSciCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "电池时间", "Battery time", NocturneLobbySettings.SciBat, NocturneLobbySettings.SetSciBat, 0, 30, NocturneText.T("秒", "s"));
                 break;
             case RoleTypes.Engineer:
-                RoleFloat(role, x, ref y, w, "Перезарядка", "Cooldown", NocturneLobbySettings.EngCd, NocturneLobbySettings.SetEngCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Время в венте", "Vent time", NocturneLobbySettings.EngVent, NocturneLobbySettings.SetEngVent, 0, 60, NocturneText.T("с", "s"));
+                RoleFloat(role, x, ref y, w, "冷却", "Cooldown", NocturneLobbySettings.EngCd, NocturneLobbySettings.SetEngCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "穿管时间", "Vent time", NocturneLobbySettings.EngVent, NocturneLobbySettings.SetEngVent, 0, 60, NocturneText.T("秒", "s"));
                 break;
             case RoleTypes.GuardianAngel:
-                RoleFloat(role, x, ref y, w, "Перезарядка", "Cooldown", NocturneLobbySettings.GaCd, NocturneLobbySettings.SetGaCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Время щита", "Shield time", NocturneLobbySettings.GaDur, NocturneLobbySettings.SetGaDur, 0, 30, NocturneText.T("с", "s"));
-                RoleBool(x, ref y, w, "Преды видят щит", "Impostors see shield", NocturneLobbySettings.GaImpSee, NocturneLobbySettings.SetGaImpSee);
+                RoleFloat(role, x, ref y, w, "冷却", "Cooldown", NocturneLobbySettings.GaCd, NocturneLobbySettings.SetGaCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "护盾时间", "Shield time", NocturneLobbySettings.GaDur, NocturneLobbySettings.SetGaDur, 0, 30, NocturneText.T("秒", "s"));
+                RoleBool(x, ref y, w, "内鬼可见护盾", "Impostors see shield", NocturneLobbySettings.GaImpSee, NocturneLobbySettings.SetGaImpSee);
                 break;
             case RoleTypes.Tracker:
-                RoleFloat(role, x, ref y, w, "Перезарядка", "Cooldown", NocturneLobbySettings.TrCd, NocturneLobbySettings.SetTrCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Длительность", "Duration", NocturneLobbySettings.TrDur, NocturneLobbySettings.SetTrDur, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Задержка метки", "Ping delay", NocturneLobbySettings.TrDelay, NocturneLobbySettings.SetTrDelay, 0, 30, NocturneText.T("с", "s"));
+                RoleFloat(role, x, ref y, w, "冷却", "Cooldown", NocturneLobbySettings.TrCd, NocturneLobbySettings.SetTrCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "持续时间", "Duration", NocturneLobbySettings.TrDur, NocturneLobbySettings.SetTrDur, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "标记延迟", "Ping delay", NocturneLobbySettings.TrDelay, NocturneLobbySettings.SetTrDelay, 0, 30, NocturneText.T("秒", "s"));
                 break;
             case RoleTypes.Noisemaker:
-                RoleFloat(role, x, ref y, w, "Длит. сигнала", "Alert duration", NocturneLobbySettings.NmDur, NocturneLobbySettings.SetNmDur, 0, 30, NocturneText.T("с", "s"));
-                RoleBool(x, ref y, w, "Преды видят сигнал", "Impostors see alert", NocturneLobbySettings.NmImpAlert, NocturneLobbySettings.SetNmImpAlert);
+                RoleFloat(role, x, ref y, w, "警报时长", "Alert duration", NocturneLobbySettings.NmDur, NocturneLobbySettings.SetNmDur, 0, 30, NocturneText.T("秒", "s"));
+                RoleBool(x, ref y, w, "内鬼可见警报", "Impostors see alert", NocturneLobbySettings.NmImpAlert, NocturneLobbySettings.SetNmImpAlert);
                 break;
             case RoleTypes.Detective:
-                RoleFloat(role, x, ref y, w, "Лимит улик", "Suspect limit", NocturneLobbySettings.DetLimit, NocturneLobbySettings.SetDetLimit, 0, 10, "");
+                RoleFloat(role, x, ref y, w, "线索数量", "Suspect limit", NocturneLobbySettings.DetLimit, NocturneLobbySettings.SetDetLimit, 0, 10, "");
                 break;
             case RoleTypes.Shapeshifter:
-                RoleFloat(role, x, ref y, w, "Перезарядка", "Cooldown", NocturneLobbySettings.SsCd, NocturneLobbySettings.SetSsCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Длительность", "Duration", NocturneLobbySettings.SsDur, NocturneLobbySettings.SetSsDur, 0, 60, NocturneText.T("с", "s"));
-                RoleBool(x, ref y, w, "Оставлять облик", "Leave skin", NocturneLobbySettings.SsSkin, NocturneLobbySettings.SetSsSkin);
+                RoleFloat(role, x, ref y, w, "冷却", "Cooldown", NocturneLobbySettings.SsCd, NocturneLobbySettings.SetSsCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "持续时间", "Duration", NocturneLobbySettings.SsDur, NocturneLobbySettings.SetSsDur, 0, 60, NocturneText.T("秒", "s"));
+                RoleBool(x, ref y, w, "保留外观", "Leave skin", NocturneLobbySettings.SsSkin, NocturneLobbySettings.SetSsSkin);
                 break;
             case RoleTypes.Phantom:
-                RoleFloat(role, x, ref y, w, "Перезарядка", "Cooldown", NocturneLobbySettings.PhCd, NocturneLobbySettings.SetPhCd, 0, 60, NocturneText.T("с", "s"));
-                RoleFloat(role, x, ref y, w, "Длительность", "Duration", NocturneLobbySettings.PhDur, NocturneLobbySettings.SetPhDur, 0, 60, NocturneText.T("с", "s"));
+                RoleFloat(role, x, ref y, w, "冷却", "Cooldown", NocturneLobbySettings.PhCd, NocturneLobbySettings.SetPhCd, 0, 60, NocturneText.T("秒", "s"));
+                RoleFloat(role, x, ref y, w, "持续时间", "Duration", NocturneLobbySettings.PhDur, NocturneLobbySettings.SetPhDur, 0, 60, NocturneText.T("秒", "s"));
                 break;
             case RoleTypes.Viper:
-                RoleFloat(role, x, ref y, w, "Время растворения", "Dissolve time", NocturneLobbySettings.VpDis, NocturneLobbySettings.SetVpDis, 0, 60, NocturneText.T("с", "s"));
+                RoleFloat(role, x, ref y, w, "溶解时间", "Dissolve time", NocturneLobbySettings.VpDis, NocturneLobbySettings.SetVpDis, 0, 60, NocturneText.T("秒", "s"));
                 break;
             case RoleTypes.Judge:
-                RoleFloat(role, x, ref y, w, "% открытых заданий", "Tasks opened %", NocturneLobbySettings.JudgeTaskPct, NocturneLobbySettings.SetJudgeTaskPct, 0, 100, "%");
+                RoleFloat(role, x, ref y, w, "公开任务 %", "Tasks opened %", NocturneLobbySettings.JudgeTaskPct, NocturneLobbySettings.SetJudgeTaskPct, 0, 100, "%");
                 break;
         }
     }
@@ -3339,80 +3339,80 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, LobbySubsRu, LobbySubsEn);
 
         Grp(0);
-        Rect b = Card(x, ref y, w, NocturneText.T("Старт", "Start"), 4f * RowH);
+        Rect b = Card(x, ref y, w, NocturneText.T("开始", "Start"), 4f * RowH);
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Разблок. кнопку Старт", "Unlock Start button"), NocturneConfig.AlwaysUnlockStartButton);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Старт по Enter", "Start on Enter"), NocturneConfig.QuickStartOnEnter);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Мгновенный старт (Enter)", "Instant start (Enter)"), NocturneConfig.InstantStartOnEnter);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Авто-возврат в лобби", "Auto-return to lobby"), NocturneConfig.AutoReturnLobbyAfterMatch);
+        Toggle(b.x, ref by, b.width, NocturneText.T("解锁开始按钮", "Unlock Start button"), NocturneConfig.AlwaysUnlockStartButton);
+        Toggle(b.x, ref by, b.width, NocturneText.T("按 Enter 开始", "Start on Enter"), NocturneConfig.QuickStartOnEnter);
+        Toggle(b.x, ref by, b.width, NocturneText.T("立即开始（Enter）", "Instant start (Enter)"), NocturneConfig.InstantStartOnEnter);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自动返回大厅", "Auto-return to lobby"), NocturneConfig.AutoReturnLobbyAfterMatch);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Прочее", "Misc"), 3f * RowH + 56f);
+        b = Card(x, ref y, w, NocturneText.T("其他", "Misc"), 3f * RowH + 56f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сенсорная кнопка меню", "Touch menu button"), NocturneConfig.MenuButton);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Отключить музыку лобби", "Mute lobby music"), NocturneConfig.MuteLobbyMusic);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Расширенный браузер лобби", "Rich lobby browser"), NocturneConfig.RichLobbyRows);
+        Toggle(b.x, ref by, b.width, NocturneText.T("触屏菜单按钮", "Touch menu button"), NocturneConfig.MenuButton);
+        Toggle(b.x, ref by, b.width, NocturneText.T("关闭大厅音乐", "Mute lobby music"), NocturneConfig.MuteLobbyMusic);
+        Toggle(b.x, ref by, b.width, NocturneText.T("增强大厅浏览器", "Rich lobby browser"), NocturneConfig.RichLobbyRows);
         _lobbySearch = CustomText(new Rect(b.x + 2f, by, b.width - 92f, 26f), _lobbySearch ?? NocturneConfig.LobbySearchHost.Value ?? "", "lobbySearch");
-        if (SmallButton(new Rect(b.x + b.width - 88f, by + 1f, 86f, 24f), NocturneText.T("ПОИСК", "SEARCH"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + b.width - 88f, by + 1f, 86f, 24f), NocturneText.T("搜索", "SEARCH"), NocturneStyle.Current.Accent))
             NocturneConfig.LobbySearchHost.Value = (_lobbySearch ?? "").Trim();
         by += 30f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Фильтр браузера по нику хоста. Пусто — все лобби.", "Browser filter by host name. Empty = all lobbies."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("按房主昵称过滤大厅。留空显示全部。", "Browser filter by host name. Empty = all lobbies."), _muted);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Автохост", "Auto-host"), 7f * RowH + 100f, true);
+        b = Card(x, ref y, w, NocturneText.T("自动开房", "Auto-host"), 7f * RowH + 100f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Включить автохост", "Enable auto-host"), NocturneConfig.AutoHostEnabled);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Мгновенный старт", "Instant start"), NocturneConfig.AutoHostInstantStart);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Возврат в лобби после матча", "Return to lobby after match"), NocturneConfig.AutoHostReturnAfterMatch);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ждать загрузку игроков", "Wait for players to load"), NocturneConfig.AutoHostWaitLoadedPlayers);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Форс в последнюю минуту", "Force in last minute"), NocturneConfig.AutoHostForceLastMinute);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Уведомления автохоста", "Auto-host notifications"), NocturneConfig.AutoHostNotifications);
+        Toggle(b.x, ref by, b.width, NocturneText.T("启用自动开房", "Enable auto-host"), NocturneConfig.AutoHostEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("立即开始", "Instant start"), NocturneConfig.AutoHostInstantStart);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对局结束后返回大厅", "Return to lobby after match"), NocturneConfig.AutoHostReturnAfterMatch);
+        Toggle(b.x, ref by, b.width, NocturneText.T("等待玩家加载", "Wait for players to load"), NocturneConfig.AutoHostWaitLoadedPlayers);
+        Toggle(b.x, ref by, b.width, NocturneText.T("最后一分钟强制开始", "Force in last minute"), NocturneConfig.AutoHostForceLastMinute);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自动开房通知", "Auto-host notifications"), NocturneConfig.AutoHostNotifications);
         bool gmBefore = NocturneConfig.GameMaster.Value;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Мастер игры", "Game master"), NocturneConfig.GameMaster);
+        Toggle(b.x, ref by, b.width, NocturneText.T("游戏主持", "Game master"), NocturneConfig.GameMaster);
         if (NocturneConfig.GameMaster.Value && !gmBefore)
             NocturneConfig.GhostAfterStart.Value = false;
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Минимум игроков", "Min players"), NocturneConfig.AutoHostMinPlayers, 1, 15);
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Задержка старта, с", "Start delay, s"), NocturneConfig.AutoHostStartDelaySeconds, 0, 180);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("最少玩家数", "Min players"), NocturneConfig.AutoHostMinPlayers, 1, 15);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("开始延迟，秒", "Start delay, s"), NocturneConfig.AutoHostStartDelaySeconds, 0, 180);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Манекены (хост)", "Dummies (host)"), 4f * RowH + 40f, true);
+        b = Card(x, ref y, w, NocturneText.T("假玩家（房主）", "Dummies (host)"), 4f * RowH + 40f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Включить манекенов", "Enable dummies"), NocturneConfig.DummyEnabled);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Делают таски", "Do tasks"), NocturneConfig.DummyDoTasks);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Чинят саботаж", "Fix sabotage"), NocturneConfig.DummyFixSabotage);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Репорт тел + чат + голос", "Report bodies + chat + vote"), NocturneConfig.DummyReportBodies);
-        Lab(new Rect(b.x + 2f, by, b.width - 160f, 24f), $"{NocturneText.T("Клавиша спавна", "Spawn key")}: <b>{KeyName(NocturneConfig.DummyKey)}</b>", _muted);
-        if (SmallButton(new Rect(b.x + b.width - 150f, by, 148f, 24f), NocturneText.T("СПАВН МАНЕКЕНА", "SPAWN DUMMY"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Манекен", "Dummy"), NocturneDummies.SpawnNow(), 2.5f, NocturneNotifyKind.Info);
+        Toggle(b.x, ref by, b.width, NocturneText.T("启用假玩家", "Enable dummies"), NocturneConfig.DummyEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("做任务", "Do tasks"), NocturneConfig.DummyDoTasks);
+        Toggle(b.x, ref by, b.width, NocturneText.T("修复破坏", "Fix sabotage"), NocturneConfig.DummyFixSabotage);
+        Toggle(b.x, ref by, b.width, NocturneText.T("报告尸体 + 聊天 + 投票", "Report bodies + chat + vote"), NocturneConfig.DummyReportBodies);
+        Lab(new Rect(b.x + 2f, by, b.width - 160f, 24f), $"{NocturneText.T("生成键", "Spawn key")}: <b>{KeyName(NocturneConfig.DummyKey)}</b>", _muted);
+        if (SmallButton(new Rect(b.x + b.width - 150f, by, 148f, 24f), NocturneText.T("生成假玩家", "SPAWN DUMMY"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("假玩家", "Dummy"), NocturneDummies.SpawnNow(), 2.5f, NocturneNotifyKind.Info);
 
         bool seekersOn = NocturneConfig.HideAndSeekTwoSeekers.Value;
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Геймплей лобби", "Lobby gameplay"), 7f * RowH + 6f + (seekersOn ? RowH : 0f));
+        b = Card(x, ref y, w, NocturneText.T("大厅玩法", "Lobby gameplay"), 7f * RowH + 6f + (seekersOn ? RowH : 0f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без условий победы", "No win conditions"), NocturneConfig.NoWinConditions);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кастом сикеры (прятки)", "Custom seekers (hide & seek)"), NocturneConfig.HideAndSeekTwoSeekers);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无胜利条件", "No win conditions"), NocturneConfig.NoWinConditions);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自定义搜寻者（捉迷藏）", "Custom seekers (hide & seek)"), NocturneConfig.HideAndSeekTwoSeekers);
         if (seekersOn)
         {
             int sc = NocturneConfig.SeekerCount.Value;
-            int nsc = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Сикеров", "Seekers"), sc, 1, 15, "");
+            int nsc = SliderIntVal(b.x, ref by, b.width, NocturneText.T("搜寻者数", "Seekers"), sc, 1, 15, "");
             if (nsc != sc)
                 NocturneConfig.SeekerCount.Value = nsc;
         }
-        Toggle(b.x, ref by, b.width, NocturneText.T("Пред без форы (прятки)", "Seeker: skip head start"), NocturneConfig.SeekerInstantStart);
-        Toggle(b.x, ref by, b.width, NocturneText.T("4 импостера (≥9 игроков)", "4 impostors (≥9 players)"), NocturneConfig.FourImpostors);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Снять лимиты настроек", "Unlock option limits"), NocturneConfig.LooseHostOptions);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Шаг настроек 0.1", "Option step 0.1"), NocturneConfig.ForceMinValues);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Копировать код при дисконнекте", "Copy code on disconnect"), NocturneConfig.CopyCodeOnDisconnect);
+        Toggle(b.x, ref by, b.width, NocturneText.T("搜寻者无前摇（捉迷藏）", "Seeker: skip head start"), NocturneConfig.SeekerInstantStart);
+        Toggle(b.x, ref by, b.width, NocturneText.T("4 内鬼（≥9 玩家）", "4 impostors (≥9 players)"), NocturneConfig.FourImpostors);
+        Toggle(b.x, ref by, b.width, NocturneText.T("解除设置上限", "Unlock option limits"), NocturneConfig.LooseHostOptions);
+        Toggle(b.x, ref by, b.width, NocturneText.T("设置步长 0.1", "Option step 0.1"), NocturneConfig.ForceMinValues);
+        Toggle(b.x, ref by, b.width, NocturneText.T("断线时复制代码", "Copy code on disconnect"), NocturneConfig.CopyCodeOnDisconnect);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Фейк-карта (хост)", "Fake map (host)"), RowH + 30f);
+        b = Card(x, ref y, w, NocturneText.T("假地图（房主）", "Fake map (host)"), RowH + 30f);
         by = b.y;
         string[] fmNames = MapsFull;
         int fmi = Mathf.Clamp(NocturneConfig.FakeMapId.Value, 0, fmNames.Length - 1);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Карта", "Map"), fmNames[fmi]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("地图", "Map"), fmNames[fmi]))
             NocturneConfig.FakeMapId.Value = (fmi + 1) % fmNames.Length;
         bool fmOn = NocturneFakeMap.Active;
-        if (SmallButton(new Rect(b.x + 2f, by, 176f, 24f), fmOn ? NocturneText.T("ВЫКЛ ФЕЙК-КАРТУ", "FAKE MAP OFF") : NocturneText.T("ВКЛ ФЕЙК-КАРТУ", "FAKE MAP ON"), fmOn ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + 2f, by, 176f, 24f), fmOn ? NocturneText.T("关闭假地图", "FAKE MAP OFF") : NocturneText.T("启用假地图", "FAKE MAP ON"), fmOn ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
         {
             if (fmOn)
                 NocturneFakeMap.DisableAndRestoreLobby();
@@ -3422,147 +3422,147 @@ public sealed class NocturneMenu : MonoBehaviour
 
         int wt = Mathf.Clamp(NocturneConfig.LobbyWeather.Value, 0, 4);
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Оформление лобби", "Lobby appearance"), 5f * RowH + 12f);
+        b = Card(x, ref y, w, NocturneText.T("大厅外观", "Lobby appearance"), 5f * RowH + 12f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Тёмная тема лобби", "Dark lobby theme"), NocturneConfig.LobbyTheme);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Своя картинка в главном меню", "Own main menu picture"), NocturneConfig.MainMenuArt);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Анимация панели", "Panel animation"), NocturneConfig.LobbyAnims);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Анимация кнопки старта", "Start button animation"), NocturneConfig.LobbyStartAnim);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кастом кнопка Старт", "Custom Start button"), NocturneConfig.StartBtnGlass);
+        Toggle(b.x, ref by, b.width, NocturneText.T("大厅深色主题", "Dark lobby theme"), NocturneConfig.LobbyTheme);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自定义主菜单图片", "Own main menu picture"), NocturneConfig.MainMenuArt);
+        Toggle(b.x, ref by, b.width, NocturneText.T("面板动画", "Panel animation"), NocturneConfig.LobbyAnims);
+        Toggle(b.x, ref by, b.width, NocturneText.T("开始按钮动画", "Start button animation"), NocturneConfig.LobbyStartAnim);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自定义开始按钮", "Custom Start button"), NocturneConfig.StartBtnGlass);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Погода лобби", "Lobby weather"), RowH + 24f + (wt > 0 ? 50f : 0f));
+        b = Card(x, ref y, w, NocturneText.T("大厅天气", "Lobby weather"), RowH + 24f + (wt > 0 ? 50f : 0f));
         by = b.y;
         string[] wNames = NocturneText.IsRussian ? WeatherRu : WeatherEn;
 
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Погода", "Weather"), wNames[wt]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("天气", "Weather"), wNames[wt]))
             NocturneConfig.LobbyWeather.Value = (wt + 1) % 5;
         if (wt > 0)
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Частиц", "Particles"), NocturneConfig.LobbySnowAmount, 10, 400);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Погоду видишь только ты.", "Only you see the weather."), _muted);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("粒子", "Particles"), NocturneConfig.LobbySnowAmount, 10, 400);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("天气只有你自己能看到。", "Only you see the weather."), _muted);
 
         LobbyHistoryCard(x, ref y, w);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Клоны лобби", "Lobby clones"), 6f * RowH + 482f + (NocturneConfig.CloneFormationAnim.Value ? 50f : 0f), true);
+        b = Card(x, ref y, w, NocturneText.T("大厅克隆", "Lobby clones"), 6f * RowH + 482f + (NocturneConfig.CloneFormationAnim.Value ? 50f : 0f), true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Режим клонов (ЛКМ=спавн, ПКМ=удал.)", "Clone mode (LMB=spawn, RMB=remove)"), NocturneConfig.LobbyCloneMode);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Клон-тень", "Shadow clone"), NocturneConfig.LobbyCloneShadow);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Клоны-охрана (кружат)", "Guard clones (orbit)"), NocturneConfig.LobbyCloneGuard);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Клоны бродят", "Clones wander"), NocturneConfig.LobbyCloneDrift);
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Макс. клонов", "Max clones"), NocturneConfig.LobbyCloneMax, 1, 2000);
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Клонов за клик", "Clones per click"), NocturneConfig.LobbyCloneSpawnCount, 1, 20);
-        Slider(b.x, ref by, b.width, NocturneText.T("Радиус охраны", "Guard radius"), NocturneConfig.LobbyCloneGuardRadius, 1f, 8f, "0.0");
-        Slider(b.x, ref by, b.width, NocturneText.T("Масштаб клонов", "Clone scale"), NocturneConfig.LobbyCloneScale, 0.4f, 2f, "0.00");
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Цвет (-1 = свой)", "Color (-1 = own)"), NocturneConfig.LobbyCloneColorId, -1, 17);
+        Toggle(b.x, ref by, b.width, NocturneText.T("克隆模式（左键=生成，右键=删除）", "Clone mode (LMB=spawn, RMB=remove)"), NocturneConfig.LobbyCloneMode);
+        Toggle(b.x, ref by, b.width, NocturneText.T("影子克隆", "Shadow clone"), NocturneConfig.LobbyCloneShadow);
+        Toggle(b.x, ref by, b.width, NocturneText.T("护卫克隆（环绕）", "Guard clones (orbit)"), NocturneConfig.LobbyCloneGuard);
+        Toggle(b.x, ref by, b.width, NocturneText.T("克隆游荡", "Clones wander"), NocturneConfig.LobbyCloneDrift);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("最大克隆数", "Max clones"), NocturneConfig.LobbyCloneMax, 1, 2000);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("每次点击克隆数", "Clones per click"), NocturneConfig.LobbyCloneSpawnCount, 1, 20);
+        Slider(b.x, ref by, b.width, NocturneText.T("护卫半径", "Guard radius"), NocturneConfig.LobbyCloneGuardRadius, 1f, 8f, "0.0");
+        Slider(b.x, ref by, b.width, NocturneText.T("克隆缩放", "Clone scale"), NocturneConfig.LobbyCloneScale, 0.4f, 2f, "0.00");
+        SliderInt(b.x, ref by, b.width, NocturneText.T("颜色（-1 = 自身）", "Color (-1 = own)"), NocturneConfig.LobbyCloneColorId, -1, 17);
 
         string[] formNames = NocturneText.IsRussian ? FormNamesRu : FormNamesEn;
         int cfi = Mathf.Clamp(NocturneConfig.CloneFormation.Value, 0, formNames.Length - 1);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Формация", "Formation"), formNames[cfi]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("形状", "Formation"), formNames[cfi]))
             NocturneConfig.CloneFormation.Value = (cfi + 1) % formNames.Length;
-        Slider(b.x, ref by, b.width, NocturneText.T("Размер формации", "Formation size"), NocturneConfig.CloneFormationScale, 0.3f, 3f, "0.00");
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Копии формации", "Formation copies"), NocturneConfig.LobbyCloneFormationCopies, 1, 5);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Живые формации", "Living formations"), NocturneConfig.CloneFormationAnim);
+        Slider(b.x, ref by, b.width, NocturneText.T("形状大小", "Formation size"), NocturneConfig.CloneFormationScale, 0.3f, 3f, "0.00");
+        SliderInt(b.x, ref by, b.width, NocturneText.T("形状副本", "Formation copies"), NocturneConfig.LobbyCloneFormationCopies, 1, 5);
+        Toggle(b.x, ref by, b.width, NocturneText.T("动态形状", "Living formations"), NocturneConfig.CloneFormationAnim);
         if (NocturneConfig.CloneFormationAnim.Value)
-            Slider(b.x, ref by, b.width, NocturneText.T("Скорость движения", "Motion speed"), NocturneConfig.CloneFormationAnimSpeed, 0.2f, 3f, "0.0");
-        if (SmallButton(new Rect(b.x + 2f, by, 132f, 24f), NocturneText.T("ПОСТРОИТЬ", "BUILD"), NocturneStyle.Current.Accent))
+            Slider(b.x, ref by, b.width, NocturneText.T("运动速度", "Motion speed"), NocturneConfig.CloneFormationAnimSpeed, 0.2f, 3f, "0.0");
+        if (SmallButton(new Rect(b.x + 2f, by, 132f, 24f), NocturneText.T("构建", "BUILD"), NocturneStyle.Current.Accent))
             NocturneLobbyClones.Instance?.BuildFormation(cfi);
-        if (SmallButton(new Rect(b.x + 142f, by, 120f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(b.x + 142f, by, 120f, 24f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
             NocturneLobbyClones.Instance?.ClearAll();
         by += 32f;
 
-        Toggle(b.x, ref by, b.width, NocturneText.T("Голые клоны (портрет красит по зонам)", "Bare clones (portrait tints by zone)"), NocturneConfig.CloneNaked);
-        if (SmallButton(new Rect(b.x + 2f, by, b.width - 4f, 24f), NocturneText.T("Я ИЗ КЛОНОВ", "ME FROM CLONES"), new Color(0.78f, 0.42f, 0.95f)))
+        Toggle(b.x, ref by, b.width, NocturneText.T("裸体克隆（头像按区着色）", "Bare clones (portrait tints by zone)"), NocturneConfig.CloneNaked);
+        if (SmallButton(new Rect(b.x + 2f, by, b.width - 4f, 24f), NocturneText.T("用克隆组成我", "ME FROM CLONES"), new Color(0.78f, 0.42f, 0.95f)))
             NocturneLobbyClones.Instance?.BuildSelf();
         by += 32f;
 
         _cloneText = CustomText(new Rect(b.x + 2f, by, b.width - 168f, 26f), _cloneText ?? "", "cloneText");
-        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("ТЕКСТ ИЗ КЛОНОВ", "TEXT FROM CLONES"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + b.width - 160f, by + 1f, 158f, 24f), NocturneText.T("用克隆组成文本", "TEXT FROM CLONES"), NocturneStyle.Current.Accent))
             NocturneLobbyClones.Instance?.BuildText(_cloneText);
 
         bool ncReady = NocturneTwins.Ready();
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Сетевые клоны", "Networked clones"), (ncReady ? 4f * RowH + 208f : 26f) + 32f, true);
+        b = Card(x, ref y, w, NocturneText.T("网络克隆", "Networked clones"), (ncReady ? 4f * RowH + 208f : 26f) + 32f, true);
         by = b.y;
         if (!ncReady)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только хост в лобби.", "Host in lobby only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅房主在大厅中可用。", "Host in lobby only."), _muted);
             by += 26f;
         }
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Копии тебя, видят все. Убираются на старте.", "Copies of you, everyone sees. Cleared on start."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("你的复制体，所有人可见。开始对局时清除。", "Copies of you, everyone sees. Cleared on start."), _muted);
             by += 26f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Режим клика (ЛКМ=спавн, ПКМ=удал.)", "Click mode (LMB=spawn, RMB=remove)"), NocturneConfig.NetCloneMode);
+            Toggle(b.x, ref by, b.width, NocturneText.T("点击模式（左键=生成，右键=删除）", "Click mode (LMB=spawn, RMB=remove)"), NocturneConfig.NetCloneMode);
 
             PlayerControl nsrc = NetSrc();
             bool mine = nsrc == null || nsrc == PlayerControl.LocalPlayer;
-            string sname = mine ? NocturneText.T("Я", "Me") : (nsrc.Data != null ? nsrc.Data.PlayerName : "?");
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Внешность", "Look like"), sname))
+            string sname = mine ? NocturneText.T("我", "Me") : (nsrc.Data != null ? nsrc.Data.PlayerName : "?");
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("外观", "Look like"), sname))
                 NextNetSrc();
             if (!mine)
                 DrawColorDot(new Rect(b.x + b.width - 132f, by - RowH + 11f, 12f, 12f), nsrc.Data != null && nsrc.Data.DefaultOutfit != null ? nsrc.Data.DefaultOutfit.ColorId : 0);
 
             int ncf = Mathf.Clamp(NocturneConfig.CloneFormation.Value, 0, formNames.Length - 1);
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Формация", "Formation"), formNames[ncf]))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("形状", "Formation"), formNames[ncf]))
                 NocturneConfig.CloneFormation.Value = (ncf + 1) % formNames.Length;
-            Slider(b.x, ref by, b.width, NocturneText.T("Размер формации", "Formation size"), NocturneConfig.CloneFormationScale, 0.3f, 3f, "0.00");
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Клонов", "Clones"), NocturneConfig.NetCloneCount, 1, 2000);
+            Slider(b.x, ref by, b.width, NocturneText.T("形状大小", "Formation size"), NocturneConfig.CloneFormationScale, 0.3f, 3f, "0.00");
+            SliderInt(b.x, ref by, b.width, NocturneText.T("克隆数", "Clones"), NocturneConfig.NetCloneCount, 1, 2000);
             by += 4f;
             float ncw = (b.width - 10f) / 2f;
-            if (SmallButton(new Rect(b.x, by, ncw, 26f), mine ? NocturneText.T("КЛОН СЕБЯ", "CLONE SELF") : NocturneText.T("КЛОН ЕГО", "CLONE THEM"), NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Клоны", "Clones"), NocturneTwins.CloneOf(nsrc), 2.5f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + ncw + 10f, by, ncw, 26f), NocturneText.T("ФОРМАЦИЯ", "FORMATION"), new Color(0.4f, 0.75f, 1f)))
-                NocturneToast.Push(NocturneText.T("Клоны", "Clones"), NocturneTwins.Formation(ncf, NocturneConfig.NetCloneCount.Value, nsrc), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, ncw, 26f), mine ? NocturneText.T("克隆自己", "CLONE SELF") : NocturneText.T("克隆他", "CLONE THEM"), NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("克隆", "Clones"), NocturneTwins.CloneOf(nsrc), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + ncw + 10f, by, ncw, 26f), NocturneText.T("形状", "FORMATION"), new Color(0.4f, 0.75f, 1f)))
+                NocturneToast.Push(NocturneText.T("克隆", "Clones"), NocturneTwins.Formation(ncf, NocturneConfig.NetCloneCount.Value, nsrc), 2.5f, NocturneNotifyKind.Info);
             by += 32f;
             _netText = CustomText(new Rect(b.x, by, b.width - 132f, 26f), _netText ?? "", "netCloneText");
-            if (SmallButton(new Rect(b.x + b.width - 128f, by + 1f, 128f, 24f), NocturneText.T("ТЕКСТ ИЗ КЛОНОВ", "TEXT FROM CLONES"), new Color(0.4f, 0.75f, 1f)))
-                NocturneToast.Push(NocturneText.T("Клоны", "Clones"), NocturneTwins.Text(_netText, nsrc), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + b.width - 128f, by + 1f, 128f, 24f), NocturneText.T("用克隆组成文本", "TEXT FROM CLONES"), new Color(0.4f, 0.75f, 1f)))
+                NocturneToast.Push(NocturneText.T("克隆", "Clones"), NocturneTwins.Text(_netText, nsrc), 2.5f, NocturneNotifyKind.Info);
             by += 32f;
-            string ncInfo = $"{NocturneText.T("Клонов", "Clones")}: <b>{NocturneTwins.Count}</b>";
+            string ncInfo = $"{NocturneText.T("克隆", "Clones")}: <b>{NocturneTwins.Count}</b>";
             if (NocturneTwins.Queued > 0)
-                ncInfo += $"   {NocturneText.T("в очереди", "queued")}: <b>{NocturneTwins.Queued}</b>";
+                ncInfo += $"   {NocturneText.T("队列中", "queued")}: <b>{NocturneTwins.Queued}</b>";
             if (NocturneTwins.Figures > 0)
-                ncInfo += $"   {NocturneText.T("фигур", "figures")}: <b>{NocturneTwins.Figures}</b>";
+                ncInfo += $"   {NocturneText.T("图形", "figures")}: <b>{NocturneTwins.Figures}</b>";
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), ncInfo, _muted);
             by += 26f;
             float ncw2 = (b.width - 10f) / 2f;
-            if (SmallButton(new Rect(b.x, by, ncw2, 26f), NocturneText.T("УБРАТЬ ПОСЛЕДНЮЮ", "REMOVE LAST"), new Color(0.92f, 0.62f, 0.30f)))
-                NocturneToast.Push(NocturneText.T("Клоны", "Clones"), NocturneTwins.DropLast(), 2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + ncw2 + 10f, by, ncw2, 26f), NocturneText.T("УБРАТЬ ВСЕХ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+            if (SmallButton(new Rect(b.x, by, ncw2, 26f), NocturneText.T("移除最后一个", "REMOVE LAST"), new Color(0.92f, 0.62f, 0.30f)))
+                NocturneToast.Push(NocturneText.T("克隆", "Clones"), NocturneTwins.DropLast(), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + ncw2 + 10f, by, ncw2, 26f), NocturneText.T("移除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                 NocturneTwins.ClearAll();
             by += 32f;
         }
 
         float lbw = (b.width - 10f) / 2f;
-        if (SmallButton(new Rect(b.x, by, lbw, 26f), NocturneText.T("РАЗРУШИТЬ ЛОББИ", "DESTROY LOBBY"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Лобби", "Lobby"), NocturneLobbyTools.DestroyLobby(), 2.5f, NocturneNotifyKind.Warning);
-        if (SmallButton(new Rect(b.x + lbw + 10f, by, lbw, 26f), NocturneText.T("СОЗДАТЬ ЛОББИ", "CREATE LOBBY"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Лобби", "Lobby"), NocturneLobbyTools.CreateLobby(), 2.5f, NocturneNotifyKind.Success);
+        if (SmallButton(new Rect(b.x, by, lbw, 26f), NocturneText.T("摧毁大厅", "DESTROY LOBBY"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("大厅", "Lobby"), NocturneLobbyTools.DestroyLobby(), 2.5f, NocturneNotifyKind.Warning);
+        if (SmallButton(new Rect(b.x + lbw + 10f, by, lbw, 26f), NocturneText.T("创建大厅", "CREATE LOBBY"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("大厅", "Lobby"), NocturneLobbyTools.CreateLobby(), 2.5f, NocturneNotifyKind.Success);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Спавнер карты (хост)", "Map spawner (host)"), 2f * RowH + 6f);
+        b = Card(x, ref y, w, NocturneText.T("地图生成（房主）", "Map spawner (host)"), 2f * RowH + 6f);
         by = b.y;
         string[] mapNames = MapsAlt;
         int ms = Mathf.Clamp(_mapSel, 0, 5);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Карта", "Map"), mapNames[ms]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("地图", "Map"), mapNames[ms]))
             _mapSel = (ms + 1) % 6;
         float mcw = (b.width - 10f) / 2f;
-        if (SmallButton(new Rect(b.x, by, mcw, 26f), NocturneText.T("УБРАТЬ КАРТУ", "DESPAWN MAP"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Карта", "Map"), NocturneLobbyTools.DespawnMap(), 2.5f, NocturneNotifyKind.Warning);
-        if (SmallButton(new Rect(b.x + mcw + 10f, by, mcw, 26f), NocturneText.T("СПАВН КАРТЫ", "SPAWN MAP"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Карта", "Map"), NocturneLobbyTools.SpawnMap(ms), 2.5f, NocturneNotifyKind.Success);
+        if (SmallButton(new Rect(b.x, by, mcw, 26f), NocturneText.T("移除地图", "DESPAWN MAP"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("地图", "Map"), NocturneLobbyTools.DespawnMap(), 2.5f, NocturneNotifyKind.Warning);
+        if (SmallButton(new Rect(b.x + mcw + 10f, by, mcw, 26f), NocturneText.T("生成地图", "SPAWN MAP"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("地图", "Map"), NocturneLobbyTools.SpawnMap(ms), 2.5f, NocturneNotifyKind.Success);
 
         IReadOnlyList<NocturneColorReservations.Entry> res = NocturneColorReservations.All();
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Резерв цветов", "Color reservations"), 2f * RowH + (res.Count > 0 ? res.Count * 30f : 26f), true);
+        b = Card(x, ref y, w, NocturneText.T("颜色保留", "Color reservations"), 2f * RowH + (res.Count > 0 ? res.Count * 30f : 26f), true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Закреплять цвет (хост)", "Reserve color (host)"), NocturneConfig.ColorReservationsEnabled);
-        if (SmallButton(new Rect(b.x + 2f, by, 260f, 24f), NocturneText.T("ЗАРЕЗЕРВИРОВАТЬ ВЫБРАННОГО", "RESERVE SELECTED"), NocturneStyle.Current.Accent))
+        Toggle(b.x, ref by, b.width, NocturneText.T("保留颜色（房主）", "Reserve color (host)"), NocturneConfig.ColorReservationsEnabled);
+        if (SmallButton(new Rect(b.x + 2f, by, 260f, 24f), NocturneText.T("保留所选玩家", "RESERVE SELECTED"), NocturneStyle.Current.Accent))
             ReserveSelectedColor();
         by += 30f;
         if (res.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто. Выбор игрока — ЛКМ (нужен «Выбор мышью»).", "Empty. Select a player with LMB (needs Mouse select)."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。用左键选择玩家（需要开启“鼠标选择”）。", "Empty. Select a player with LMB (needs Mouse select)."), _muted);
         else
             for (int i = 0; i < res.Count; i++)
             {
@@ -3581,28 +3581,28 @@ public sealed class NocturneMenu : MonoBehaviour
             }
     }
 
-    private static readonly string[] CheatSubsRu = { "Собрания", "Игроки", "Себе", "Карта", "Задания", "Чат" };
+    private static readonly string[] CheatSubsRu = { "会议", "玩家", "自身", "地图", "任务", "聊天" };
     private static readonly string[] CheatSubsEn = { "Meetings", "Players", "Self", "Map", "Tasks", "Chat" };
 
-    private static readonly string[] HomeSubsRu = { "О моде", "Клавиши", "Действия" };
+    private static readonly string[] HomeSubsRu = { "关于", "快捷键", "操作" };
     private static readonly string[] HomeSubsEn = { "About", "Keys", "Actions" };
 
-    private static readonly string[] QolSubsRu = { "Интерфейс", "Чат" };
+    private static readonly string[] QolSubsRu = { "界面", "聊天" };
     private static readonly string[] QolSubsEn = { "Interface", "Chat" };
 
-    private static readonly string[] LobbySubsRu = { "Основное", "Хост", "Клоны" };
+    private static readonly string[] LobbySubsRu = { "基本", "房主", "克隆" };
     private static readonly string[] LobbySubsEn = { "Basics", "Host", "Clones" };
 
-    private static readonly string[] PlayersSubsRu = { "Карточка", "Инфо", "Действия" };
+    private static readonly string[] PlayersSubsRu = { "卡片", "信息", "操作" };
     private static readonly string[] PlayersSubsEn = { "Card", "Info", "Actions" };
 
-    private static readonly string[] VisualSubsRu = { "Камера", "Облик", "Эффекты" };
+    private static readonly string[] VisualSubsRu = { "相机", "外观", "效果" };
     private static readonly string[] VisualSubsEn = { "Camera", "Look", "Effects" };
 
-    private static readonly string[] SettingsSubsRu = { "Интерфейс", "Клавиши", "Прочее" };
+    private static readonly string[] SettingsSubsRu = { "界面", "快捷键", "其他" };
     private static readonly string[] SettingsSubsEn = { "Interface", "Keys", "Other" };
 
-    private static readonly string[] HostSubsRu = { "Власть", "Настройки", "Роли" };
+    private static readonly string[] HostSubsRu = { "权限", "设置", "角色" };
     private static readonly string[] HostSubsEn = { "Powers", "Options", "Roles" };
 
     private string[] PinnedSubs()
@@ -3733,18 +3733,18 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         bool inMatch = ShipStatus.Instance != null;
 
-        Rect mb = Card(x, ref y, w, NocturneText.T("Собрания", "Meetings"), RowH + 2f * 30f + 6f);
+        Rect mb = Card(x, ref y, w, NocturneText.T("会议", "Meetings"), RowH + 2f * 30f + 6f);
         float mby = mb.y;
-        Toggle(mb.x, ref mby, mb.width, NocturneText.T("Спам-собрания", "Spam meetings"), NocturneConfig.NukeGame);
+        Toggle(mb.x, ref mby, mb.width, NocturneText.T("刷会议", "Spam meetings"), NocturneConfig.NukeGame);
         mby += 4f;
-        if (SmallButton(new Rect(mb.x, mby, mb.width, 26f), NocturneText.T("НАБРАТЬ СОБРАНИЕ", "CALL MEETING"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Собрание", "Meeting"), NocturneMeetingTools.CallMeeting(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(mb.x, mby, mb.width, 26f), NocturneText.T("召开会议", "CALL MEETING"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("会议", "Meeting"), NocturneMeetingTools.CallMeeting(), 2f, NocturneNotifyKind.Info);
         mby += 30f;
         float mbHalf = (mb.width - 8f) / 2f;
-        if (SmallButton(new Rect(mb.x, mby, mbHalf, 26f), NocturneText.T("ЗАКРЫТЬ ГОЛОСОВАНИЕ", "CLOSE VOTING"), new Color(0.5f, 0.55f, 0.62f)))
-            NocturneToast.Push(NocturneText.T("Голосование", "Voting"), NocturneMeetingTools.CloseVoting(), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(mb.x + mbHalf + 8f, mby, mbHalf, 26f), NocturneText.T("ЗАКРЫТЬ СОБРАНИЕ", "CLOSE MEETING"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Собрание", "Meeting"), NocturneMeetingTools.CloseMeeting(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(mb.x, mby, mbHalf, 26f), NocturneText.T("关闭投票", "CLOSE VOTING"), new Color(0.5f, 0.55f, 0.62f)))
+            NocturneToast.Push(NocturneText.T("投票", "Voting"), NocturneMeetingTools.CloseVoting(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(mb.x + mbHalf + 8f, mby, mbHalf, 26f), NocturneText.T("关闭会议", "CLOSE MEETING"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("会议", "Meeting"), NocturneMeetingTools.CloseMeeting(), 2f, NocturneNotifyKind.Info);
 
         _roleClients.Clear();
         CollectPlayers(_roleClients);
@@ -3753,37 +3753,37 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 vkCount++;
         float vkBody = 30f * 5f + RowH * 3f + (vkCount > 0 ? vkCount * 32f + 22f : 26f);
-        Rect b = Card(x, ref y, w, NocturneText.T("Войткик", "Votekick"), vkBody);
+        Rect b = Card(x, ref y, w, NocturneText.T("投票踢人", "Votekick"), vkBody);
         float by = b.y;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneVotekick.Armed ? NocturneText.T("АВТО: ВКЛ — СТОП", "AUTO: ON — STOP") : NocturneText.T("АВТО-ВОЙТКИК", "AUTO VOTEKICK"), NocturneVotekick.Armed ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneVotekick.Armed ? NocturneText.T("自动：开——停止", "AUTO: ON — STOP") : NocturneText.T("自动投票踢人", "AUTO VOTEKICK"), NocturneVotekick.Armed ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
             NocturneVotekick.ToggleAuto();
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ГОЛОСА ВСЕМ + ОСТАТЬСЯ", "VOTE ALL + STAY"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("投票所有人 + 留下", "VOTE ALL + STAY"), NocturneStyle.Current.Accent))
             NocturneVotekick.VoteAllStay();
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ЗАЯВИТЬ ВСЕМ ПО ОЧЕРЕДИ", "VOTE EACH IN TURN"), new Color(0.78f, 0.42f, 0.95f)))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("依次投票所有人", "VOTE EACH IN TURN"), new Color(0.78f, 0.42f, 0.95f)))
             NocturneVotekick.RapidAll();
         by += 30f;
         string autoLbl = NocturneVotekick.AutoTargeting
-            ? NocturneText.T("АВТО ПО ЦЕЛЯМ: СТОП", "AUTO TARGETS: STOP")
-            : NocturneText.T("АВТО ПО ЦЕЛЯМ", "AUTO TARGETS") + " (" + NocturneVotekick.TargetCount + ")";
+            ? NocturneText.T("自动目标：停止", "AUTO TARGETS: STOP")
+            : NocturneText.T("自动目标", "AUTO TARGETS") + " (" + NocturneVotekick.TargetCount + ")";
         if (SmallButton(new Rect(b.x, by, b.width - 130f, 26f), autoLbl, NocturneVotekick.AutoTargeting ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
             NocturneVotekick.ToggleTargetAuto();
-        if (SmallButton(new Rect(b.x + b.width - 124f, by, 124f, 26f), NocturneText.T("СБРОС ЦЕЛЕЙ", "CLEAR TARGETS"), new Color(0.5f, 0.5f, 0.58f)))
+        if (SmallButton(new Rect(b.x + b.width - 124f, by, 124f, 26f), NocturneText.T("清除目标", "CLEAR TARGETS"), new Color(0.5f, 0.5f, 0.58f)))
             NocturneVotekick.ClearTargets();
         by += 30f;
         bool hostSel = NocturneVotekick.HostIsTarget();
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), hostSel ? NocturneText.T("ПРЕСЕТ ХОСТ ✓ — СНЯТЬ", "PRESET HOST ✓ — REMOVE") : NocturneText.T("ПРЕСЕТ: ОТМЕТИТЬ ХОСТА", "PRESET: MARK HOST"), hostSel ? NocturneStyle.Current.Accent : new Color(0.92f, 0.62f, 0.30f)))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), hostSel ? NocturneText.T("预设房主 ✓ — 移除", "PRESET HOST ✓ — REMOVE") : NocturneText.T("预设：标记房主", "PRESET: MARK HOST"), hostSel ? NocturneStyle.Current.Accent : new Color(0.92f, 0.62f, 0.30f)))
             NocturneVotekick.ToggleHostTarget();
         by += 30f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Копировать код лобби", "Copy lobby code"), NocturneConfig.VkCopyCode);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Авто-перезаход по коду", "Auto rejoin by code"), NocturneConfig.VkRejoin);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Перезаход если войткикают (2 голоса)", "Rejoin if votekicked (2 votes)"), NocturneConfig.VkAutoRejoin);
+        Toggle(b.x, ref by, b.width, NocturneText.T("复制大厅代码", "Copy lobby code"), NocturneConfig.VkCopyCode);
+        Toggle(b.x, ref by, b.width, NocturneText.T("按代码自动重进", "Auto rejoin by code"), NocturneConfig.VkRejoin);
+        Toggle(b.x, ref by, b.width, NocturneText.T("被投票踢出时重进（2 票）", "Rejoin if votekicked (2 votes)"), NocturneConfig.VkAutoRejoin);
         if (vkCount == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Выборочно — отметь «АВТО» у нужных:", "Selective — mark AUTO on players:"), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("按需选择——给目标标记“自动”：", "Selective — mark AUTO on players:"), _muted);
             by += 22f;
             for (int i = 0; i < _roleClients.Count; i++)
                 if (_roleClients[i] != Me())
@@ -3793,15 +3793,15 @@ public sealed class NocturneMenu : MonoBehaviour
         List<string> pend = NocturneJudgeOverrule.Lines;
         int jTotal = NocturneJudgeOverrule.Total;
         float jBody = RowH + 24f + (pend.Count > 0 ? pend.Count * 20f + 4f : 22f) + 30f + (jTotal > 0 ? 22f : 0f);
-        b = Card(x, ref y, w, NocturneText.T("Судья: оверрул", "Judge: overrule"), jBody);
+        b = Card(x, ref y, w, NocturneText.T("法官：一票否决", "Judge: overrule"), jBody);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Следить за оверрулами", "Watch overrules"), NocturneConfig.JudgeWatch);
+        Toggle(b.x, ref by, b.width, NocturneText.T("监视一票否决", "Watch overrules"), NocturneConfig.JudgeWatch);
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f),
-            NocturneText.T("Очередь видит хост — цель судьи до удара молотка.", "The host sees the queue — the judge's target before the gavel."), _muted);
+            NocturneText.T("队列对房主可见——即法官在小木槌敲下之前锁定的目标。", "The host sees the queue — the judge's target before the gavel."), _muted);
         by += 24f;
         if (pend.Count == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Оверрулов нет.", "No overrules."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("无否决。", "No overrules."), _muted);
             by += 22f;
         }
         else
@@ -3813,23 +3813,23 @@ public sealed class NocturneMenu : MonoBehaviour
             }
             by += 4f;
         }
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("СБРОСИТЬ ОЧЕРЕДЬ (ХОСТ)", "CLEAR QUEUE (HOST)"), new Color(0.5f, 0.55f, 0.62f)))
-            NocturneToast.Push(NocturneText.T("Судья", "Judge"), NocturneJudgeOverrule.ClearAll(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("清除队列（房主）", "CLEAR QUEUE (HOST)"), new Color(0.5f, 0.55f, 0.62f)))
+            NocturneToast.Push(NocturneText.T("法官", "Judge"), NocturneJudgeOverrule.ClearAll(), 2f, NocturneNotifyKind.Info);
         by += 30f;
         if (jTotal > 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Оверрулов за матч: ", "Overrules this match: ") + jTotal, _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("本局一票否决次数： ", "Overrules this match: ") + jTotal, _muted);
 
-        b = Card(x, ref y, w, NocturneText.T("Собрание: свободный ход", "Meeting: free roam"), inMatch ? 28f + 26f + 30f : 26f);
+        b = Card(x, ref y, w, NocturneText.T("会议：自由走动", "Meeting: free roam"), inMatch ? 28f + 26f + 30f : 26f);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-                NocturneText.T("Закрыть собрание у себя — ходишь, пока у других идёт.", "Close the meeting locally — roam while others are stuck."), _muted);
+                NocturneText.T("在自己端关闭会议——其他人还卡着时你能走。", "Close the meeting locally — roam while others are stuck."), _muted);
             by += 26f;
-            if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ВЫЙТИ И ХОДИТЬ", "EXIT & ROAM"), NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Собрание", "Meeting"), NocturneMeetingRoam.Roam(), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("退出并走动", "EXIT & ROAM"), NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("会议", "Meeting"), NocturneMeetingRoam.Roam(), 2.5f, NocturneNotifyKind.Info);
         }
     }
 
@@ -3845,17 +3845,17 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 loopN++;
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Цикл смерти", "Murder loop"), inMatch ? 38f + (loopN > 0 ? loopN * 32f : 26f) : 26f, true);
+        Rect b = Card(x, ref y, w, NocturneText.T("死亡循环", "Murder loop"), inMatch ? 38f + (loopN > 0 ? loopN * 32f : 26f) : 26f, true);
         float by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 34f),
-                NocturneText.T("Только хост, только для своих — в пабликах забанят.", "Host only, friends only — publics will ban you."), _muted);
+                NocturneText.T("仅房主、仅对朋友——公开房会被封。", "Host only, friends only — publics will ban you."), _muted);
             by += 38f;
             if (loopN == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
                 for (int i = 0; i < _roleClients.Count; i++)
                     if (_roleClients[i] != Me())
@@ -3869,25 +3869,25 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 killN++;
 
-        b = Card(x, ref y, w, NocturneText.T("Мгновенный килл", "Instant kill"), inMatch ? 68f + (killN > 0 ? killN * 32f : 26f) : 26f, true);
+        b = Card(x, ref y, w, NocturneText.T("立即击杀", "Instant kill"), inMatch ? 68f + (killN > 0 ? killN * 32f : 26f) : 26f, true);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 34f),
-                NocturneText.T("Только хост, для своих. В пабликах — бан.", "Host only, friends only. Publics = ban."), _muted);
+                NocturneText.T("仅房主、仅对朋友。公开房——封禁。", "Host only, friends only. Publics = ban."), _muted);
             by += 38f;
             float third = (b.width - 8f) / 3f;
-            if (SmallButton(new Rect(b.x, by, third, 26f), NocturneText.T("ВСЕХ", "ALL"), red))
-                NocturneToast.Push(NocturneText.T("Килл", "Kill"), NocturneKillTools.KillAll(0), 2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + third + 4f, by, third, 26f), NocturneText.T("МИРНЫХ", "CREW"), new Color(0.92f, 0.62f, 0.30f)))
-                NocturneToast.Push(NocturneText.T("Килл", "Kill"), NocturneKillTools.KillAll(1), 2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + third * 2f + 8f, by, b.width - third * 2f - 8f, 26f), NocturneText.T("ПРЕДОВ", "IMPS"), new Color(0.78f, 0.42f, 0.95f)))
-                NocturneToast.Push(NocturneText.T("Килл", "Kill"), NocturneKillTools.KillAll(2), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, third, 26f), NocturneText.T("所有人", "ALL"), red))
+                NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillAll(0), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + third + 4f, by, third, 26f), NocturneText.T("船员", "CREW"), new Color(0.92f, 0.62f, 0.30f)))
+                NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillAll(1), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + third * 2f + 8f, by, b.width - third * 2f - 8f, 26f), NocturneText.T("内鬼", "IMPS"), new Color(0.78f, 0.42f, 0.95f)))
+                NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillAll(2), 2f, NocturneNotifyKind.Info);
             by += 30f;
             if (killN == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
                 for (int i = 0; i < _roleClients.Count; i++)
                     if (_roleClients[i] != Me())
@@ -3902,28 +3902,28 @@ public sealed class NocturneMenu : MonoBehaviour
                 vkN++;
 
         float vkkBody = vkN > 0 ? 88f + vkN * 32f : 54f;
-        b = Card(x, ref y, w, NocturneText.T("Вент кик", "Vent kick"), inMatch ? vkkBody : 26f, true);
+        b = Card(x, ref y, w, NocturneText.T("穿管踢出", "Vent kick"), inMatch ? vkkBody : 26f, true);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-                NocturneText.T("Вент-кик.", "Vent kick."), _muted);
+                NocturneText.T("穿管踢出。", "Vent kick."), _muted);
             by += 28f;
             if (vkN == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
             {
                 float vkSelw = (b.width - 8f) / 2f;
-                if (SmallButton(new Rect(b.x, by, vkSelw, 24f), NocturneText.T("ВЫБРАТЬ ВСЕХ", "SELECT ALL"), NocturneStyle.Current.Accent))
+                if (SmallButton(new Rect(b.x, by, vkSelw, 24f), NocturneText.T("全选", "SELECT ALL"), NocturneStyle.Current.Accent))
                     NocturneVentKick.SelectAll();
-                if (SmallButton(new Rect(b.x + vkSelw + 8f, by, vkSelw, 24f), NocturneText.T("СНЯТЬ ВСЕ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+                if (SmallButton(new Rect(b.x + vkSelw + 8f, by, vkSelw, 24f), NocturneText.T("清除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                     NocturneVentKick.ClearSelection();
                 by += 30f;
-                string vkLbl = NocturneText.T("КИК ПО ВЫБРАННЫМ", "KICK SELECTED") + (NocturneVentKick.SelectedCount > 0 ? $" ({NocturneVentKick.SelectedCount})" : "");
+                string vkLbl = NocturneText.T("踢出所选", "KICK SELECTED") + (NocturneVentKick.SelectedCount > 0 ? $" ({NocturneVentKick.SelectedCount})" : "");
                 if (SmallButton(new Rect(b.x, by, b.width, 24f), vkLbl, new Color(0.95f, 0.5f, 0.25f)))
-                    NocturneToast.Push(NocturneText.T("Вент кик", "Vent kick"), NocturneVentKick.KickSelected(), 2.4f, NocturneNotifyKind.Info);
+                    NocturneToast.Push(NocturneText.T("穿管踢出", "Vent kick"), NocturneVentKick.KickSelected(), 2.4f, NocturneNotifyKind.Info);
                 by += 30f;
                 for (int i = 0; i < _roleClients.Count; i++)
                     if (_roleClients[i] != Me())
@@ -3939,14 +3939,14 @@ public sealed class NocturneMenu : MonoBehaviour
                 jailN++;
 
         float jailBody = jailN > 0 ? 88f + jailN * 32f : 82f;
-        b = Card(x, ref y, w, NocturneText.T("Тюрьма", "Jail"), inMatch ? jailBody : 26f, true);
+        b = Card(x, ref y, w, NocturneText.T("监狱", "Jail"), inMatch ? jailBody : 26f, true);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-                NocturneText.T("Держит отмеченных в комнате — выйдут, закинет обратно в вент.", "Keeps marked players in the room — leaving forces them back into a vent."), _muted);
+                NocturneText.T("把标记的玩家关在房间里——离开就会被传送回管内。", "Keeps marked players in the room — leaving forces them back into a vent."), _muted);
             by += 28f;
 
             float jrNameW = b.width - 60f;
@@ -3958,13 +3958,13 @@ public sealed class NocturneMenu : MonoBehaviour
             by += 30f;
 
             if (jailN == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
             {
                 float jSelw = (b.width - 8f) / 2f;
-                if (SmallButton(new Rect(b.x, by, jSelw, 24f), NocturneText.T("ВЫБРАТЬ ВСЕХ", "SELECT ALL"), NocturneStyle.Current.Accent))
+                if (SmallButton(new Rect(b.x, by, jSelw, 24f), NocturneText.T("全选", "SELECT ALL"), NocturneStyle.Current.Accent))
                     NocturneJail.SelectAll();
-                if (SmallButton(new Rect(b.x + jSelw + 8f, by, jSelw, 24f), NocturneText.T("СНЯТЬ ВСЕ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+                if (SmallButton(new Rect(b.x + jSelw + 8f, by, jSelw, 24f), NocturneText.T("清除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                     NocturneJail.ClearTargets();
                 by += 30f;
                 for (int i = 0; i < _roleClients.Count; i++)
@@ -3981,31 +3981,31 @@ public sealed class NocturneMenu : MonoBehaviour
                 blN++;
 
         float blBody = blN > 0 ? 88f + blN * 32f : 54f;
-        b = Card(x, ref y, w, NocturneText.T("Слепота / фулбрайт", "Blind / fullbright"), inMatch ? blBody : 26f);
+        b = Card(x, ref y, w, NocturneText.T("致盲 / 全亮", "Blind / fullbright"), inMatch ? blBody : 26f);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-                NocturneText.T("Тьма или слепящий свет.", "Darkness or blinding light."), _muted);
+                NocturneText.T("黑暗或刺眼光线。", "Darkness or blinding light."), _muted);
             by += 28f;
             if (blN == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
             {
                 float blSelw = (b.width - 8f) / 2f;
-                if (SmallButton(new Rect(b.x, by, blSelw, 24f), NocturneText.T("ВЫБРАТЬ ВСЕХ", "SELECT ALL"), NocturneStyle.Current.Accent))
+                if (SmallButton(new Rect(b.x, by, blSelw, 24f), NocturneText.T("全选", "SELECT ALL"), NocturneStyle.Current.Accent))
                     NocturneBlind.SelectAll();
-                if (SmallButton(new Rect(b.x + blSelw + 8f, by, blSelw, 24f), NocturneText.T("СНЯТЬ ВСЕ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+                if (SmallButton(new Rect(b.x + blSelw + 8f, by, blSelw, 24f), NocturneText.T("清除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                     NocturneBlind.ClearSelection();
                 by += 30f;
-                string blLbl = NocturneText.T("ОСЛЕПИТЬ ВЫБРАННЫХ", "BLIND SELECTED") + (NocturneBlind.SelectedCount > 0 ? $" ({NocturneBlind.SelectedCount})" : "");
+                string blLbl = NocturneText.T("致盲所选", "BLIND SELECTED") + (NocturneBlind.SelectedCount > 0 ? $" ({NocturneBlind.SelectedCount})" : "");
                 float blActw = (b.width - 8f) / 2f;
                 if (SmallButton(new Rect(b.x, by, blActw, 24f), blLbl, new Color(0.4f, 0.42f, 0.48f)))
-                    NocturneToast.Push(NocturneText.T("Свет", "Vision"), NocturneBlind.BlindSelected(), 2.2f, NocturneNotifyKind.Info);
-                if (SmallButton(new Rect(b.x + blActw + 8f, by, blActw, 24f), NocturneText.T("ВЕРНУТЬ ВЫБРАННЫМ", "RESTORE SELECTED"), NocturneStyle.Current.Accent))
-                    NocturneToast.Push(NocturneText.T("Свет", "Vision"), NocturneBlind.RestoreSelected(), 2.2f, NocturneNotifyKind.Info);
+                    NocturneToast.Push(NocturneText.T("光照", "Vision"), NocturneBlind.BlindSelected(), 2.2f, NocturneNotifyKind.Info);
+                if (SmallButton(new Rect(b.x + blActw + 8f, by, blActw, 24f), NocturneText.T("恢复所选", "RESTORE SELECTED"), NocturneStyle.Current.Accent))
+                    NocturneToast.Push(NocturneText.T("光照", "Vision"), NocturneBlind.RestoreSelected(), 2.2f, NocturneNotifyKind.Info);
                 by += 30f;
                 for (int i = 0; i < _roleClients.Count; i++)
                     if (_roleClients[i] != Me())
@@ -4013,39 +4013,39 @@ public sealed class NocturneMenu : MonoBehaviour
             }
         }
 
-        b = Card(x, ref y, w, NocturneText.T("Хост-тролль", "Host tricks"), 3f * RowH + 44f);
+        b = Card(x, ref y, w, NocturneText.T("房主恶作剧", "Host tricks"), 3f * RowH + 44f);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только хост, в матче.", "Host only, in match."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅房主、对局中。", "Host only, in match."), _muted);
         by += 24f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Фейк-цвет при морфе", "Fake color on morph"), NocturneConfig.FakeMorphColor);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Глушить камеры смотрящим", "Jam watchers' cameras"), NocturneConfig.CameraJam);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Спам голосов (в собрании)", "Vote spam (in meeting)"), NocturneConfig.VoteSpam);
+        Toggle(b.x, ref by, b.width, NocturneText.T("变形时假颜色", "Fake color on morph"), NocturneConfig.FakeMorphColor);
+        Toggle(b.x, ref by, b.width, NocturneText.T("干扰监控者摄像头", "Jam watchers' cameras"), NocturneConfig.CameraJam);
+        Toggle(b.x, ref by, b.width, NocturneText.T("刷票（会议中）", "Vote spam (in meeting)"), NocturneConfig.VoteSpam);
 
-        b = Card(x, ref y, w, NocturneText.T("Фантом", "Phantom"), RowH + 26f, true);
+        b = Card(x, ref y, w, NocturneText.T("幻影", "Phantom"), RowH + 26f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Дым-бомба (спам исчезновения)", "Smoke bomb (vanish spam)"), NocturneConfig.SmokeSpam);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Только Фантом, в матче. Облако дыма у всех.", "Phantom only, in match. Smoke cloud for everyone."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("烟雾弹（刷消失）", "Smoke bomb (vanish spam)"), NocturneConfig.SmokeSpam);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("仅幻影、对局中。所有人可见烟团。", "Phantom only, in match. Smoke cloud for everyone."), _muted);
 
         int petN = 0;
         for (int i = 0; i < _roleClients.Count; i++)
             if (_roleClients[i] != Me())
                 petN++;
-        b = Card(x, ref y, w, NocturneText.T("Пет-рука", "Pet hand"), 28f + 26f + 30f + 30f + 30f + (petN > 0 ? petN * 32f : 0f), true);
+        b = Card(x, ref y, w, NocturneText.T("宠物手", "Pet hand"), 28f + 26f + 30f + 30f + 30f + (petN > 0 ? petN * 32f : 0f), true);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Джойстик, роспись мышью, ГЛАДИТЬ (стоя) или СЛЕДОМ (на ходу).", "Joystick, mouse paint, PET (standing) or FOLLOW (while moving)."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("摇杆、鼠标涂鸦，站立时抚摸、移动中跟随。", "Joystick, mouse paint, PET (standing) or FOLLOW (while moving)."), _muted);
         by += 26f;
         float ptw2 = (b.width - 8f) / 2f;
         bool petMan = NocturnePet.On && NocturnePet.Manual;
-        if (SmallButton(new Rect(b.x, by, ptw2, 24f), petMan ? NocturneText.T("РУЧНОЙ: ВКЛ", "MANUAL: ON") : NocturneText.T("РУЧНОЙ ДЖОЙСТИК", "MANUAL JOYSTICK"), petMan ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), NocturnePet.ToggleManual(), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(b.x + ptw2 + 8f, by, ptw2, 24f), NocturneText.T("СТОП", "STOP"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(b.x, by, ptw2, 24f), petMan ? NocturneText.T("手动：开", "MANUAL: ON") : NocturneText.T("手动摇杆", "MANUAL JOYSTICK"), petMan ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), NocturnePet.ToggleManual(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x + ptw2 + 8f, by, ptw2, 24f), NocturneText.T("停止", "STOP"), new Color(0.9f, 0.4f, 0.4f)))
             NocturnePet.Stop();
         by += 30f;
         bool petPaint = NocturnePet.On && NocturnePet.Paint;
-        if (SmallButton(new Rect(b.x, by, ptw2, 24f), petPaint ? NocturneText.T("РОСПИСЬ: ВКЛ", "PAINT: ON") : NocturneText.T("РОСПИСЬ", "PAINT"), petPaint ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), NocturnePet.TogglePaint(), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(b.x + ptw2 + 8f, by, ptw2, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR") + $" ({NocturnePet.PaintCount})", new Color(0.5f, 0.55f, 0.62f)))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), NocturnePet.ClearPaint(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, ptw2, 24f), petPaint ? NocturneText.T("涂鸦：开", "PAINT: ON") : NocturneText.T("涂鸦", "PAINT"), petPaint ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), NocturnePet.TogglePaint(), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x + ptw2 + 8f, by, ptw2, 24f), NocturneText.T("清空", "CLEAR") + $" ({NocturnePet.PaintCount})", new Color(0.5f, 0.55f, 0.62f)))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), NocturnePet.ClearPaint(), 2f, NocturneNotifyKind.Info);
         by += 30f;
         float rNameW = b.width - 60f;
         if (SmallButton(new Rect(b.x, by, 26f, 24f), "◄", new Color(0.5f, 0.55f, 0.62f)))
@@ -4054,8 +4054,8 @@ public sealed class NocturneMenu : MonoBehaviour
         if (SmallButton(new Rect(b.x + b.width - 26f, by, 26f, 24f), "►", new Color(0.5f, 0.55f, 0.62f)))
             NocturnePet.RoomStep(1);
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("ЗАЛИТЬ КОМНАТУ ПЕТОМ", "FILL ROOM WITH PET"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), NocturnePet.FillRoom(), 2.5f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("用宠物填满房间", "FILL ROOM WITH PET"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), NocturnePet.FillRoom(), 2.5f, NocturneNotifyKind.Info);
         by += 30f;
         for (int i = 0; i < _roleClients.Count; i++)
             if (_roleClients[i] != Me())
@@ -4070,20 +4070,20 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 frameCount++;
 
-        b = Card(x, ref y, w, NocturneText.T("Подстава саботажа", "Frame sabotage"), inMatch ? 132f + (frameCount > 0 ? frameCount * 32f : RowH) : 26f, true);
+        b = Card(x, ref y, w, NocturneText.T("栽赃破坏", "Frame sabotage"), inMatch ? 132f + (frameCount > 0 ? frameCount * 32f : RowH) : 26f, true);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 34f),
-                NocturneText.T("Подделывает actor в системном RPC — ловит только чужой guard, не проверено. Sabotage флагает не-импостора при любом значении.", "Fakes the actor in a system RPC — only catches a foreign guard, untested. Sabotage flags a non-impostor at any value."), _muted);
+                NocturneText.T("伪造系统 RPC 的 actor——只对外来防护有效，未测试。破坏会以任意值标记非内鬼。", "Fakes the actor in a system RPC — only catches a foreign guard, untested. Sabotage flags a non-impostor at any value."), _muted);
             by += 38f;
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Система", "System"), frameSystems[_frameSystemIdx]))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("系统", "System"), frameSystems[_frameSystemIdx]))
                 _frameSystemIdx = (_frameSystemIdx + 1) % frameSystems.Length;
-            _frameValue = SliderIntVal(b.x, ref by, b.width, NocturneText.T("Значение", "Value"), _frameValue, 0, 200, "");
+            _frameValue = SliderIntVal(b.x, ref by, b.width, NocturneText.T("值", "Value"), _frameValue, 0, 200, "");
             if (frameCount == 0)
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             else
                 for (int i = 0; i < _roleClients.Count; i++)
                     if (_roleClients[i] != Me())
@@ -4096,186 +4096,186 @@ public sealed class NocturneMenu : MonoBehaviour
         for (int i = 0; i < _roleClients.Count; i++)
             if (_roleClients[i] != Me())
                 tpCount++;
-        b = Card(x, ref y, w, NocturneText.T("Телепорт к игроку", "Teleport to player"), 24f + (tpCount > 0 ? tpCount * 32f : 26f), true);
+        b = Card(x, ref y, w, NocturneText.T("传送到玩家", "Teleport to player"), 24f + (tpCount > 0 ? tpCount * 32f : 26f), true);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Прыжок к выбранному или идти за ним.", "Snap to the selected player or follow them."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("跳转到所选玩家或跟随他。", "Snap to the selected player or follow them."), _muted);
         by += 24f;
         if (tpCount == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
         else
             for (int i = 0; i < _roleClients.Count; i++)
                 if (_roleClients[i] != Me())
                     TpRow(b.x, ref by, b.width, _roleClients[i]);
 
-        b = Card(x, ref y, w, NocturneText.T("Яйца (хост)", "Eggs (host)"), 5f * 30f + 24f, true);
+        b = Card(x, ref y, w, NocturneText.T("彩蛋（房主）", "Eggs (host)"), 5f * 30f + 24f, true);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("В игре, не в лобби. На офиц. сервере может кикнуть.", "In-game only. May kick on official servers."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("对局中，不在大厅。官方服务器可能踢出。", "In-game only. May kick on official servers."), _muted);
         by += 24f;
         float cw2 = (b.width - 10f) / 2f;
-        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("ВСЕ В ЯЙЦА", "ALL TO EGGS"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("所有人变蛋", "ALL TO EGGS"), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.MassMorphToEgg());
-        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("МОРФ В ВЫБРАННОГО", "MORPH TO TARGET"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("变形为所选", "MORPH TO TARGET"), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.MorphAllIntoSelected());
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("РАДУГА", "RAINBOW") + St(NocturneLobbyPranks.RainbowActive), FunCol(NocturneLobbyPranks.RainbowActive)))
+        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("彩虹", "RAINBOW") + St(NocturneLobbyPranks.RainbowActive), FunCol(NocturneLobbyPranks.RainbowActive)))
             FunToast(NocturneLobbyPranks.ToggleRainbow());
-        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("ЦИКЛ КОСМЕТИКИ", "COSMETIC CYCLE") + St(NocturneLobbyPranks.SkinCycleActive), FunCol(NocturneLobbyPranks.SkinCycleActive)))
+        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("装饰循环", "COSMETIC CYCLE") + St(NocturneLobbyPranks.SkinCycleActive), FunCol(NocturneLobbyPranks.SkinCycleActive)))
             FunToast(NocturneLobbyPranks.ToggleSkinCycle());
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("ТАКТ: ", "BEAT: ") + NocturneLobbyPranks.SyncName(), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("节拍： ", "BEAT: ") + NocturneLobbyPranks.SyncName(), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.ToggleSync());
-        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("РАЗМЕР: ", "SIZE: ") + NocturneLobbyPranks.ScaleName(), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("尺寸： ", "SIZE: ") + NocturneLobbyPranks.ScaleName(), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.CycleScale());
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("ДВИЖЕНИЕ: ", "MOTION: ") + NocturneLobbyPranks.SpinName(), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, cw2, 26f), NocturneText.T("运动： ", "MOTION: ") + NocturneLobbyPranks.SpinName(), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.CycleSpin());
-        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("АНИМАЦИЯ: ", "ANIM: ") + NocturneLobbyPranks.AnimName(), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + cw2 + 10f, by, cw2, 26f), NocturneText.T("动画： ", "ANIM: ") + NocturneLobbyPranks.AnimName(), NocturneStyle.Current.Accent))
             FunToast(NocturneLobbyPranks.CycleAnim());
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("СБРОС ОБЛИКА", "RESET LOOK"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("重置外观", "RESET LOOK"), new Color(0.9f, 0.4f, 0.4f)))
             FunToast(NocturneLobbyPranks.ResetAppearance());
     }
 
     private void CheatsSelf(float x, ref float y, float w)
     {
-        Rect b = Card(x, ref y, w, NocturneText.T("Фантом: тихий уход", "Phantom: silent vanish"), 28f + 26f + RowH);
+        Rect b = Card(x, ref y, w, NocturneText.T("幻影：静默消失", "Phantom: silent vanish"), 28f + 26f + RowH);
         float by = b.y;
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
-            NocturneText.T("Дым исчезновения уходит за карту — не видно, где ты пропал.", "Vanish smoke goes off-map — nobody sees where you vanished."), _muted);
+            NocturneText.T("消失烟雾跑到地图外——没人看到你在哪消失的。", "Vanish smoke goes off-map — nobody sees where you vanished."), _muted);
         by += 26f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Скрывать точку исчезновения", "Hide vanish point"), NocturneConfig.PhantomNoVanish);
+        Toggle(b.x, ref by, b.width, NocturneText.T("隐藏消失点", "Hide vanish point"), NocturneConfig.PhantomNoVanish);
 
         bool reach = NocturneConfig.BuffKillReach.Value;
-        b = Card(x, ref y, w, NocturneText.T("Бафы ролей", "Role buffs"), RowH * 30f + 234f + (reach ? 54f : 4f));
+        b = Card(x, ref y, w, NocturneText.T("角色增益", "Role buffs"), RowH * 30f + 234f + (reach ? 54f : 4f));
         by = b.y;
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Общее", "General"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без кулдаунов", "No cooldowns"), NocturneConfig.BuffNoCd);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ходить внутри вента", "Move inside vent"), NocturneConfig.BuffVentWalk);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Лестницы/зиплайн без кд", "No ladder/zipline cd"), NocturneConfig.BuffMapCd);
+        Sub(b.x, ref by, b.width, NocturneText.T("通用", "General"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("无冷却", "No cooldowns"), NocturneConfig.BuffNoCd);
+        Toggle(b.x, ref by, b.width, NocturneText.T("管内移动", "Move inside vent"), NocturneConfig.BuffVentWalk);
+        Toggle(b.x, ref by, b.width, NocturneText.T("梯子/滑索无冷却", "No ladder/zipline cd"), NocturneConfig.BuffMapCd);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Импостер", "Impostor"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Дальность убийства", "Kill reach"), NocturneConfig.BuffKillReach);
+        Sub(b.x, ref by, b.width, NocturneText.T("内鬼", "Impostor"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("击杀距离", "Kill reach"), NocturneConfig.BuffKillReach);
         if (reach)
-            Slider(b.x, ref by, b.width, NocturneText.T("Радиус", "Radius"), NocturneConfig.BuffKillDist, 1f, 12f, "0.0");
-        Toggle(b.x, ref by, b.width, NocturneText.T("Убивать кого угодно", "Kill anyone"), NocturneConfig.BuffKillAny);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Аура убийства", "Kill aura"), NocturneConfig.BuffKillAura);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Авто-вент после килла", "Auto-vent after kill"), NocturneConfig.AutoVentKill);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Тело в вент (хост)", "Body to vent (host)"), NocturneConfig.BodyToVent);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кулдаун убийства 0 (хост)", "Kill cooldown 0 (host)"), NocturneConfig.BuffNoKillCd);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Венты любой ролью", "Vents with any role"), NocturneConfig.BuffVentAny);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Вент-сеть (прыжок в любой вент)", "Vent network (hop any vent)"), NocturneConfig.VentNetwork);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Таски предом", "Tasks as impostor"), NocturneConfig.BuffImpTasks);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Авто-репорт своих киллов", "Auto-report own kills"), NocturneConfig.BuffAutoReport);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Саботаж из вента", "Sabotage from vent"), NocturneConfig.BuffVentSab);
+            Slider(b.x, ref by, b.width, NocturneText.T("半径", "Radius"), NocturneConfig.BuffKillDist, 1f, 12f, "0.0");
+        Toggle(b.x, ref by, b.width, NocturneText.T("可击杀任何人", "Kill anyone"), NocturneConfig.BuffKillAny);
+        Toggle(b.x, ref by, b.width, NocturneText.T("击杀光环", "Kill aura"), NocturneConfig.BuffKillAura);
+        Toggle(b.x, ref by, b.width, NocturneText.T("击杀后自动穿管", "Auto-vent after kill"), NocturneConfig.AutoVentKill);
+        Toggle(b.x, ref by, b.width, NocturneText.T("尸体进管（房主）", "Body to vent (host)"), NocturneConfig.BodyToVent);
+        Toggle(b.x, ref by, b.width, NocturneText.T("击杀冷却 0（房主）", "Kill cooldown 0 (host)"), NocturneConfig.BuffNoKillCd);
+        Toggle(b.x, ref by, b.width, NocturneText.T("任意角色穿管", "Vents with any role"), NocturneConfig.BuffVentAny);
+        Toggle(b.x, ref by, b.width, NocturneText.T("穿管网（跳到任意管）", "Vent network (hop any vent)"), NocturneConfig.VentNetwork);
+        Toggle(b.x, ref by, b.width, NocturneText.T("内鬼做任务", "Tasks as impostor"), NocturneConfig.BuffImpTasks);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自动报告自己的击杀", "Auto-report own kills"), NocturneConfig.BuffAutoReport);
+        Toggle(b.x, ref by, b.width, NocturneText.T("管内破坏", "Sabotage from vent"), NocturneConfig.BuffVentSab);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Оборотень", "Shapeshifter"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Вечная маскировка", "Endless shapeshift"), NocturneConfig.BuffSsForever);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без анимации", "No animation"), NocturneConfig.BuffSsQuiet);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Морф в мёртвых", "Shapeshift into dead"), NocturneConfig.BuffSsDead);
+        Sub(b.x, ref by, b.width, NocturneText.T("变形者", "Shapeshifter"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("永久变形", "Endless shapeshift"), NocturneConfig.BuffSsForever);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无动画", "No animation"), NocturneConfig.BuffSsQuiet);
+        Toggle(b.x, ref by, b.width, NocturneText.T("变形为死者", "Shapeshift into dead"), NocturneConfig.BuffSsDead);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Фантом", "Phantom"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Убийство в невидимости", "Kill while vanished"), NocturneConfig.BuffVanishKill);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Вечная невидимость", "Endless invisibility"), NocturneConfig.BuffPhVanish);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть невидимого", "See vanished"), NocturneConfig.SeePhantoms);
+        Sub(b.x, ref by, b.width, NocturneText.T("幻影", "Phantom"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("隐身中击杀", "Kill while vanished"), NocturneConfig.BuffVanishKill);
+        Toggle(b.x, ref by, b.width, NocturneText.T("永久隐身", "Endless invisibility"), NocturneConfig.BuffPhVanish);
+        Toggle(b.x, ref by, b.width, NocturneText.T("看到隐身者", "See vanished"), NocturneConfig.SeePhantoms);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Инженер", "Engineer"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Вечный вент", "Endless vent"), NocturneConfig.BuffEngVent);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без кулдауна", "No cooldown"), NocturneConfig.BuffEngCd);
+        Sub(b.x, ref by, b.width, NocturneText.T("工程师", "Engineer"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("永久穿管", "Endless vent"), NocturneConfig.BuffEngVent);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无冷却", "No cooldown"), NocturneConfig.BuffEngCd);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Учёный", "Scientist"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Вечная батарея", "Endless battery"), NocturneConfig.BuffSciBat);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Без кулдауна", "No cooldown"), NocturneConfig.BuffSciCd);
+        Sub(b.x, ref by, b.width, NocturneText.T("科学家", "Scientist"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("永久电池", "Endless battery"), NocturneConfig.BuffSciBat);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无冷却", "No cooldown"), NocturneConfig.BuffSciCd);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Детектив", "Detective"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Любая дистанция", "Any range"), NocturneConfig.BuffDetReach);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Допрос без кулдауна", "Interrogate without cooldown"), NocturneConfig.BuffDetCd);
+        Sub(b.x, ref by, b.width, NocturneText.T("侦探", "Detective"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("任意距离", "Any range"), NocturneConfig.BuffDetReach);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无冷却审讯", "Interrogate without cooldown"), NocturneConfig.BuffDetCd);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Судья", "Judge"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Переголосование без заданий", "Overrule without tasks"), NocturneConfig.BuffJudgeNoTasks);
+        Sub(b.x, ref by, b.width, NocturneText.T("法官", "Judge"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("无需任务一票否决", "Overrule without tasks"), NocturneConfig.BuffJudgeNoTasks);
 
-        Sub(b.x, ref by, b.width, NocturneText.T("Ангел", "Guardian Angel"));
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть щит", "See shield"), NocturneConfig.SeeProtections);
+        Sub(b.x, ref by, b.width, NocturneText.T("天使", "Guardian Angel"));
+        Toggle(b.x, ref by, b.width, NocturneText.T("看到护盾", "See shield"), NocturneConfig.SeeProtections);
 
         bool creach = NocturneConfig.ConsoleReach.Value;
         bool air = NocturneConfig.AirshipSpawn.Value;
-        b = Card(x, ref y, w, NocturneText.T("Мирный: помощь", "Crew: assist"), 5f * RowH + (creach ? 50f : 0f) + (air ? 50f : 0f) + 8f);
+        b = Card(x, ref y, w, NocturneText.T("船员：辅助", "Crew: assist"), 5f * RowH + (creach ? 50f : 0f) + (air ? 50f : 0f) + 8f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Чинить саботаж сразу", "Auto-fix sabotage"), NocturneConfig.SabAutoFix);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Открытые шлюзы (Полюс, Мира)", "Skip decontamination"), NocturneConfig.SkipDecon);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Дальность консолей", "Console reach"), NocturneConfig.ConsoleReach);
+        Toggle(b.x, ref by, b.width, NocturneText.T("立即修复破坏", "Auto-fix sabotage"), NocturneConfig.SabAutoFix);
+        Toggle(b.x, ref by, b.width, NocturneText.T("跳过消毒（Polus、Mira）", "Skip decontamination"), NocturneConfig.SkipDecon);
+        Toggle(b.x, ref by, b.width, NocturneText.T("控制台距离", "Console reach"), NocturneConfig.ConsoleReach);
         if (creach)
-            Slider(b.x, ref by, b.width, NocturneText.T("Дистанция", "Distance"), NocturneConfig.ConsoleDist, 1f, 15f, "0.0");
-        Toggle(b.x, ref by, b.width, NocturneText.T("Свой спавн на Airship", "Pick Airship spawn"), NocturneConfig.AirshipSpawn);
+            Slider(b.x, ref by, b.width, NocturneText.T("距离", "Distance"), NocturneConfig.ConsoleDist, 1f, 15f, "0.0");
+        Toggle(b.x, ref by, b.width, NocturneText.T("Airship 自定义出生点", "Pick Airship spawn"), NocturneConfig.AirshipSpawn);
         if (air)
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Точка спавна", "Spawn point"), NocturneConfig.AirshipSpawnId, 0, 6);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("出生点", "Spawn point"), NocturneConfig.AirshipSpawnId, 0, 6);
 
-        b = Card(x, ref y, w, NocturneText.T("Выживание", "Survival"), 3f * RowH + 132f);
+        b = Card(x, ref y, w, NocturneText.T("生存", "Survival"), 3f * RowH + 132f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Бессмертие (God Mode)", "God Mode"), NocturneConfig.GodMode);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Не убить (фейк-вент). От голосования не спасает.", "Can't be killed (fake vent). Not vs vote-out."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("无敌（God Mode）", "God Mode"), NocturneConfig.GodMode);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("不会被杀（假穿管）。不能防止被投票踢出。", "Can't be killed (fake vent). Not vs vote-out."), _muted);
         by += 24f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Невидимость", "Invisibility"), NocturneConfig.Invisible);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Для других уезжаешь за карту. Взаимодействий/килла нет. ⚠ античит.", "You warp off-map for others. No interaction/kill. ⚠ anti-cheat."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("隐身", "Invisibility"), NocturneConfig.Invisible);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("对别人来说你飞到地图外。无交互/击杀。⚠ 反作弊。", "You warp off-map for others. No interaction/kill. ⚠ anti-cheat."), _muted);
         by += 24f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Дымок Фантома", "Phantom poof"), NocturneConfig.InvisiblePoof);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Хлопок и звук как у Фантома. Роль не нужна, видишь только ты.", "Phantom-style poof and sound. No role needed, only you see it."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("幻影烟雾", "Phantom poof"), NocturneConfig.InvisiblePoof);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("像幻影一样的音效和烟雾。不需要角色，仅自己可见。", "Phantom-style poof and sound. No role needed, only you see it."), _muted);
         by += 24f;
         float phw = (b.width - 6f) / 2f;
-        if (SmallButton(new Rect(b.x, by, phw, 24f), NocturneText.T("ФАНТОМ В ЛОББИ (ХОСТ)", "PHANTOM IN LOBBY (HOST)"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, phw, 24f), NocturneText.T("大厅幻影（房主）", "PHANTOM IN LOBBY (HOST)"), NocturneStyle.Current.Accent))
             LobbyPhantom.Vanish();
-        if (SmallButton(new Rect(b.x + phw + 6f, by, phw, 24f), NocturneText.T("ВЕРНУТЬСЯ (ХОСТ)", "APPEAR (HOST)"), new Color(0.5f, 0.55f, 0.62f)))
+        if (SmallButton(new Rect(b.x + phw + 6f, by, phw, 24f), NocturneText.T("返回（房主）", "APPEAR (HOST)"), new Color(0.5f, 0.55f, 0.62f)))
             LobbyPhantom.Appear();
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("ОСТАВИТЬ ТЕЛО (ХОСТ)", "LEAVE A BODY (HOST)"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("留下尸体（房主）", "LEAVE A BODY (HOST)"), NocturneStyle.Current.Accent))
             Corpses.Drop();
 
         bool lc = NocturneConfig.LagComp.Value;
         bool lcj = lc && NocturneConfig.LagCompJitter.Value;
         float lch = RowH + 40f + (lc ? 2f * RowH + (lcj ? 100f : 0f) : 0f);
-        b = Card(x, ref y, w, NocturneText.T("Мираж", "Mirage"), lch);
+        b = Card(x, ref y, w, NocturneText.T("幻影", "Mirage"), lch);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Включить", "Enable"), NocturneConfig.LagComp);
+        Toggle(b.x, ref by, b.width, NocturneText.T("启用", "Enable"), NocturneConfig.LagComp);
         if (lc)
         {
-            Toggle(b.x, ref by, b.width, NocturneText.T("Стоп-кадр (замер для других)", "Freeze frame (frozen to others)"), NocturneConfig.LagCompFreeze);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Мерцание (рваный сигнал)", "Flicker (broken signal)"), NocturneConfig.LagCompJitter);
+            Toggle(b.x, ref by, b.width, NocturneText.T("定格（对他人静止）", "Freeze frame (frozen to others)"), NocturneConfig.LagCompFreeze);
+            Toggle(b.x, ref by, b.width, NocturneText.T("闪烁（撕裂信号）", "Flicker (broken signal)"), NocturneConfig.LagCompJitter);
             if (lcj)
             {
-                SliderInt(b.x, ref by, b.width, NocturneText.T("Мерцание мин (кадры)", "Flicker min (frames)"), NocturneConfig.LagCompJitterMin, 1, 30);
-                SliderInt(b.x, ref by, b.width, NocturneText.T("Мерцание макс (кадры)", "Flicker max (frames)"), NocturneConfig.LagCompJitterMax, 1, 30);
+                SliderInt(b.x, ref by, b.width, NocturneText.T("闪烁最小（帧）", "Flicker min (frames)"), NocturneConfig.LagCompJitterMin, 1, 30);
+                SliderInt(b.x, ref by, b.width, NocturneText.T("闪烁最大（帧）", "Flicker max (frames)"), NocturneConfig.LagCompJitterMax, 1, 30);
             }
         }
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 40f), NocturneText.T("Только для других — у себя двигаешься нормально. ⚠ палит античит.", "Others only — you move normally. ⚠ anti-cheat risk."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 40f), NocturneText.T("仅对他人有效——自己移动正常。⚠ 反作弊风险。", "Others only — you move normally. ⚠ anti-cheat risk."), _muted);
 
         bool spd = NocturneConfig.SpeedMod.Value;
-        b = Card(x, ref y, w, NocturneText.T("Движение", "Movement"), 2f * RowH + 22f + (spd ? 50f : 0f));
+        b = Card(x, ref y, w, NocturneText.T("移动", "Movement"), 2f * RowH + 22f + (spd ? 50f : 0f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Своя скорость", "Custom speed"), NocturneConfig.SpeedMod);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自定义速度", "Custom speed"), NocturneConfig.SpeedMod);
         if (spd)
-            Slider(b.x, ref by, b.width, NocturneText.T("Множитель", "Multiplier"), NocturneConfig.SpeedMult, 0f, 3f, "0.0");
-        Toggle(b.x, ref by, b.width, NocturneText.T("Инверт управления", "Invert controls"), NocturneConfig.InvertControls);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Клиентское. Большие значения палит античит.", "Client-side. High values trip anti-cheat."), _muted);
+            Slider(b.x, ref by, b.width, NocturneText.T("倍率", "Multiplier"), NocturneConfig.SpeedMult, 0f, 3f, "0.0");
+        Toggle(b.x, ref by, b.width, NocturneText.T("反转操作", "Invert controls"), NocturneConfig.InvertControls);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("客户端。过高数值会触发反作弊。", "Client-side. High values trip anti-cheat."), _muted);
 
         bool sd = NocturneConfig.SelfDrag.Value;
         bool sds = sd && NocturneConfig.SelfDragSmooth.Value;
-        b = Card(x, ref y, w, NocturneText.T("Мышь и призрак", "Mouse & ghost"), 4f * RowH + 52f + (sd ? RowH : 0f) + (sds ? RowH : 0f));
+        b = Card(x, ref y, w, NocturneText.T("鼠标与幽灵", "Mouse & ghost"), 4f * RowH + 52f + (sd ? RowH : 0f) + (sds ? RowH : 0f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Телепорт по ПКМ", "Teleport on RMB"), NocturneConfig.MouseTeleport);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Выбор мышью + ресайз колёсиком", "Mouse select + wheel resize"), NocturneConfig.MouseSelect);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Тащить себя (ЛКМ)", "Drag self (LMB)"), NocturneConfig.SelfDrag);
+        Toggle(b.x, ref by, b.width, NocturneText.T("右键传送", "Teleport on RMB"), NocturneConfig.MouseTeleport);
+        Toggle(b.x, ref by, b.width, NocturneText.T("鼠标选择 + 滚轮缩放", "Mouse select + wheel resize"), NocturneConfig.MouseSelect);
+        Toggle(b.x, ref by, b.width, NocturneText.T("拖动自己（左键）", "Drag self (LMB)"), NocturneConfig.SelfDrag);
         if (sd)
-            Toggle(b.x, ref by, b.width, NocturneText.T("— плавно (скольжение)", "— smooth glide"), NocturneConfig.SelfDragSmooth);
+            Toggle(b.x, ref by, b.width, NocturneText.T("— 平滑滑行", "— smooth glide"), NocturneConfig.SelfDragSmooth);
         if (sds)
-            Slider(b.x, ref by, b.width, NocturneText.T("Скорость", "Speed"), NocturneConfig.SelfDragSpeed, 2f, 14f, "0.0");
+            Slider(b.x, ref by, b.width, NocturneText.T("速度", "Speed"), NocturneConfig.SelfDragSpeed, 2f, 14f, "0.0");
         bool gaBefore = NocturneConfig.GhostAfterStart.Value;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Призрак после старта", "Ghost after start"), NocturneConfig.GhostAfterStart);
+        Toggle(b.x, ref by, b.width, NocturneText.T("开局变幽灵", "Ghost after start"), NocturneConfig.GhostAfterStart);
         if (NocturneConfig.GhostAfterStart.Value && !gaBefore)
             NocturneConfig.GameMaster.Value = false;
-        if (SmallButton(new Rect(b.x + 2f, by, b.width - 4f, 26f), NocturneText.T("СУИЦИД (ПРЕД)", "SUICIDE (IMPOSTOR)"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Суицид", "Suicide"), Patches.GhostStart.Now(), 2.5f, NocturneNotifyKind.Warning);
+        if (SmallButton(new Rect(b.x + 2f, by, b.width - 4f, 26f), NocturneText.T("自杀（内鬼）", "SUICIDE (IMPOSTOR)"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("自杀", "Suicide"), Patches.GhostStart.Now(), 2.5f, NocturneNotifyKind.Warning);
         by += 30f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Настоящая смерть, только за преда и при готовом кд.", "Real death, impostor only, needs kill cooldown ready."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("真死，仅内鬼、击杀冷却就绪时。", "Real death, impostor only, needs kill cooldown ready."), _muted);
     }
 
     private void CheatsMap(float x, ref float y, float w)
@@ -4296,29 +4296,29 @@ public sealed class NocturneMenu : MonoBehaviour
                 zpN++;
         bool zpOn = inMatch && Zipline.OnMap;
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Зиплайн (Fungle)", "Zipline (Fungle)"), zpOn && zpN > 0 ? 88f + zpN * 32f : 26f);
+        Rect b = Card(x, ref y, w, NocturneText.T("滑索（Fungle）", "Zipline (Fungle)"), zpOn && zpN > 0 ? 88f + zpN * 32f : 26f);
         float by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else if (!Zipline.OnMap)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Зиплайна на этой карте нет.", "No zipline on this map."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("此地图上没有滑索。", "No zipline on this map."), _muted);
         else if (zpN == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Отправить кататься.", "Send for a ride."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("派他们去玩。", "Send for a ride."), _muted);
             by += 28f;
             float zpSelw = (b.width - 8f) / 2f;
-            if (SmallButton(new Rect(b.x, by, zpSelw, 24f), NocturneText.T("ВЫБРАТЬ ВСЕХ", "SELECT ALL"), NocturneStyle.Current.Accent))
+            if (SmallButton(new Rect(b.x, by, zpSelw, 24f), NocturneText.T("全选", "SELECT ALL"), NocturneStyle.Current.Accent))
                 RideTargets.All();
-            if (SmallButton(new Rect(b.x + zpSelw + 8f, by, zpSelw, 24f), NocturneText.T("СНЯТЬ ВСЕ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+            if (SmallButton(new Rect(b.x + zpSelw + 8f, by, zpSelw, 24f), NocturneText.T("清除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                 RideTargets.Clear();
             by += 30f;
             string zpTag = RideTargets.Count > 0 ? $" ({RideTargets.Count})" : "";
-            if (SmallButton(new Rect(b.x, by, zpSelw, 24f), NocturneText.T("ВНИЗ ↓", "DOWN ↓") + zpTag, NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Зиплайн", "Zipline"), Zipline.RideSelected(true), 2.5f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + zpSelw + 8f, by, zpSelw, 24f), NocturneText.T("ВВЕРХ ↑", "UP ↑") + zpTag, NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Зиплайн", "Zipline"), Zipline.RideSelected(false), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, zpSelw, 24f), NocturneText.T("向下 ↓", "DOWN ↓") + zpTag, NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("滑索", "Zipline"), Zipline.RideSelected(true), 2.5f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + zpSelw + 8f, by, zpSelw, 24f), NocturneText.T("向上 ↑", "UP ↑") + zpTag, NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("滑索", "Zipline"), Zipline.RideSelected(false), 2.5f, NocturneNotifyKind.Info);
             by += 30f;
             for (int i = 0; i < _roleClients.Count; i++)
                 if (_roleClients[i] != Me())
@@ -4326,90 +4326,90 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         bool ptOn = inMatch && Platform.OnMap;
-        b = Card(x, ref y, w, NocturneText.T("Платформа (Airship)", "Platform (Airship)"), ptOn ? 58f + RowH : 26f);
+        b = Card(x, ref y, w, NocturneText.T("平台（Airship）", "Platform (Airship)"), ptOn ? 58f + RowH : 26f);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else if (!Platform.OnMap)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Платформы на этой карте нет.", "No platform on this map."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("此地图上没有平台。", "No platform on this map."), _muted);
         else
         {
-            Toggle(b.x, ref by, b.width, NocturneText.T("Разблокировать (прятки)", "Unlock (hide & seek)"), NocturneConfig.PlatformUnlock);
-            string state = Platform.IsLeft ? NocturneText.T("слева", "left") : NocturneText.T("справа", "right");
+            Toggle(b.x, ref by, b.width, NocturneText.T("解锁（捉迷藏）", "Unlock (hide & seek)"), NocturneConfig.PlatformUnlock);
+            string state = Platform.IsLeft ? NocturneText.T("左侧", "left") : NocturneText.T("右侧", "right");
             if (Platform.Locked)
-                state += NocturneText.T(" · заблокирована", " · locked");
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Сейчас: ", "Now: ") + state, _muted);
+                state += NocturneText.T(" · 已锁定", " · locked");
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("当前： ", "Now: ") + state, _muted);
             by += 28f;
             float ptw = (b.width - 16f) / 3f;
-            if (SmallButton(new Rect(b.x, by, ptw, 24f), NocturneText.T("◀ ВЛЕВО", "◀ LEFT"), NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Платформа", "Platform"), Platform.Move(true), 2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + ptw + 8f, by, ptw, 24f), NocturneText.T("ПЕРЕКЛЮЧИТЬ", "TOGGLE"), NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Платформа", "Platform"), Platform.Toggle(), 2f, NocturneNotifyKind.Info);
-            if (SmallButton(new Rect(b.x + 2f * ptw + 16f, by, ptw, 24f), NocturneText.T("ВПРАВО ▶", "RIGHT ▶"), NocturneStyle.Current.Accent))
-                NocturneToast.Push(NocturneText.T("Платформа", "Platform"), Platform.Move(false), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, ptw, 24f), NocturneText.T("◀ 左移", "◀ LEFT"), NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("平台", "Platform"), Platform.Move(true), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + ptw + 8f, by, ptw, 24f), NocturneText.T("切换", "TOGGLE"), NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("平台", "Platform"), Platform.Toggle(), 2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x + 2f * ptw + 16f, by, ptw, 24f), NocturneText.T("右移 ▶", "RIGHT ▶"), NocturneStyle.Current.Accent))
+                NocturneToast.Push(NocturneText.T("平台", "Platform"), Platform.Move(false), 2f, NocturneNotifyKind.Info);
         }
 
-        b = Card(x, ref y, w, NocturneText.T("Двери", "Doors"), inMatch ? 30f * 2f + RowH + 6f : 26f);
+        b = Card(x, ref y, w, NocturneText.T("门", "Doors"), inMatch ? 30f * 2f + RowH + 6f : 26f);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             cw = (b.width - 10f) / 2f;
-            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("ЗАКРЫТЬ ВСЕ", "CLOSE ALL"), acc))
+            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("全部关闭", "CLOSE ALL"), acc))
                 NocturneDoors.CloseAll();
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("ОТКРЫТЬ ВСЕ", "OPEN ALL"), acc))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("全部打开", "OPEN ALL"), acc))
                 NocturneDoors.OpenAll();
             by += 30f;
-            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("ЗАПИНИТЬ ВСЕ", "PIN ALL"), acc))
+            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("全部锁定", "PIN ALL"), acc))
                 NocturneDoors.PinAll();
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("СНЯТЬ ПИНЫ", "UNPIN"), red))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("解除锁定", "UNPIN"), red))
                 NocturneDoors.UnpinAll();
             by += 30f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Авто-открытие (без миниигры)", "Auto-open (no minigame)"), NocturneConfig.DoorKeepOpen);
+            Toggle(b.x, ref by, b.width, NocturneText.T("自动开启（跳过小游戏）", "Auto-open (no minigame)"), NocturneConfig.DoorKeepOpen);
         }
 
         float sabBody = 30f * 4f + RowH * 3f + 4f;
-        b = Card(x, ref y, w, NocturneText.T("Саботаж", "Sabotage"), (inMatch ? sabBody : 26f) + RowH);
+        b = Card(x, ref y, w, NocturneText.T("破坏", "Sabotage"), (inMatch ? sabBody : 26f) + RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Обход саботажа связи", "Bypass comms sabotage"), NocturneConfig.CommsBypass);
+        Toggle(b.x, ref by, b.width, NocturneText.T("绕过通讯破坏", "Bypass comms sabotage"), NocturneConfig.CommsBypass);
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
             cw = (b.width - 10f) / 2f;
-            string mainLbl = mapId == 2 ? NocturneText.T("СЕЙСМИКА", "SEISMIC") : mapId == 4 ? NocturneText.T("КРУШЕНИЕ", "CRASH") : NocturneText.T("РЕАКТОР", "REACTOR");
-            if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ПОЧИНИТЬ ВСЁ", "FIX ALL"), new Color(0.30f, 0.72f, 0.40f)))
+            string mainLbl = mapId == 2 ? NocturneText.T("地震", "SEISMIC") : mapId == 4 ? NocturneText.T("坠落", "CRASH") : NocturneText.T("反应堆", "REACTOR");
+            if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("修复所有", "FIX ALL"), new Color(0.30f, 0.72f, 0.40f)))
                 NocturneSabotage.Fix();
             by += 30f;
-            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("САБОТАЖ ВСЕГО", "SABOTAGE ALL"), red))
+            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("破坏全部", "SABOTAGE ALL"), red))
                 NocturneSabotage.All();
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("СЛУЧАЙНЫЙ", "RANDOM"), acc))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("随机", "RANDOM"), acc))
                 NocturneSabotage.Random();
             by += 30f;
             if (SmallButton(new Rect(b.x, by, cw, 26f), mainLbl, acc))
                 NocturneSabotage.Main();
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("СВЯЗЬ", "COMMS"), acc))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("通讯", "COMMS"), acc))
                 NocturneSabotage.Comms();
             by += 30f;
-            if (!fungle && SmallButton(new Rect(b.x, by, hasO2 ? cw : b.width, 26f), NocturneText.T("СВЕТ", "LIGHTS"), acc))
+            if (!fungle && SmallButton(new Rect(b.x, by, hasO2 ? cw : b.width, 26f), NocturneText.T("灯光", "LIGHTS"), acc))
                 NocturneSabotage.Lights();
-            if (hasO2 && SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("КИСЛОРОД", "OXYGEN"), acc))
+            if (hasO2 && SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("氧气", "OXYGEN"), acc))
                 NocturneSabotage.Oxygen();
             if (!fungle || hasO2)
                 by += 30f;
-            if (fungle && SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ГРИБЫ (MIXUP)", "MUSHROOM MIXUP"), acc))
+            if (fungle && SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("蘑菇（MIXUP）", "MUSHROOM MIXUP"), acc))
             {
                 NocturneSabotage.Mush();
             }
             if (fungle)
                 by += 30f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Спам главного саботажа", "Spam main sabotage"), NocturneConfig.SabSpamReactor);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Мульти-саботаж (пред, не хост)", "Multi sabotage (impostor, non-host)"), NocturneConfig.MultiSabotage);
+            Toggle(b.x, ref by, b.width, NocturneText.T("主破坏刷屏", "Spam main sabotage"), NocturneConfig.SabSpamReactor);
+            Toggle(b.x, ref by, b.width, NocturneText.T("多重破坏（内鬼，非房主）", "Multi sabotage (impostor, non-host)"), NocturneConfig.MultiSabotage);
             if (!fungle)
-                Toggle(b.x, ref by, b.width, NocturneText.T("Держать свет выключенным", "Keep lights off"), NocturneConfig.SabAutoLights);
+                Toggle(b.x, ref by, b.width, NocturneText.T("保持灯灭", "Keep lights off"), NocturneConfig.SabAutoLights);
             if (fungle)
-                Toggle(b.x, ref by, b.width, NocturneText.T("Бесконечные грибы", "Infinite mushroom"), NocturneConfig.SabInfMushroom);
+                Toggle(b.x, ref by, b.width, NocturneText.T("无限蘑菇", "Infinite mushroom"), NocturneConfig.SabInfMushroom);
         }
     }
 
@@ -4419,15 +4419,15 @@ public sealed class NocturneMenu : MonoBehaviour
         Color acc = NocturneStyle.Current.Accent;
         float cw;
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Прятки: слив таймера", "Hide & seek: drain timer"), 28f + RowH + 50f);
+        Rect b = Card(x, ref y, w, NocturneText.T("捉迷藏：耗尽计时", "Hide & seek: drain timer"), 28f + RowH + 50f);
         float by = b.y;
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f),
             TaskDrain.Running
-                ? NocturneText.T("Идёт слив — таймер мирных утекает.", "Draining — the crew timer is running out.")
-                : NocturneText.T("Только в прятках. Работает и призраком.", "Hide and seek only. Keeps working as a ghost."), _muted);
+                ? NocturneText.T("正在耗尽——船员计时在流失。", "Draining — the crew timer is running out.")
+                : NocturneText.T("仅捉迷藏模式。幽灵状态也有效。", "Hide and seek only. Keeps working as a ghost."), _muted);
         by += 26f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сливать таймер", "Drain the timer"), NocturneConfig.HnsDrain);
-        Slider(b.x, ref by, b.width, NocturneText.T("Шаг отправки, сек", "Send step, sec"), NocturneConfig.HnsDrainStep, 0.15f, 1.5f, "0.00");
+        Toggle(b.x, ref by, b.width, NocturneText.T("耗尽计时", "Drain the timer"), NocturneConfig.HnsDrain);
+        Slider(b.x, ref by, b.width, NocturneText.T("发送步长，秒", "Send step, sec"), NocturneConfig.HnsDrainStep, 0.15f, 1.5f, "0.00");
 
         _roleClients.Clear();
         CollectPlayers(_roleClients);
@@ -4436,17 +4436,17 @@ public sealed class NocturneMenu : MonoBehaviour
             if (_roleClients[i] != Me())
                 tkN++;
         bool tkOn = inMatch && Utils.Host;
-        b = Card(x, ref y, w, NocturneText.T("Задания (хост)", "Tasks (host)"), 26f + (tkOn && tkN > 0 ? 24f + tkN * 32f : 24f));
+        b = Card(x, ref y, w, NocturneText.T("任务（房主）", "Tasks (host)"), 26f + (tkOn && tkN > 0 ? 24f + tkN * 32f : 24f));
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else if (!Utils.Host)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только для хоста.", "Host only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅房主可用。", "Host only."), _muted);
         else if (tkN == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Обнулить — палит, завалить — гора тасков.", "Clear exposes them, flood buries in tasks."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("清零——会被发现，灌满——堆满任务。", "Clear exposes them, flood buries in tasks."), _muted);
             by += 26f;
             for (int i = 0; i < _roleClients.Count; i++)
                 if (_roleClients[i] != Me())
@@ -4454,80 +4454,80 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         float fakeBody = inMatch ? 40f + 30f + RowH * 2f : 26f;
-        b = Card(x, ref y, w, NocturneText.T("Фейк-задания", "Fake tasks"), fakeBody);
+        b = Card(x, ref y, w, NocturneText.T("假任务", "Fake tasks"), fakeBody);
         by = b.y;
         if (!inMatch)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In match only."), _muted);
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("Проиграть анимацию задания для окружающих (казаться занятым).", "Play a task animation for others (look busy)."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 36f), NocturneText.T("对周围播放任务动画（看起来很忙）。", "Play a task animation for others (look busy)."), _muted);
             by += 40f;
             cw = (b.width - 20f) / 3f;
-            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("ЩИТЫ", "SHIELDS"), acc))
+            if (SmallButton(new Rect(b.x, by, cw, 26f), NocturneText.T("护盾", "SHIELDS"), acc))
                 NocturneFakeTasks.Shields();
-            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("АСТЕРОИДЫ", "ASTEROIDS"), acc))
+            if (SmallButton(new Rect(b.x + cw + 10f, by, cw, 26f), NocturneText.T("陨石", "ASTEROIDS"), acc))
                 NocturneFakeTasks.Asteroids();
-            if (SmallButton(new Rect(b.x + (cw + 10f) * 2f, by, cw, 26f), NocturneText.T("МУСОР", "GARBAGE"), acc))
+            if (SmallButton(new Rect(b.x + (cw + 10f) * 2f, by, cw, 26f), NocturneText.T("垃圾", "GARBAGE"), acc))
                 NocturneFakeTasks.Garbage();
             by += 30f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Скан в медбэе (постоянно)", "Medbay scan (held)"), NocturneConfig.FakeScan);
+            Toggle(b.x, ref by, b.width, NocturneText.T("医务室扫描（持续）", "Medbay scan (held)"), NocturneConfig.FakeScan);
             if (NocturneFakeTasks.HasCams())
-                Toggle(b.x, ref by, b.width, NocturneText.T("Камеры «заняты»", "Cameras in use"), NocturneConfig.FakeCams);
+                Toggle(b.x, ref by, b.width, NocturneText.T("摄像头“占用”", "Cameras in use"), NocturneConfig.FakeCams);
             else
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Камеры — не на этой карте.", "Cameras — not on this map."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("摄像头——不在此地图。", "Cameras — not on this map."), _muted);
         }
 
         bool autoOn = NocturneConfig.AutoTasks.Value;
-        b = Card(x, ref y, w, NocturneText.T("Авто-задания", "Auto tasks"), RowH + (autoOn ? 76f : 24f));
+        b = Card(x, ref y, w, NocturneText.T("自动任务", "Auto tasks"), RowH + (autoOn ? 76f : 24f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Делать задания сами", "Finish tasks by itself"), NocturneConfig.AutoTasks);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自动完成", "Finish tasks by itself"), NocturneConfig.AutoTasks);
         if (autoOn)
         {
-            Slider(b.x, ref by, b.width, NocturneText.T("Пауза между заданиями", "Gap between tasks"), NocturneConfig.AutoTasksDelay, 0.8f, 6f, "0.0");
+            Slider(b.x, ref by, b.width, NocturneText.T("任务间隔", "Gap between tasks"), NocturneConfig.AutoTasksDelay, 0.8f, 6f, "0.0");
             int left = NocturneAutoTasks.Left();
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f),
-                inMatch ? NocturneText.T("Осталось: ", "Left: ") + $"<b>{left}</b>" : NocturneText.T("Только в матче, мирным.", "In match, crewmate only."), _muted);
+                inMatch ? NocturneText.T("剩余： ", "Left: ") + $"<b>{left}</b>" : NocturneText.T("仅对局中，船员可用。", "In match, crewmate only."), _muted);
         }
         else
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("По одному, не в собрании. Не для предов.", "One by one, never in a meeting. Not for impostors."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("逐个进行，不在会议中。内鬼不可用。", "One by one, never in a meeting. Not for impostors."), _muted);
     }
 
     private void CheatsChat(float x, ref float y, float w)
     {
-        Rect b = Card(x, ref y, w, NocturneText.T("Отправить в чат", "Chat sender"), 4f * RowH + 50f);
+        Rect b = Card(x, ref y, w, NocturneText.T("发送到聊天", "Chat sender"), 4f * RowH + 50f);
         float by = b.y;
         _chatSend = CustomText(new Rect(b.x + 2f, by, b.width - 4f, 26f), _chatSend ?? "", "chatSend");
         NocturneChatSender.Message = _chatSend ?? "";
         by += 32f;
         float chHalf = (b.width - 10f) / 2f;
-        if (SmallButton(new Rect(b.x, by, chHalf, 26f), NocturneText.T("ОТПРАВИТЬ", "SEND"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, chHalf, 26f), NocturneText.T("发送", "SEND"), NocturneStyle.Current.Accent))
             NocturneChatSender.SendNow();
-        if (SmallButton(new Rect(b.x + chHalf + 10f, by, chHalf, 26f), NocturneChatSender.Spamming ? NocturneText.T("СПАМ: ВКЛ", "SPAM: ON") : NocturneText.T("СПАМ: ВЫКЛ", "SPAM: OFF"), NocturneChatSender.Spamming ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x + chHalf + 10f, by, chHalf, 26f), NocturneChatSender.Spamming ? NocturneText.T("刷屏：开", "SPAM: ON") : NocturneText.T("刷屏：关", "SPAM: OFF"), NocturneChatSender.Spamming ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Accent))
             NocturneChatSender.Spamming = !NocturneChatSender.Spamming;
         by += 30f;
         bool floodReady = NocturneChatSender.FloodReady;
-        string floodLabel = floodReady ? NocturneText.T("ЗАТОПИТЬ ЧАТ", "FLOOD CHAT") : NocturneText.T("ОСТЫВАЕТ ", "COOLDOWN ") + Mathf.CeilToInt(NocturneChatSender.FloodCooldownLeft) + "с";
+        string floodLabel = floodReady ? NocturneText.T("淹没聊天", "FLOOD CHAT") : NocturneText.T("冷却 ", "COOLDOWN ") + Mathf.CeilToInt(NocturneChatSender.FloodCooldownLeft) + "秒";
         if (SmallButton(new Rect(b.x, by, b.width - 4f, 26f), floodLabel, floodReady ? new Color(0.9f, 0.4f, 0.4f) : NocturneStyle.Current.Button) && floodReady)
-            NocturneToast.Push(NocturneText.T("Чат", "Chat"), NocturneChatSender.Flood(), 2f, NocturneNotifyKind.Warning);
+            NocturneToast.Push(NocturneText.T("聊天", "Chat"), NocturneChatSender.Flood(), 2f, NocturneNotifyKind.Warning);
         by += 30f;
-        Slider(b.x, ref by, b.width, NocturneText.T("Задержка (с)", "Delay (s)"), NocturneConfig.ChatSpamDelay, 1.5f, 10f, "0.0");
+        Slider(b.x, ref by, b.width, NocturneText.T("延迟（秒）", "Delay (s)"), NocturneConfig.ChatSpamDelay, 1.5f, 10f, "0.0");
         by += 22f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Чат в лобби/митинге. Малая задержка — кик за флуд.", "Chat in lobby/meeting. Low delay — flood kick."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("在大厅/会议中聊天。延迟过短会因刷屏被踢。", "Chat in lobby/meeting. Low delay — flood kick."), _muted);
 
         const int qcCols = 5;
         int qcRows = Mathf.CeilToInt(NocturneQuickChatChain.KnownSubs.Length / (float)qcCols);
         float qcListHeight = _qcWordListOpen ? qcRows * 30f + 4f : 0f;
-        b = Card(x, ref y, w, NocturneText.T("Цепочка Quick Chat", "Quick Chat chain"), 5f * RowH + 34f + qcListHeight);
+        b = Card(x, ref y, w, NocturneText.T("Quick Chat 链", "Quick Chat chain"), 5f * RowH + 34f + qcListHeight);
         by = b.y;
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f),
-            NocturneText.T("Через запятую.", "Comma-separated."), _muted);
+            NocturneText.T("以逗号分隔。", "Comma-separated."), _muted);
         by += 24f;
         _qcChain = CustomText(new Rect(b.x + 2f, by, b.width - 4f, 26f), _qcChain ?? "", "qcChain");
         by += 32f;
         float qcHalf = (b.width - 8f) / 2f;
-        if (SmallButton(new Rect(b.x, by, qcHalf, 26f), _qcWordListOpen ? NocturneText.T("СПИСОК СЛОВ ▴", "WORD LIST ▴") : NocturneText.T("СПИСОК СЛОВ ▾", "WORD LIST ▾"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, qcHalf, 26f), _qcWordListOpen ? NocturneText.T("词表 ▴", "WORD LIST ▴") : NocturneText.T("词表 ▾", "WORD LIST ▾"), NocturneStyle.Current.Accent))
             _qcWordListOpen = !_qcWordListOpen;
-        if (SmallButton(new Rect(b.x + qcHalf + 8f, by, qcHalf, 26f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(b.x + qcHalf + 8f, by, qcHalf, 26f), NocturneText.T("清空", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
             _qcChain = "";
         by += 30f;
         if (_qcWordListOpen)
@@ -4546,30 +4546,30 @@ public sealed class NocturneMenu : MonoBehaviour
             }
             by += qcRows * 30f + 4f;
         }
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), _qcDupSelf ? NocturneText.T("СЕБЕ КОПИЮ: ВКЛ", "COPY TO SELF: ON") : NocturneText.T("СЕБЕ КОПИЮ: ВЫКЛ", "COPY TO SELF: OFF"), _qcDupSelf ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), _qcDupSelf ? NocturneText.T("发给自己：开", "COPY TO SELF: ON") : NocturneText.T("发给自己：关", "COPY TO SELF: OFF"), _qcDupSelf ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
             _qcDupSelf = !_qcDupSelf;
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ОТПРАВИТЬ ЦЕПОЧКОЙ", "SEND CHAIN"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("按链发送", "SEND CHAIN"), NocturneStyle.Current.Accent))
             NocturneToast.Push(NocturneText.T("Quick Chat", "Quick Chat"), NocturneQuickChatChain.SendFromText(_qcChain, _qcDupSelf), 2.2f, NocturneNotifyKind.Info);
 
-        b = Card(x, ref y, w, NocturneText.T("Шаблон Quick Chat (с игроком)", "Quick Chat template (with player)"), 6f * RowH + 66f);
+        b = Card(x, ref y, w, NocturneText.T("Quick Chat 模板（含玩家）", "Quick Chat template (with player)"), 6f * RowH + 66f);
         by = b.y;
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 38f),
-            NocturneText.T("ID корневой фразы-шаблона (например, обвинение). Игрок A берётся по ЛКМ-выбору.",
+            NocturneText.T("模板根短语 ID（例如指控）。A 玩家通过左键选择。",
                 "Template root phrase id (e.g. an accusation). Player A is whoever is LMB-selected."), _muted);
         by += 40f;
         _qcTemplate = CustomText(new Rect(b.x + 2f, by, b.width - 4f, 26f), _qcTemplate ?? "", "qcTemplate");
         by += 32f;
         Lab(new Rect(b.x + 2f, by, b.width - 2f, 38f),
-            NocturneText.T("ID игрока B (необязательно, для шаблонов на двоих — например, «A видел B в венте»).",
+            NocturneText.T("B 玩家 ID（可选，用于双人模板——例如「A 看到 B 穿管」）。",
                 "Player B id (optional, for two-player templates — e.g. \"A saw B vent\")."), _muted);
         by += 40f;
         _qcTemplateB = CustomText(new Rect(b.x + 2f, by, b.width - 4f, 26f), _qcTemplateB ?? "", "qcTemplateB");
         by += 32f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), _qcDupSelf ? NocturneText.T("СЕБЕ КОПИЮ: ВКЛ", "COPY TO SELF: ON") : NocturneText.T("СЕБЕ КОПИЮ: ВЫКЛ", "COPY TO SELF: OFF"), _qcDupSelf ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), _qcDupSelf ? NocturneText.T("发给自己：开", "COPY TO SELF: ON") : NocturneText.T("发给自己：关", "COPY TO SELF: OFF"), _qcDupSelf ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
             _qcDupSelf = !_qcDupSelf;
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("ОТПРАВИТЬ НА ВЫБРАННОГО", "SEND ON SELECTED"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, b.width, 26f), NocturneText.T("发送到所选", "SEND ON SELECTED"), NocturneStyle.Current.Accent))
         {
             PlayerControl playerB = PlayerByIdText(_qcTemplateB);
             string result = playerB != null
@@ -4584,33 +4584,33 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, PlayersSubsRu, PlayersSubsEn);
 
         Grp(1);
-        Rect b = Card(x, ref y, w, NocturneText.T("Роли и инфо", "Roles & info"), (NocturneConfig.RevealVotes.Value ? 9f : 8f) * RowH, true);
+        Rect b = Card(x, ref y, w, NocturneText.T("角色与信息", "Roles & info"), (NocturneConfig.RevealVotes.Value ? 9f : 8f) * RowH, true);
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать роли всех", "Reveal all roles"), NocturneConfig.RevealRoles);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Инфо над игроками (лобби)", "Info above players (lobby)"), NocturneConfig.VisualPlayerInfoNames);
-        Toggle(b.x, ref by, b.width, NocturneText.T("ID над игроками", "Player id above names"), NocturneConfig.ShowPlayerIds);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Френдкод над игроками", "Friend code above names"), NocturneConfig.ShowPlayerFc);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Счётчик войткиков", "Votekick counter"), NocturneConfig.ShowVotekickCount);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ники в прятках", "Names in Hide and Seek"), NocturneConfig.ForceNamesInHns);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Раскрыть Оборотня", "Unmask shapeshifter"), NocturneConfig.UnmaskShapeshifter);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Голоса на собрании", "Votes in meeting"), NocturneConfig.RevealVotes);
+        Toggle(b.x, ref by, b.width, NocturneText.T("显示所有人角色", "Reveal all roles"), NocturneConfig.RevealRoles);
+        Toggle(b.x, ref by, b.width, NocturneText.T("玩家上方信息（大厅）", "Info above players (lobby)"), NocturneConfig.VisualPlayerInfoNames);
+        Toggle(b.x, ref by, b.width, NocturneText.T("昵称上方 ID", "Player id above names"), NocturneConfig.ShowPlayerIds);
+        Toggle(b.x, ref by, b.width, NocturneText.T("昵称上方 FriendCode", "Friend code above names"), NocturneConfig.ShowPlayerFc);
+        Toggle(b.x, ref by, b.width, NocturneText.T("投票踢出计数", "Votekick counter"), NocturneConfig.ShowVotekickCount);
+        Toggle(b.x, ref by, b.width, NocturneText.T("捉迷藏显示昵称", "Names in Hide and Seek"), NocturneConfig.ForceNamesInHns);
+        Toggle(b.x, ref by, b.width, NocturneText.T("揭穿变形者", "Unmask shapeshifter"), NocturneConfig.UnmaskShapeshifter);
+        Toggle(b.x, ref by, b.width, NocturneText.T("会议中显示投票", "Votes in meeting"), NocturneConfig.RevealVotes);
         if (NocturneConfig.RevealVotes.Value)
-            Toggle(b.x, ref by, b.width, NocturneText.T("Раскрывать анонимные", "De-anonymize voters"), NocturneConfig.RevealAnonVotes);
+            Toggle(b.x, ref by, b.width, NocturneText.T("揭示匿名投票", "De-anonymize voters"), NocturneConfig.RevealAnonVotes);
 
         _roleClients.Clear();
         CollectPlayers(_roleClients);
         float rbBody = 30f + (_roleClients.Count > 0 ? _roleClients.Count * 32f : 26f);
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Форс ролей (хост)", "Force roles (host)"), rbBody, true);
+        b = Card(x, ref y, w, NocturneText.T("强制角色（房主）", "Force roles (host)"), rbBody, true);
         by = b.y;
         if (!Utils.Host)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только хост. Роли выдаются на старте матча.", "Host only. Roles apply on match start."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅房主。角色在开局时分配。", "Host only. Roles apply on match start."), _muted);
         else if (_roleClients.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет игроков в лобби.", "No players in lobby."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("大厅中没有玩家。", "No players in lobby."), _muted);
         else
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 110f, 24f), $"{NocturneText.T("Назначено", "Assigned")}: <b>{NocturneForceRoles.Count}</b>   {NocturneText.T("выдача на старте", "applied on start")}", _muted);
-            if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("СБРОС", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
+            Lab(new Rect(b.x + 2f, by, b.width - 110f, 24f), $"{NocturneText.T("已分配", "Assigned")}: <b>{NocturneForceRoles.Count}</b>   {NocturneText.T("开局时应用", "applied on start")}", _muted);
+            if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("重置", "CLEAR"), new Color(0.9f, 0.4f, 0.4f)))
                 NocturneForceRoles.Clear();
             by += 30f;
             for (int i = 0; i < _roleClients.Count; i++)
@@ -4624,37 +4624,37 @@ public sealed class NocturneMenu : MonoBehaviour
         float autoH = immReady ? 2f * RowH + (NocturneConfig.VentTpAuto.Value ? 50f : 0f) : 0f;
         float immBody = 30f + (immReady ? 30f : 0f) + (immReady && _immPlayers.Count > 0 ? 60f : 0f) + autoH + (immReady && _immPlayers.Count > 0 ? _immPlayers.Count * 32f : 26f);
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Действия на игроках", "Player actions"), immBody, true);
+        b = Card(x, ref y, w, NocturneText.T("对玩家操作", "Player actions"), immBody, true);
         by = b.y;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Работает вне хоста. Нужен ванильный хост.", "Works off-host. Needs a vanilla host."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("非房主也有效。需要原版房主。", "Works off-host. Needs a vanilla host."), _muted);
         by += 28f;
         if (!immReady)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Только в матче.", "In-match only."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("仅对局中可用。", "In-match only."), _muted);
         else if (_immPlayers.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет игроков.", "No players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有玩家。", "No players."), _muted);
         else
         {
             int vt = ventCount > 0 ? ((NocturneVentTp.Vent % ventCount) + ventCount) % ventCount : 0;
             NocturneVentTp.Vent = vt;
-            Lab(new Rect(b.x + 2f, by, b.width - 200f, 24f), NocturneText.T("Вент для ТП: ", "TP vent: ") + (ventCount > 0 ? vt.ToString() : "-") + $"   {NocturneText.T("отмечено", "marked")}: {NocturneVentTp.MarkedCount}", _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 200f, 24f), NocturneText.T("传送管： ", "TP vent: ") + (ventCount > 0 ? vt.ToString() : "-") + $"   {NocturneText.T("已标记", "marked")}: {NocturneVentTp.MarkedCount}", _muted);
             if (SmallButton(new Rect(b.x + b.width - 116f, by, 34f, 24f), "◂", NocturneStyle.Current.Accent) && ventCount > 0)
                 NocturneVentTp.Vent = (vt - 1 + ventCount) % ventCount;
             if (SmallButton(new Rect(b.x + b.width - 40f, by, 34f, 24f), "▸", NocturneStyle.Current.Accent) && ventCount > 0)
                 NocturneVentTp.Vent = (vt + 1) % ventCount;
             by += 30f;
             float selw = (b.width - 8f) / 2f;
-            if (SmallButton(new Rect(b.x, by, selw, 24f), NocturneText.T("ВЫБРАТЬ ВСЕХ", "SELECT ALL"), NocturneStyle.Current.Accent))
+            if (SmallButton(new Rect(b.x, by, selw, 24f), NocturneText.T("全选", "SELECT ALL"), NocturneStyle.Current.Accent))
                 NocturneVentTp.MarkAll();
-            if (SmallButton(new Rect(b.x + selw + 8f, by, selw, 24f), NocturneText.T("СНЯТЬ ВСЕ", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
+            if (SmallButton(new Rect(b.x + selw + 8f, by, selw, 24f), NocturneText.T("清除全部", "CLEAR ALL"), new Color(0.9f, 0.4f, 0.4f)))
                 NocturneVentTp.ClearMarks();
             by += 30f;
-            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("ВЫКИНУТЬ ВСЕХ ИЗ ВЕНТОВ", "KICK EVERYONE FROM VENTS"), new Color(0.78f, 0.42f, 0.95f)))
-                NocturneToast.Push(NocturneText.T("Венты", "Vents"), NocturneVentTp.KickAllFromVents(), 2.2f, NocturneNotifyKind.Info);
+            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("把所有人踢出管", "KICK EVERYONE FROM VENTS"), new Color(0.78f, 0.42f, 0.95f)))
+                NocturneToast.Push(NocturneText.T("穿管", "Vents"), NocturneVentTp.KickAllFromVents(), 2.2f, NocturneNotifyKind.Info);
             by += 30f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Авто-раскидывание отмеченных", "Auto-scatter marked"), NocturneConfig.VentTpAuto);
+            Toggle(b.x, ref by, b.width, NocturneText.T("自动散布标记者", "Auto-scatter marked"), NocturneConfig.VentTpAuto);
             if (NocturneConfig.VentTpAuto.Value)
-                Slider(b.x, ref by, b.width, NocturneText.T("Интервал", "Interval"), NocturneConfig.VentTpAutoDelay, 0.3f, 10f, "0.0");
-            Toggle(b.x, ref by, b.width, NocturneText.T("Сбор на предателя (килл/морф/невидимость)", "Rally to impostor (kill/morph/vanish)"), NocturneConfig.ImpTrap);
+                Slider(b.x, ref by, b.width, NocturneText.T("间隔", "Interval"), NocturneConfig.VentTpAutoDelay, 0.3f, 10f, "0.0");
+            Toggle(b.x, ref by, b.width, NocturneText.T("向内鬼集合（击杀/变形/隐身）", "Rally to impostor (kill/morph/vanish)"), NocturneConfig.ImpTrap);
             for (int i = 0; i < _immPlayers.Count; i++)
                 ImmortalRow(b.x, ref by, b.width, _immPlayers[i], vt);
         }
@@ -4663,28 +4663,28 @@ public sealed class NocturneMenu : MonoBehaviour
         ShieldCard(x, ref y, w);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Морф (хост)", "Morph (host)"), 2f * RowH + 22f, true);
+        b = Card(x, ref y, w, NocturneText.T("变形（房主）", "Morph (host)"), 2f * RowH + 22f, true);
         by = b.y;
         float mw2 = (b.width - 8f) / 2f;
-        if (SmallButton(new Rect(b.x, by, mw2, 24f), NocturneText.T("ВЫБР. → В МЕНЯ", "SELECTED → ME"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.Into(NocturneMouseTools.Selected, PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(b.x + mw2 + 8f, by, mw2, 24f), NocturneText.T("ВСЕХ → В ВЫБР.", "ALL → SELECTED"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.IntoAll(NocturneMouseTools.Selected), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, mw2, 24f), NocturneText.T("所选 → 我", "SELECTED → ME"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.Into(NocturneMouseTools.Selected, PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x + mw2 + 8f, by, mw2, 24f), NocturneText.T("所有人 → 所选", "ALL → SELECTED"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.IntoAll(NocturneMouseTools.Selected), 2f, NocturneNotifyKind.Info);
         by += 30f;
-        if (SmallButton(new Rect(b.x, by, mw2, 24f), NocturneText.T("ВСЕХ → В МЕНЯ", "ALL → ME"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.IntoAll(PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(b.x + mw2 + 8f, by, mw2, 24f), NocturneText.T("СБРОС МОРФА", "REVERT ALL"), new Color(0.9f, 0.4f, 0.4f)))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.RevertAll(), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, mw2, 24f), NocturneText.T("所有人 → 我", "ALL → ME"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.IntoAll(PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x + mw2 + 8f, by, mw2, 24f), NocturneText.T("重置变形", "REVERT ALL"), new Color(0.9f, 0.4f, 0.4f)))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.RevertAll(), 2f, NocturneNotifyKind.Info);
 
         InnerNetClient net = GuardNet();
         _guardClients.Clear();
         CollectClients(_guardClients);
         float listBody = _guardClients.Count > 0 ? _guardClients.Count * (RowH + 6f) : 28f;
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Игроки в лобби", "Players in lobby"), listBody, true);
+        b = Card(x, ref y, w, NocturneText.T("大厅中玩家", "Players in lobby"), listBody, true);
         by = b.y;
         if (_guardClients.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 26f), NocturneText.T("Зайди в лобби как хост.", "Join a lobby as host."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 26f), NocturneText.T("以房主身份进入大厅。", "Join a lobby as host."), _muted);
         else
             for (int i = 0; i < _guardClients.Count; i++)
                 PlayerRow(b.x, ref by, b.width, net, _guardClients[i]);
@@ -4716,7 +4716,7 @@ public sealed class NocturneMenu : MonoBehaviour
         return null;
     }
 
-    private static readonly string[] ActTabsRu = { "ДЕЙСТ.", "ОБЛИК", "АТАКА" };
+    private static readonly string[] ActTabsRu = { "操作", "外观", "攻击" };
     private static readonly string[] ActTabsEn = { "ACTIONS", "LOOK", "ATTACK" };
 
     private int _cardAct;
@@ -4745,10 +4745,10 @@ public sealed class NocturneMenu : MonoBehaviour
         float ry = y;
 
         float listH = _cardPlayers.Count > 0 ? _cardPlayers.Count * 30f + 10f : 26f;
-        Rect b = Card(x, ref ly, lw, NocturneText.T("Игроки", "Players"), listH);
+        Rect b = Card(x, ref ly, lw, NocturneText.T("玩家", "Players"), listH);
         float by = b.y;
         if (_cardPlayers.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет игроков.", "No players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有玩家。", "No players."), _muted);
         else
         {
             var box = new Rect(b.x, by, b.width, listH);
@@ -4762,10 +4762,10 @@ public sealed class NocturneMenu : MonoBehaviour
                 CardRow(b.x + 5f, ref by, b.width - 10f, _cardPlayers[i]);
         }
 
-        b = Card(x, ref ly, lw, NocturneText.T("Карточка", "Card"), sel != null ? 296f : 26f);
+        b = Card(x, ref ly, lw, NocturneText.T("卡片", "Card"), sel != null ? 296f : 26f);
         by = b.y;
         if (sel == null)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Выбери игрока.", "Pick a player."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("选择一名玩家。", "Pick a player."), _muted);
         else
             CardInfo(b.x, ref by, b.width, sel, c);
 
@@ -4774,12 +4774,12 @@ public sealed class NocturneMenu : MonoBehaviour
 
         bool acts = sel != null && !me;
         int rows = _cardAct == 0 ? 6 : _cardAct == 1 ? 3 : 2;
-        b = Card(rx, ref ry, rw, NocturneText.T("Действия", "Actions"), acts ? 34f + rows * 30f : 26f);
+        b = Card(rx, ref ry, rw, NocturneText.T("操作", "Actions"), acts ? 34f + rows * 30f : 26f);
         by = b.y;
         if (sel == null)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Выбери игрока.", "Pick a player."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("选择一名玩家。", "Pick a player."), _muted);
         else if (me)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Это ты.", "That's you."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("这是你。", "That's you."), _muted);
         else
         {
             ActTabs(b.x, ref by, b.width);
@@ -4791,7 +4791,7 @@ public sealed class NocturneMenu : MonoBehaviour
                 CardAttack(b.x, ref by, b.width, sel);
         }
 
-        b = Card(rx, ref ry, rw, NocturneText.T("Модерация", "Moderation"), acts ? 64f : 26f);
+        b = Card(rx, ref ry, rw, NocturneText.T("管理", "Moderation"), acts ? 64f : 26f);
         by = b.y;
         if (!acts)
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("—", "—"), _muted);
@@ -4842,7 +4842,7 @@ public sealed class NocturneMenu : MonoBehaviour
         {
             string nm = pc.Data != null ? pc.Data.PlayerName : "?";
             if (pc == PlayerControl.LocalPlayer)
-                nm += "   <color=#8A94AC><size=11>" + NocturneText.T("это ты", "you") + "</size></color>";
+                nm += "   <color=#8A94AC><size=11>" + NocturneText.T("这是你", "you") + "</size></color>";
             Lab(new Rect(r.x + 28f, r.y, r.width - 32f, r.height), nm, on ? _rowSel : _rowName);
         }
         if (GUI.Button(r, GUIContent.none, _invisible))
@@ -4862,58 +4862,58 @@ public sealed class NocturneMenu : MonoBehaviour
         byte pid = pc.PlayerId;
 
         bool watch = NocturneFollow.IsTarget(pid);
-        if (CardBtn(x, y, bw, 0, watch ? NocturneText.T("СТОП", "STOP") : NocturneText.T("СЛЕДИТЬ", "WATCH"), watch ? CGold : CBlue))
-            NocturneToast.Push(NocturneText.T("Слежка", "Watch"), NocturneFollow.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ЗРЕНИЕ", "VISION"), NocturneBlind.IsDark(pid) || NocturneBlind.IsBright(pid) ? CGold : CGray))
-            NocturneToast.Push(NocturneText.T("Зрение", "Vision"), NocturneBlind.Cycle(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ШЕПНУТЬ", "WHISPER"), CBlue))
+        if (CardBtn(x, y, bw, 0, watch ? NocturneText.T("停止", "STOP") : NocturneText.T("监视", "WATCH"), watch ? CGold : CBlue))
+            NocturneToast.Push(NocturneText.T("跟随", "Watch"), NocturneFollow.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("视野", "VISION"), NocturneBlind.IsDark(pid) || NocturneBlind.IsBright(pid) ? CGold : CGray))
+            NocturneToast.Push(NocturneText.T("视野", "Vision"), NocturneBlind.Cycle(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("私聊", "WHISPER"), CBlue))
             NocturneWhisper.Prefill(pid.ToString());
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ЩИТ", "SHIELD"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Щит", "Shield"), NocturneShield.Give(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("护盾", "SHIELD"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("护盾", "Shield"), NocturneShield.Give(pc), 2.2f, NocturneNotifyKind.Info);
         bool god = NocturneGodMode.IsGranted(pid);
-        if (CardBtn(x, y, bw, 1, god ? NocturneText.T("СНЯТЬ", "UNGOD") : NocturneText.T("БЕСС.", "GOD"), god ? CGold : CGray))
-            NocturneToast.Push(NocturneText.T("Бессмертие", "Immortality"), NocturneGodMode.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("В ВЕНТ", "TO VENT"), CBlue))
-            NocturneToast.Push(NocturneText.T("Вент-ТП", "Vent TP"), NocturneVentTp.Send(pc, NocturneVentTp.Vent), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, god ? NocturneText.T("取消", "UNGOD") : NocturneText.T("无敌", "GOD"), god ? CGold : CGray))
+            NocturneToast.Push(NocturneText.T("无敌", "Immortality"), NocturneGodMode.Toggle(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("进管", "TO VENT"), CBlue))
+            NocturneToast.Push(NocturneText.T("穿管传送", "Vent TP"), NocturneVentTp.Send(pc, NocturneVentTp.Vent), 2.2f, NocturneNotifyKind.Info);
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ВЕНТ-КИК", "VENT KICK"), CPurple))
-            NocturneToast.Push(NocturneText.T("Венты", "Vents"), NocturneVentKick.Kick(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ВЫБИТЬ", "BOOT"), CPurple))
-            NocturneToast.Push(NocturneText.T("Венты", "Vents"), NocturneVentTp.BootOnly(pc, NocturneVentTp.Vent), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("穿管踢出", "VENT KICK"), CPurple))
+            NocturneToast.Push(NocturneText.T("穿管", "Vents"), NocturneVentKick.Kick(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("踢出", "BOOT"), CPurple))
+            NocturneToast.Push(NocturneText.T("穿管", "Vents"), NocturneVentTp.BootOnly(pc, NocturneVentTp.Vent), 2.2f, NocturneNotifyKind.Info);
         bool marked = NocturneVentKick.IsSelected(pid);
-        if (CardBtn(x, y, bw, 2, marked ? NocturneText.T("ОТМЕЧЕН", "MARKED") : NocturneText.T("ОТМЕТИТЬ", "MARK"), marked ? CGold : CGray))
+        if (CardBtn(x, y, bw, 2, marked ? NocturneText.T("已标记", "MARKED") : NocturneText.T("标记", "MARK"), marked ? CGold : CGray))
             NocturneVentKick.ToggleSelect(pid);
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("КИК ОТМ.", "KICK MARKED") + " " + NocturneVentKick.SelectedCount, CPurple))
-            NocturneToast.Push(NocturneText.T("Венты", "Vents"), NocturneVentKick.KickSelected(), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ЗИПЛАЙН", "ZIPLINE"), CPurple))
-            NocturneToast.Push(NocturneText.T("Зиплайн", "Zipline"), Zipline.Ride(pc, true), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("踢标记", "KICK MARKED") + " " + NocturneVentKick.SelectedCount, CPurple))
+            NocturneToast.Push(NocturneText.T("穿管", "Vents"), NocturneVentKick.KickSelected(), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("滑索", "ZIPLINE"), CPurple))
+            NocturneToast.Push(NocturneText.T("滑索", "Zipline"), Zipline.Ride(pc, true), 2.2f, NocturneNotifyKind.Info);
         bool jail = NocturneJail.IsTarget(pid);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ТЮРЬМА", "JAIL"), jail ? CGold : CGray))
+        if (CardBtn(x, y, bw, 2, NocturneText.T("监狱", "JAIL"), jail ? CGold : CGray))
             NocturneJail.ToggleTarget(pid);
         y += 30f;
 
         bool ride = RideTargets.Has(pid);
-        if (CardBtn(x, y, bw, 0, NocturneText.T("КАТАТЬ", "RIDE"), ride ? CGold : CGray))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("载入", "RIDE"), ride ? CGold : CGray))
             RideTargets.Toggle(pid);
         bool petting = NocturnePet.IsTarget(pid);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ГЛАДИТЬ", "PET"), petting ? CGold : CBlue))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), petting ? NocturnePet.Stop2() : NocturnePet.Grab(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("抚摸", "PET"), petting ? CGold : CBlue))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), petting ? NocturnePet.Stop2() : NocturnePet.Grab(pc), 2.2f, NocturneNotifyKind.Info);
         bool chasing = NocturnePet.IsFollow(pid);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ПЁС ЗА", "PET CHASE"), chasing ? CGold : CBlue))
-            NocturneToast.Push(NocturneText.T("Пет", "Pet"), chasing ? NocturnePet.Stop2() : NocturnePet.Chase(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("宠物追", "PET CHASE"), chasing ? CGold : CBlue))
+            NocturneToast.Push(NocturneText.T("宠物", "Pet"), chasing ? NocturnePet.Stop2() : NocturnePet.Chase(pc), 2.2f, NocturneNotifyKind.Info);
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ТАСКИ+", "TASKS+"), CGray))
-            NocturneToast.Push(NocturneText.T("Таски", "Tasks"), TaskTools.Flood(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ТАСКИ−", "TASKS−"), CGray))
-            NocturneToast.Push(NocturneText.T("Таски", "Tasks"), TaskTools.Clear(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("НОРМА", "NORMAL"), CGray))
-            NocturneToast.Push(NocturneText.T("Таски", "Tasks"), TaskTools.Normal(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("任务+", "TASKS+"), CGray))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Flood(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("任务−", "TASKS−"), CGray))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Clear(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("正常", "NORMAL"), CGray))
+            NocturneToast.Push(NocturneText.T("任务", "Tasks"), TaskTools.Normal(pc), 2.2f, NocturneNotifyKind.Info);
         y += 30f;
     }
 
@@ -4921,46 +4921,46 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         float bw = (w - 16f) / 3f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("МОРФ→Я", "MORPH→ME"), CPurple))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.Into(pc, PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ОБЛИК→Я", "LOOK→ME"), CPurple))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("变形→我", "MORPH→ME"), CPurple))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.Into(pc, PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("外观→我", "LOOK→ME"), CPurple))
         {
             NocturneOutfitApplier.Borrow(pc);
-            NocturneToast.Push(NocturneText.T("Облик", "Look"), NocturneText.T("Скопирован.", "Copied."), 2f, NocturneNotifyKind.Success);
+            NocturneToast.Push(NocturneText.T("外观", "Look"), NocturneText.T("已复制。", "Copied."), 2f, NocturneNotifyKind.Success);
         }
-        if (CardBtn(x, y, bw, 2, NocturneText.T("РАНДОМ", "RANDOM"), CGray))
-            NocturneToast.Push(NocturneText.T("Облик", "Look"), NocturneOutfits.Randomize(pc), 2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("随机", "RANDOM"), CGray))
+            NocturneToast.Push(NocturneText.T("外观", "Look"), NocturneOutfits.Randomize(pc), 2f, NocturneNotifyKind.Info);
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ВЕРНУТЬ", "RESTORE"), NocturneOutfitApplier.Borrowed ? CGold : CGray))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("恢复", "RESTORE"), NocturneOutfitApplier.Borrowed ? CGold : CGray))
         {
             NocturneOutfitApplier.Restore();
-            NocturneToast.Push(NocturneText.T("Облик", "Look"), NocturneText.T("Возвращён.", "Restored."), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("外观", "Look"), NocturneText.T("已恢复。", "Restored."), 2f, NocturneNotifyKind.Info);
         }
-        if (CardBtn(x, y, bw, 1, NocturneText.T("КЛОН", "CLONE"), CBlue))
-            NocturneToast.Push(NocturneText.T("Клон", "Clone"), NocturneTwins.CloneOf(pc), 2.2f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ИСЧЕЗ", "VANISH"), CBlue))
+        if (CardBtn(x, y, bw, 1, NocturneText.T("克隆", "CLONE"), CBlue))
+            NocturneToast.Push(NocturneText.T("克隆", "Clone"), NocturneTwins.CloneOf(pc), 2.2f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("消失", "VANISH"), CBlue))
         {
             PhantomPoof.Vanish(pc);
-            NocturneToast.Push(NocturneText.T("Фантом", "Phantom"), NocturneText.T("Исчез.", "Vanished."), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("幻影", "Phantom"), NocturneText.T("已消失。", "Vanished."), 2f, NocturneNotifyKind.Info);
         }
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ЦВЕТ", "COLOR"), CPurple))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("颜色", "COLOR"), CPurple))
         {
             int cn = Palette.PlayerColors != null ? Palette.PlayerColors.Length : 12;
             NocturneOutfits.SetColor(pc, UnityEngine.Random.Range(0, cn));
-            NocturneToast.Push(NocturneText.T("Облик", "Look"), NocturneText.T("Цвет сменён.", "Color changed."), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("外观", "Look"), NocturneText.T("颜色已更换。", "Color changed."), 2f, NocturneNotifyKind.Info);
         }
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ПОЯВИТЬ", "APPEAR"), CBlue))
+        if (CardBtn(x, y, bw, 1, NocturneText.T("出现", "APPEAR"), CBlue))
         {
             PhantomPoof.Appear(pc);
-            NocturneToast.Push(NocturneText.T("Фантом", "Phantom"), NocturneText.T("Появился.", "Appeared."), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("幻影", "Phantom"), NocturneText.T("已出现。", "Appeared."), 2f, NocturneNotifyKind.Info);
         }
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ЗАРЯД", "CHARGE"), CGray))
+        if (CardBtn(x, y, bw, 2, NocturneText.T("充能", "CHARGE"), CGray))
         {
             PhantomPoof.Charge(pc);
-            NocturneToast.Push(NocturneText.T("Фантом", "Phantom"), NocturneText.T("Заряжен.", "Charged."), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("幻影", "Phantom"), NocturneText.T("已充能。", "Charged."), 2f, NocturneNotifyKind.Info);
         }
         y += 30f;
     }
@@ -4969,20 +4969,20 @@ public sealed class NocturneMenu : MonoBehaviour
     {
         float bw = (w - 16f) / 3f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("УБИТЬ", "KILL"), CRed))
-            NocturneToast.Push(NocturneText.T("Убийство", "Kill"), NocturneKillTools.KillOne(pc), 2.2f, NocturneNotifyKind.Warning);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("ТЕЛЕКИЛЛ", "TELEKILL"), CRed))
-            NocturneToast.Push(NocturneText.T("Убийство", "Kill"), NocturneKillTools.Telekill(pc), 2.2f, NocturneNotifyKind.Warning);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ЭНДЕР", "ENDER"), CRed))
-            NocturneToast.Push(NocturneText.T("Эндермен", "Enderman"), NocturneEnderman.Kill(pc), 2.2f, NocturneNotifyKind.Warning);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("击杀", "KILL"), CRed))
+            NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillOne(pc), 2.2f, NocturneNotifyKind.Warning);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("远程击杀", "TELEKILL"), CRed))
+            NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.Telekill(pc), 2.2f, NocturneNotifyKind.Warning);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("末影", "ENDER"), CRed))
+            NocturneToast.Push(NocturneText.T("末影人", "Enderman"), NocturneEnderman.Kill(pc), 2.2f, NocturneNotifyKind.Warning);
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ВЫКИНУТЬ", "EJECT"), CRed))
-            NocturneToast.Push(NocturneText.T("Выброс", "Eject"), NocturneMeetingTools.Eject(pc), 2.5f, NocturneNotifyKind.Warning);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("РЕПОРТ", "REPORT"), COrange))
-            NocturneToast.Push(NocturneText.T("Собрание", "Meeting"), NocturneMeetingTools.RequestMeeting(PlayerControl.LocalPlayer, pc.Data), 2.5f, NocturneNotifyKind.Info);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ЦИКЛ×3", "LOOP×3"), CRed))
-            NocturneToast.Push(NocturneText.T("Пранк", "Prank"), NocturneLobbyPranks.MurderLoop(pc, 3), 2.5f, NocturneNotifyKind.Warning);
+        if (CardBtn(x, y, bw, 0, NocturneText.T("弹出", "EJECT"), CRed))
+            NocturneToast.Push(NocturneText.T("弹出", "Eject"), NocturneMeetingTools.Eject(pc), 2.5f, NocturneNotifyKind.Warning);
+        if (CardBtn(x, y, bw, 1, NocturneText.T("举报", "REPORT"), COrange))
+            NocturneToast.Push(NocturneText.T("会议", "Meeting"), NocturneMeetingTools.RequestMeeting(PlayerControl.LocalPlayer, pc.Data), 2.5f, NocturneNotifyKind.Info);
+        if (CardBtn(x, y, bw, 2, NocturneText.T("循环×3", "LOOP×3"), CRed))
+            NocturneToast.Push(NocturneText.T("恶作剧", "Prank"), NocturneLobbyPranks.MurderLoop(pc, 3), 2.5f, NocturneNotifyKind.Warning);
         y += 30f;
     }
 
@@ -4991,12 +4991,12 @@ public sealed class NocturneMenu : MonoBehaviour
         float bw = (w - 16f) / 3f;
         string mfc = NocturneColorReservations.Fc(pc);
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("ВОЙТКИК", "VOTEKICK"), COrange))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("投票", "VOTEKICK"), COrange))
             NocturneVotekick.VoteOne(pc);
         bool muted = NocturneMuteList.IsMuted(mfc);
-        if (CardBtn(x, y, bw, 1, NocturneText.T("МУТ", "MUTE"), muted ? CRed : CGray))
+        if (CardBtn(x, y, bw, 1, NocturneText.T("静音", "MUTE"), muted ? CRed : CGray))
             NocturneMuteList.Toggle(mfc);
-        if (CardBtn(x, y, bw, 2, NocturneText.T("КИК", "KICK"), COrange))
+        if (CardBtn(x, y, bw, 2, NocturneText.T("踢出", "KICK"), COrange))
         {
             if (c != null && net != null)
                 NocturneAccess.Kick(net, c.Id, false);
@@ -5005,21 +5005,21 @@ public sealed class NocturneMenu : MonoBehaviour
         }
         y += 30f;
 
-        if (CardBtn(x, y, bw, 0, NocturneText.T("НИК-БАН", "NICK BAN"), COrange))
+        if (CardBtn(x, y, bw, 0, NocturneText.T("昵称封禁", "NICK BAN"), COrange))
         {
             if (c != null && net != null)
                 NocturneAccess.NickBanClient(net, c);
             else
                 NoClientToast();
         }
-        if (CardBtn(x, y, bw, 1, NocturneText.T("БАН", "BAN"), CRed))
+        if (CardBtn(x, y, bw, 1, NocturneText.T("封禁", "BAN"), CRed))
         {
             if (c != null && net != null)
                 NocturneAccess.BanClient(net, c);
             else
                 NoClientToast();
         }
-        if (CardBtn(x, y, bw, 2, NocturneText.T("ВАЙТ", "WHITE"), NocturneStyle.Current.Accent))
+        if (CardBtn(x, y, bw, 2, NocturneText.T("白名单", "WHITE"), NocturneStyle.Current.Accent))
         {
             if (c != null)
                 NocturneAccess.WhiteClient(c);
@@ -5054,17 +5054,17 @@ public sealed class NocturneMenu : MonoBehaviour
         int n = Mathf.Min(rows.Count, LobbyHistShown);
         float body = 30f + (n > 0 ? n * 44f : 26f);
 
-        Rect b = Card(x, ref y, w, $"{NocturneText.T("История лобби", "Lobby history")} ({rows.Count})", body, true);
+        Rect b = Card(x, ref y, w, $"{NocturneText.T("大厅历史", "Lobby history")} ({rows.Count})", body, true);
         float by = b.y;
 
-        if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("ОЧИСТИТЬ", "CLEAR"), CRed))
+        if (SmallButton(new Rect(b.x + b.width - 96f, by, 92f, 24f), NocturneText.T("清空", "CLEAR"), CRed))
             LobbyHistory.Clear();
-        Lab(new Rect(b.x + 2f, by, b.width - 104f, 24f), NocturneText.T("Где играл: код, хост, карта.", "Where you played: code, host, map."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 104f, 24f), NocturneText.T("在哪玩过：代码、房主、地图。", "Where you played: code, host, map."), _muted);
         by += 30f;
 
         if (n == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто.", "Empty."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。", "Empty."), _muted);
             return;
         }
 
@@ -5083,21 +5083,21 @@ public sealed class NocturneMenu : MonoBehaviour
         if (NocturneStyle.Painting)
         {
             Lab(new Rect(box.x + 8f, box.y + 1f, box.width - 190f, 22f), $"<b>{r.Code}</b>   <color=#8A94AC><size=11>{r.When}</size></color>", _rowName);
-            string info = r.Host + " · " + r.Map + " · " + r.Players + NocturneText.T(" игр.", " ppl") + " · " + r.Region + (r.Public ? NocturneText.T(" · публ.", " · public") : string.Empty);
+            string info = r.Host + " · " + r.Map + " · " + r.Players + NocturneText.T(" 人", " ppl") + " · " + r.Region + (r.Public ? NocturneText.T(" · 公开", " · public") : string.Empty);
             Lab(new Rect(box.x + 8f, box.y + 21f, box.width - 190f, 20f), info, _rowInfo);
         }
 
         float by = box.y + (box.height - 24f) / 2f;
-        if (SmallButton(new Rect(box.xMax - 176f, by, 84f, 24f), NocturneText.T("КОПИЯ", "COPY"), CGray))
+        if (SmallButton(new Rect(box.xMax - 176f, by, 84f, 24f), NocturneText.T("复制", "COPY"), CGray))
         {
             try
             {
                 GUIUtility.systemCopyBuffer = r.Code;
-                NocturneToast.Push(NocturneText.T("Лобби", "Lobby"), NocturneText.T("Код скопирован.", "Code copied."), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push(NocturneText.T("大厅", "Lobby"), NocturneText.T("代码已复制。", "Code copied."), 2f, NocturneNotifyKind.Success);
             }
             catch { }
         }
-        if (SmallButton(new Rect(box.xMax - 88f, by, 84f, 24f), NocturneText.T("ЗАЙТИ", "JOIN"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(box.xMax - 88f, by, 84f, 24f), NocturneText.T("进入", "JOIN"), NocturneStyle.Current.Accent))
             LobbyHistory.Rejoin(r);
 
         y += 44f;
@@ -5130,7 +5130,7 @@ public sealed class NocturneMenu : MonoBehaviour
                 GUIUtility.systemCopyBuffer = copy;
                 _copyFlash = NocturneStyle.Now;
                 _copyRow = label;
-                NocturneToast.Push(label, NocturneText.T("Скопирован.", "Copied."), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push(label, NocturneText.T("已复制。", "Copied."), 2f, NocturneNotifyKind.Success);
             }
             catch { }
         }
@@ -5164,78 +5164,78 @@ public sealed class NocturneMenu : MonoBehaviour
         string name = pc.Data != null ? pc.Data.PlayerName : "?";
         string ids = c != null ? pc.PlayerId + " · " + c.Id : pc.PlayerId.ToString();
 
-        CardKv(x, ref y, w, NocturneText.T("Ник", "Name"), name);
+        CardKv(x, ref y, w, NocturneText.T("昵称", "Name"), name);
         CardKv(x, ref y, w, "ID", ids);
-        CardKvCopy(x, ref y, w, NocturneText.T("Френдкод", "Friend code"), fc.Length > 0 ? fc : "—", fc);
+        CardKvCopy(x, ref y, w, NocturneText.T("FriendCode", "Friend code"), fc.Length > 0 ? fc : "—", fc);
 
         Lab(new Rect(x + 2f, y, w * 0.3f, 24f), "PUID", _muted);
         Lab(new Rect(x + w * 0.3f, y, w * 0.7f - 42f, 24f), puid.Length > 12 ? puid.Substring(0, 11) + "…" : (puid.Length > 0 ? puid : "—"), _cardVal);
-        if (puid.Length > 0 && SmallButton(new Rect(x + w - 38f, y, 38f, 24f), NocturneText.T("КОП", "COPY"), CGray))
+        if (puid.Length > 0 && SmallButton(new Rect(x + w - 38f, y, 38f, 24f), NocturneText.T("复制", "COPY"), CGray))
         {
             try
             {
                 GUIUtility.systemCopyBuffer = puid;
-                NocturneToast.Push("PUID", NocturneText.T("Скопирован.", "Copied."), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push("PUID", NocturneText.T("已复制。", "Copied."), 2f, NocturneNotifyKind.Success);
             }
             catch { }
         }
         y += 26f;
 
-        CardKv(x, ref y, w, NocturneText.T("Уровень", "Level"), lvl);
-        CardKv(x, ref y, w, NocturneText.T("Платформа", "Platform"), plat.Length > 0 ? plat : "—");
+        CardKv(x, ref y, w, NocturneText.T("等级", "Level"), lvl);
+        CardKv(x, ref y, w, NocturneText.T("平台", "Platform"), plat.Length > 0 ? plat : "—");
 
         string mod = ModHandshake.ModOf(pc.PlayerId) ?? ForeignMods.Name(pc.PlayerId);
-        CardKv(x, ref y, w, "Mod Client", mod != null ? mod : NocturneText.T("нет", "no"));
+        CardKv(x, ref y, w, "Mod Client", mod != null ? mod : NocturneText.T("无", "no"));
 
         int nicks = NocturneNameHistory.KnownNickCount(pc);
         string vk = c != null ? NocturneVoteTally.Count(c.Id).ToString() : "0";
-        CardKv(x, ref y, w, NocturneText.T("Ники · ВК", "Nicks · VK"), (nicks > 0 ? nicks : 1) + " · " + vk);
+        CardKv(x, ref y, w, NocturneText.T("昵称 · 票", "Nicks · VK"), (nicks > 0 ? nicks : 1) + " · " + vk);
 
-        CardKv(x, ref y, w, NocturneText.T("Знаком", "Seen before"), _liveSeen);
+        CardKv(x, ref y, w, NocturneText.T("是否见过", "Seen before"), _liveSeen);
 
         string st = string.Empty;
         if (NocturneAccess.IsBanned(fc, puid))
-            st = NocturneText.T("в бане", "banned");
+            st = NocturneText.T("已封禁", "banned");
         else if (NocturneAccess.IsWhite(fc, puid))
-            st = NocturneText.T("вайтлист", "whitelist");
+            st = NocturneText.T("白名单", "whitelist");
         if (NocturneMuteList.IsMuted(fc))
-            st = st.Length > 0 ? st + " · " + NocturneText.T("мут", "muted") : NocturneText.T("мут", "muted");
-        CardKv(x, ref y, w, NocturneText.T("Статус", "Status"), st.Length > 0 ? st : "—");
+            st = st.Length > 0 ? st + " · " + NocturneText.T("静音", "muted") : NocturneText.T("静音", "muted");
+        CardKv(x, ref y, w, NocturneText.T("状态", "Status"), st.Length > 0 ? st : "—");
 
         y += 2f;
-        if (SmallButton(new Rect(x + 2f, y, w - 4f, 24f), NocturneText.T("КОПИРОВАТЬ ВСЁ", "COPY ALL"), CBlue))
+        if (SmallButton(new Rect(x + 2f, y, w - 4f, 24f), NocturneText.T("复制全部", "COPY ALL"), CBlue))
             CopyCard(name, ids, fc, puid, lvl, plat, mod, nicks, vk, st);
         y += 26f;
     }
 
     private void CopyCard(string name, string ids, string fc, string puid, string lvl, string plat, string mod, int nicks, string vk, string st)
     {
-        string txt = NocturneText.T("Ник", "Name") + ": " + name + "\n"
+        string txt = NocturneText.T("昵称", "Name") + ": " + name + "\n"
             + "ID: " + ids + "\n"
-            + NocturneText.T("Френдкод", "Friend code") + ": " + (fc.Length > 0 ? fc : "—") + "\n"
+            + NocturneText.T("FriendCode", "Friend code") + ": " + (fc.Length > 0 ? fc : "—") + "\n"
             + "PUID: " + (puid.Length > 0 ? puid : "—") + "\n"
-            + NocturneText.T("Уровень", "Level") + ": " + lvl + "\n"
-            + NocturneText.T("Платформа", "Platform") + ": " + (plat.Length > 0 ? plat : "—") + "\n"
-            + "Mod Client: " + (mod != null ? mod : NocturneText.T("нет", "no")) + "\n"
-            + NocturneText.T("Ники · ВК", "Nicks · VK") + ": " + (nicks > 0 ? nicks : 1) + " · " + vk + "\n"
-            + NocturneText.T("Знаком", "Seen before") + ": " + _liveSeen + "\n"
-            + NocturneText.T("Статус", "Status") + ": " + (st.Length > 0 ? st : "—");
+            + NocturneText.T("等级", "Level") + ": " + lvl + "\n"
+            + NocturneText.T("平台", "Platform") + ": " + (plat.Length > 0 ? plat : "—") + "\n"
+            + "Mod Client: " + (mod != null ? mod : NocturneText.T("无", "no")) + "\n"
+            + NocturneText.T("昵称 · 票", "Nicks · VK") + ": " + (nicks > 0 ? nicks : 1) + " · " + vk + "\n"
+            + NocturneText.T("是否见过", "Seen before") + ": " + _liveSeen + "\n"
+            + NocturneText.T("状态", "Status") + ": " + (st.Length > 0 ? st : "—");
 
         try
         {
             GUIUtility.systemCopyBuffer = txt;
-            NocturneToast.Push(NocturneText.T("Карточка", "Card"), NocturneText.T("Инфо скопировано.", "Info copied."), 2f, NocturneNotifyKind.Success);
+            NocturneToast.Push(NocturneText.T("卡片", "Card"), NocturneText.T("信息已复制。", "Info copied."), 2f, NocturneNotifyKind.Success);
         }
         catch { }
     }
 
     private static void NoClientToast()
     {
-        NocturneToast.Push(NocturneText.T("Игрок", "Player"), NocturneText.T("Нет данных клиента.", "No client data."), 2.2f, NocturneNotifyKind.Warning);
+        NocturneToast.Push(NocturneText.T("玩家", "Player"), NocturneText.T("无客户端数据。", "No client data."), 2.2f, NocturneNotifyKind.Warning);
     }
 
-    private static void FunToast(string msg) => NocturneToast.Push(NocturneText.T("Фан", "Fun"), msg, 2.5f, NocturneNotifyKind.Info);
-    private static string St(bool on) => on ? NocturneText.T(": вкл", ": on") : NocturneText.T(": выкл", ": off");
+    private static void FunToast(string msg) => NocturneToast.Push(NocturneText.T("趣味", "Fun"), msg, 2.5f, NocturneNotifyKind.Info);
+    private static string St(bool on) => on ? NocturneText.T("：开", ": on") : NocturneText.T("：关", ": off");
     private static Color FunCol(bool on) => on ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f);
 
     private static readonly string[] PlatNames = { "Epic", "Steam", "Mac", "MS Store", "Itch", "iOS", "Android", "Switch", "Xbox", "PS", "Starlight", "Unknown" };
@@ -5259,63 +5259,63 @@ public sealed class NocturneMenu : MonoBehaviour
             ping = -1;
         }
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Соединение", "Connection"), 4f * 30f);
+        Rect b = Card(x, ref y, w, NocturneText.T("连接", "Connection"), 4f * 30f);
         float by = b.y;
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Пинг", "Ping"), ping >= 0 ? ping + " ms" : "—");
+        InfoRow(b.x, ref by, b.width, NocturneText.T("延迟", "Ping"), ping >= 0 ? ping + " ms" : "—");
         InfoRow(b.x, ref by, b.width, "FPS", NocturneHud.CurrentFps.ToString());
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Сервер", "Server"), server);
-        InfoRow(b.x, ref by, b.width, NocturneText.T("Лобби", "Lobby"), LobbyBehaviour.Instance != null ? NocturneText.T("в лобби", "in lobby") : NocturneText.T("нет", "no"));
+        InfoRow(b.x, ref by, b.width, NocturneText.T("服务器", "Server"), server);
+        InfoRow(b.x, ref by, b.width, NocturneText.T("大厅", "Lobby"), LobbyBehaviour.Instance != null ? NocturneText.T("在大厅", "in lobby") : NocturneText.T("无", "no"));
 
         bool brOn = NocturneConfig.GlichRoomCycle.Value;
-        b = Card(x, ref y, w, NocturneText.T("Баг-комнаты", "Glich Rooms"), 3f * RowH + 34f + (brOn ? 76f : 26f));
+        b = Card(x, ref y, w, NocturneText.T("漏洞房", "Glich Rooms"), 3f * RowH + 34f + (brOn ? 76f : 26f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Крутить цикл", "Run cycle"), NocturneConfig.GlichRoomCycle);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Поиск: новая комната каждый круг", "Hunt: new room each cycle"), NocturneConfig.GlichRoomHunt);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Писать найденные в файл", "Log found rooms"), NocturneConfig.GlichRoomLog);
+        Toggle(b.x, ref by, b.width, NocturneText.T("循环运行", "Run cycle"), NocturneConfig.GlichRoomCycle);
+        Toggle(b.x, ref by, b.width, NocturneText.T("搜索：每轮新房间", "Hunt: new room each cycle"), NocturneConfig.GlichRoomHunt);
+        Toggle(b.x, ref by, b.width, NocturneText.T("记录发现的房间", "Log found rooms"), NocturneConfig.GlichRoomLog);
 
-        Lab(new Rect(b.x + 2f, by, 118f, 26f), NocturneText.T("Хвосты кодов", "Code endings"), _rowLabel);
+        Lab(new Rect(b.x + 2f, by, 118f, 26f), NocturneText.T("代码后缀", "Code endings"), _rowLabel);
         NocturneConfig.GlichRoomTargets.Value = CustomText(new Rect(b.x + 122f, by, b.width - 124f, 26f), NocturneConfig.GlichRoomTargets.Value ?? "", "bugTails");
         by += 32f;
 
         if (brOn)
         {
-            Slider(b.x, ref by, b.width, NocturneText.T("Пауза", "Delay"), NocturneConfig.GlichRoomDelay, 1f, 10f, "0.0");
+            Slider(b.x, ref by, b.width, NocturneText.T("延迟", "Delay"), NocturneConfig.GlichRoomDelay, 1f, 10f, "0.0");
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f),
-                $"{NocturneGlichRooms.Stage}   {NocturneText.T("кругов", "runs")}: <b>{NocturneGlichRooms.Runs}</b>   {NocturneText.T("ур.", "lvl")}: <b>{NocturneGlichRooms.Was}→{NocturneGlichRooms.Lvl}</b>   {NocturneText.T("найдено", "found")}: <b>{NocturneGlichRooms.Hits}</b>", _muted);
+                $"{NocturneGlichRooms.Stage}   {NocturneText.T("轮次", "runs")}: <b>{NocturneGlichRooms.Runs}</b>   {NocturneText.T("等级", "lvl")}: <b>{NocturneGlichRooms.Was}→{NocturneGlichRooms.Lvl}</b>   {NocturneText.T("已找到", "found")}: <b>{NocturneGlichRooms.Hits}</b>", _muted);
         }
         else
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто = судить по уровню. Nocturne/GlichRooms.txt", "Empty = judge by level. Nocturne/GlichRooms.txt"), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("留空 = 按等级判断。Nocturne/GlichRooms.txt", "Empty = judge by level. Nocturne/GlichRooms.txt"), _muted);
 
         float spoofBody = 6f * RowH + 30f + (NocturneConfig.SpoofLevelEnabled.Value ? 50f : 0f) + (NocturneConfig.SpoofFriendCodeEnabled.Value ? 58f : 0f);
-        b = Card(x, ref y, w, NocturneText.T("Спуф", "Spoof"), spoofBody, true);
+        b = Card(x, ref y, w, NocturneText.T("伪装", "Spoof"), spoofBody, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Спуф платформы", "Spoof platform"), NocturneConfig.SpoofPlatformEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("伪装平台", "Spoof platform"), NocturneConfig.SpoofPlatformEnabled);
         int pi = Mathf.Clamp(NocturneConfig.SpoofPlatformIndex.Value, 0, PlatNames.Length - 1);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Платформа", "Platform"), PlatNames[pi]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("平台", "Platform"), PlatNames[pi]))
             NocturneConfig.SpoofPlatformIndex.Value = (pi + 1) % PlatNames.Length;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Спуф уровня", "Spoof level"), NocturneConfig.SpoofLevelEnabled);
+        Toggle(b.x, ref by, b.width, NocturneText.T("伪装等级", "Spoof level"), NocturneConfig.SpoofLevelEnabled);
         if (NocturneConfig.SpoofLevelEnabled.Value)
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Уровень", "Level"), NocturneConfig.SpoofLevelValue, 1, 9999);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Спуф Device ID", "Spoof Device ID"), NocturneConfig.SpoofDeviceId);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Спуф ФК", "Spoof friend code"), NocturneConfig.SpoofFriendCodeEnabled);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("等级", "Level"), NocturneConfig.SpoofLevelValue, 1, 9999);
+        Toggle(b.x, ref by, b.width, NocturneText.T("伪装 Device ID", "Spoof Device ID"), NocturneConfig.SpoofDeviceId);
+        Toggle(b.x, ref by, b.width, NocturneText.T("伪装 FC", "Spoof friend code"), NocturneConfig.SpoofFriendCodeEnabled);
         if (NocturneConfig.SpoofFriendCodeEnabled.Value)
         {
             _fcText = CustomText(new Rect(b.x + 2f, by, b.width - 190f, 26f), _fcText ?? NocturneConfig.SpoofFriendCodeValue.Value ?? "", "fcSpoof", 10);
-            if (SmallButton(new Rect(b.x + b.width - 184f, by + 1f, 86f, 24f), NocturneText.T("ЗАДАТЬ", "SET"), NocturneStyle.Current.Accent))
+            if (SmallButton(new Rect(b.x + b.width - 184f, by + 1f, 86f, 24f), NocturneText.T("设置", "SET"), NocturneStyle.Current.Accent))
                 NocturneConfig.SpoofFriendCodeValue.Value = (_fcText ?? "").Trim();
-            if (SmallButton(new Rect(b.x + b.width - 92f, by + 1f, 88f, 24f), NocturneText.T("РАНДОМ", "RANDOM"), new Color(0.5f, 0.55f, 0.62f)))
+            if (SmallButton(new Rect(b.x + b.width - 92f, by + 1f, 88f, 24f), NocturneText.T("随机", "RANDOM"), new Color(0.5f, 0.55f, 0.62f)))
             {
                 _fcText = Patches.NocturneFcSpoof.Random();
                 NocturneConfig.SpoofFriendCodeValue.Value = _fcText;
             }
             by += 30f;
-            Lab(new Rect(b.x + 4f, by, b.width - 6f, 20f), NocturneText.T("Спуф ФК срабатывает при регистрации акка.", "Spoofs the FC set at account registration."), _muted);
+            Lab(new Rect(b.x + 4f, by, b.width - 6f, 20f), NocturneText.T("伪装 FC 在账号注册时生效。", "Spoofs the FC set at account registration."), _muted);
             by += 24f;
         }
-        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("РАНДОМ ОБРАЗА", "RANDOM OUTFIT"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Образ", "Outfit"), NocturneOutfits.Randomize(PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("随机外观", "RANDOM OUTFIT"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneOutfits.Randomize(PlayerControl.LocalPlayer), 2f, NocturneNotifyKind.Info);
         by += 30f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Рандом → сохранять в профиль", "Random → save to profile"), NocturneConfig.RandomOutfitSave);
+        Toggle(b.x, ref by, b.width, NocturneText.T("随机 → 保存到配置文件", "Random → save to profile"), NocturneConfig.RandomOutfitSave);
 
     }
 
@@ -5324,14 +5324,14 @@ public sealed class NocturneMenu : MonoBehaviour
         SubBar(x, ref y, w, VisualSubsRu, VisualSubsEn);
 
         Grp(1);
-        Rect b = Card(x, ref y, w, NocturneText.T("Косметика", "Cosmetics"), 6f * RowH + 6f + (NocturneConfig.SeasonDecor.Value ? 28f : 0f), true);
+        Rect b = Card(x, ref y, w, NocturneText.T("装饰", "Cosmetics"), 6f * RowH + 6f + (NocturneConfig.SeasonDecor.Value ? 28f : 0f), true);
         float by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Разблокировать косметику", "Unlock cosmetics"), NocturneConfig.FreeCosmetics);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Прятать косметику в матче", "Hide cosmetics in match"), NocturneConfig.HideCosmeticsInMatch);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Одинаковые цвета (хост)", "Duplicate colors (host)"), NocturneConfig.AllowDuplicateColors);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Классический вид", "Classic look"), NocturneConfig.ClassicBody);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Классика 2018 полностью", "Full 2018 classic"), NocturneConfig.ClassicMode);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сезонный декор круглый год", "Seasonal decor year-round"), NocturneConfig.SeasonDecor);
+        Toggle(b.x, ref by, b.width, NocturneText.T("解锁装饰", "Unlock cosmetics"), NocturneConfig.FreeCosmetics);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对局中隐藏装饰", "Hide cosmetics in match"), NocturneConfig.HideCosmeticsInMatch);
+        Toggle(b.x, ref by, b.width, NocturneText.T("重复颜色（房主）", "Duplicate colors (host)"), NocturneConfig.AllowDuplicateColors);
+        Toggle(b.x, ref by, b.width, NocturneText.T("经典外观", "Classic look"), NocturneConfig.ClassicBody);
+        Toggle(b.x, ref by, b.width, NocturneText.T("完整 2018 经典模式", "Full 2018 classic"), NocturneConfig.ClassicMode);
+        Toggle(b.x, ref by, b.width, NocturneText.T("全年节日装饰", "Seasonal decor year-round"), NocturneConfig.SeasonDecor);
         if (NocturneConfig.SeasonDecor.Value)
         {
             int mask = NocturneConfig.SeasonDecorMask.Value;
@@ -5359,18 +5359,18 @@ public sealed class NocturneMenu : MonoBehaviour
             + (NocturneConfig.VisualCameraZoom.Value ? RowH : 0f)
             + (NocturneConfig.WorldTilt.Value ? 50f : 0f);
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Камера", "Camera"), camBody);
+        b = Card(x, ref y, w, NocturneText.T("相机", "Camera"), camBody);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Свободная камера (WASD)", "Free camera (WASD)"), NocturneConfig.VisualFreeCamera);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自由相机（WASD）", "Free camera (WASD)"), NocturneConfig.VisualFreeCamera);
         if (NocturneConfig.VisualFreeCamera.Value)
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Скорость камеры", "Camera speed"), NocturneConfig.VisualFreeCameraSpeed, 4, 30);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Зум колёсиком (безлимит)", "Wheel zoom (unlimited)"), NocturneConfig.VisualCameraZoom);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("相机速度", "Camera speed"), NocturneConfig.VisualFreeCameraSpeed, 4, 30);
+        Toggle(b.x, ref by, b.width, NocturneText.T("滚轮缩放（无限制）", "Wheel zoom (unlimited)"), NocturneConfig.VisualCameraZoom);
         if (NocturneConfig.VisualCameraZoom.Value)
-            Toggle(b.x, ref by, b.width, NocturneText.T("Держать зум на тасках", "Keep zoom during tasks"), NocturneConfig.ZoomDuringTasks);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ноклип", "No-clip"), NocturneConfig.VisualNoClip);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Наклон мира — ты прямо (только у тебя)", "World tilt — you stay upright (only you)"), NocturneConfig.WorldTilt);
+            Toggle(b.x, ref by, b.width, NocturneText.T("任务期间保持缩放", "Keep zoom during tasks"), NocturneConfig.ZoomDuringTasks);
+        Toggle(b.x, ref by, b.width, NocturneText.T("穿墙", "No-clip"), NocturneConfig.VisualNoClip);
+        Toggle(b.x, ref by, b.width, NocturneText.T("世界倾斜——你保持直立（仅自己可见）", "World tilt — you stay upright (only you)"), NocturneConfig.WorldTilt);
         if (NocturneConfig.WorldTilt.Value)
-            Slider(b.x, ref by, b.width, NocturneText.T("Угол наклона", "Tilt angle"), NocturneConfig.WorldTiltAngle, -180f, 180f, "0");
+            Slider(b.x, ref by, b.width, NocturneText.T("倾斜角度", "Tilt angle"), NocturneConfig.WorldTiltAngle, -180f, 180f, "0");
 
         float espH = 8f * RowH
             + (NocturneConfig.EspBoxes.Value ? 5f * RowH + 24f : 0f)
@@ -5380,138 +5380,138 @@ public sealed class NocturneMenu : MonoBehaviour
         Grp(0);
         b = Card(x, ref y, w, "ESP", espH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Боксы сквозь стены", "Boxes through walls"), NocturneConfig.EspBoxes);
+        Toggle(b.x, ref by, b.width, NocturneText.T("穿墙方框", "Boxes through walls"), NocturneConfig.EspBoxes);
         if (NocturneConfig.EspBoxes.Value)
         {
-            Toggle(b.x, ref by, b.width, NocturneText.T("Ник и дистанция", "Name and distance"), NocturneConfig.EspNames);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Показывать мёртвых", "Show dead players"), NocturneConfig.EspDead);
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Кого показывать:", "Who to show:"), _muted);
+            Toggle(b.x, ref by, b.width, NocturneText.T("昵称和距离", "Name and distance"), NocturneConfig.EspNames);
+            Toggle(b.x, ref by, b.width, NocturneText.T("显示死者", "Show dead players"), NocturneConfig.EspDead);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("显示对象：", "Who to show:"), _muted);
             by += 24f;
-            Toggle(b.x, ref by, b.width, NocturneText.T("Предатели (пред, оборотень, фантом, гадюка)", "Impostors (imp, shifter, phantom, viper)"), NocturneConfig.EspSeeImps);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Ангел-хранитель", "Guardian angel"), NocturneConfig.EspSeeAngels);
-            Toggle(b.x, ref by, b.width, NocturneText.T("Мирные (и все роли мирных)", "Crewmates (and all crew roles)"), NocturneConfig.EspSeeCrew);
+            Toggle(b.x, ref by, b.width, NocturneText.T("内鬼（内鬼、变形者、幻影、蝰蛇）", "Impostors (imp, shifter, phantom, viper)"), NocturneConfig.EspSeeImps);
+            Toggle(b.x, ref by, b.width, NocturneText.T("守护天使", "Guardian angel"), NocturneConfig.EspSeeAngels);
+            Toggle(b.x, ref by, b.width, NocturneText.T("船员（及所有船员角色）", "Crewmates (and all crew roles)"), NocturneConfig.EspSeeCrew);
         }
-        Toggle(b.x, ref by, b.width, NocturneText.T("Трейсеры до игроков", "Tracers to players"), NocturneConfig.Tracers);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Трейсеры к телам", "Tracers to bodies"), NocturneConfig.TracerBodies);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Стрелки к таскам", "Task arrows"), NocturneConfig.TaskArrows);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Цвет ESP по сторонам", "ESP color by side"), NocturneConfig.EspSideColors);
+        Toggle(b.x, ref by, b.width, NocturneText.T("指向玩家的追踪线", "Tracers to players"), NocturneConfig.Tracers);
+        Toggle(b.x, ref by, b.width, NocturneText.T("指向尸体的追踪线", "Tracers to bodies"), NocturneConfig.TracerBodies);
+        Toggle(b.x, ref by, b.width, NocturneText.T("指向任务的箭头", "Task arrows"), NocturneConfig.TaskArrows);
+        Toggle(b.x, ref by, b.width, NocturneText.T("ESP 按阵营着色", "ESP color by side"), NocturneConfig.EspSideColors);
         if (NocturneConfig.EspSideColors.Value)
         {
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Мирные", "Crewmates"), NocturneTracers.SideName(NocturneConfig.EspCrewColor.Value)))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("船员", "Crewmates"), NocturneTracers.SideName(NocturneConfig.EspCrewColor.Value)))
                 NocturneConfig.EspCrewColor.Value = (NocturneConfig.EspCrewColor.Value + 1) % NocturneTracers.SideCount;
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Предатели", "Impostors"), NocturneTracers.SideName(NocturneConfig.EspImpColor.Value)))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("内鬼", "Impostors"), NocturneTracers.SideName(NocturneConfig.EspImpColor.Value)))
                 NocturneConfig.EspImpColor.Value = (NocturneConfig.EspImpColor.Value + 1) % NocturneTracers.SideCount;
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Мёртвое тело", "Dead body"), NocturneTracers.SideName(NocturneConfig.EspDeadColor.Value)))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("尸体", "Dead body"), NocturneTracers.SideName(NocturneConfig.EspDeadColor.Value)))
                 NocturneConfig.EspDeadColor.Value = (NocturneConfig.EspDeadColor.Value + 1) % NocturneTracers.SideCount;
         }
-        Toggle(b.x, ref by, b.width, NocturneText.T("КД килла над убийцами", "Kill CD over killers"), NocturneConfig.KillTimers);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сообщения над игроками", "Chat above players"), NocturneConfig.OverheadChat);
+        Toggle(b.x, ref by, b.width, NocturneText.T("杀手上方击杀冷却", "Kill CD over killers"), NocturneConfig.KillTimers);
+        Toggle(b.x, ref by, b.width, NocturneText.T("玩家上方消息", "Chat above players"), NocturneConfig.OverheadChat);
         if (NocturneConfig.OverheadChat.Value)
         {
             string[] ocWhere = NocturneText.IsRussian ? OcWhereRu : OcWhereEn;
             int ocw = Mathf.Clamp(NocturneConfig.OverheadChatWhere.Value, 0, 2);
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Показывать", "Show in"), ocWhere[ocw]))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("显示位置", "Show in"), ocWhere[ocw]))
                 NocturneConfig.OverheadChatWhere.Value = (ocw + 1) % 3;
-            SliderInt(b.x, ref by, b.width, NocturneText.T("Держать сообщение", "Message time"), NocturneConfig.OverheadChatTime, 2, 15);
+            SliderInt(b.x, ref by, b.width, NocturneText.T("消息停留", "Message time"), NocturneConfig.OverheadChatTime, 2, 15);
         }
-        Toggle(b.x, ref by, b.width, NocturneText.T("Неон-обводка игроков", "Neon outline"), NocturneConfig.NeonOutline);
+        Toggle(b.x, ref by, b.width, NocturneText.T("玩家霓虹描边", "Neon outline"), NocturneConfig.NeonOutline);
         if (NocturneConfig.NeonOutline.Value)
         {
             string[] noModes = NocturneText.IsRussian ? NoModesRu : NoModesEn;
             int nm = Mathf.Clamp(NocturneConfig.NeonOutlineMode.Value, 0, 2);
-            if (CycleRow(b.x, ref by, b.width, NocturneText.T("Цвет обводки", "Outline color"), noModes[nm]))
+            if (CycleRow(b.x, ref by, b.width, NocturneText.T("描边颜色", "Outline color"), noModes[nm]))
                 NocturneConfig.NeonOutlineMode.Value = (nm + 1) % 3;
         }
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Обзор", "Vision"), 3f * RowH + 22f);
+        b = Card(x, ref y, w, NocturneText.T("视野", "Vision"), 3f * RowH + 22f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть игроков в вентах", "See players in vents"), NocturneConfig.SeeVents);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Видеть призраков", "See ghosts"), NocturneConfig.SeeGhosts);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Wallhack (без тьмы)", "Wallhack (no darkness)"), NocturneConfig.Wallhack);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Убирает завесу обзора — видно всю карту и всех.", "Removes the vision veil — see the whole map and everyone."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("看到管内玩家", "See players in vents"), NocturneConfig.SeeVents);
+        Toggle(b.x, ref by, b.width, NocturneText.T("看到幽灵", "See ghosts"), NocturneConfig.SeeGhosts);
+        Toggle(b.x, ref by, b.width, NocturneText.T("穿墙视野（去除黑暗）", "Wallhack (no darkness)"), NocturneConfig.Wallhack);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("移除视野遮挡——可见整张地图和所有人。", "Removes the vision veil — see the whole map and everyone."), _muted);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Карта", "Map"), RowH + 26f);
+        b = Card(x, ref y, w, NocturneText.T("地图", "Map"), RowH + 26f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Dleks (перевёрнутый Skeld)", "Dleks (mirrored Skeld)"), NocturneConfig.Dleks);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Локально, применится на следующей карте.", "Local, applies on next map load."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("Dleks（翻转 Skeld）", "Dleks (mirrored Skeld)"), NocturneConfig.Dleks);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("本地生效，下一张地图应用。", "Local, applies on next map load."), _muted);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Радар (миникарта)", "Radar (minimap)"), 4f * RowH + 130f);
+        b = Card(x, ref y, w, NocturneText.T("雷达（小地图）", "Radar (minimap)"), 4f * RowH + 130f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Показывать радар", "Show radar"), NocturneConfig.Radar);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Тела на радаре", "Bodies on radar"), NocturneConfig.RadarBodies);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Телепорт по ПКМ на радаре", "Right-click radar to teleport"), NocturneConfig.RadarTeleport);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Кнопки дверей (пред)", "Door buttons (impostor)"), NocturneConfig.RadarDoors);
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Размер, %", "Size, %"), NocturneConfig.RadarSize, 60, 180);
-        SliderInt(b.x, ref by, b.width, NocturneText.T("Прозрачность, %", "Opacity, %"), NocturneConfig.RadarOpacity, 30, 100);
+        Toggle(b.x, ref by, b.width, NocturneText.T("显示雷达", "Show radar"), NocturneConfig.Radar);
+        Toggle(b.x, ref by, b.width, NocturneText.T("雷达上显示尸体", "Bodies on radar"), NocturneConfig.RadarBodies);
+        Toggle(b.x, ref by, b.width, NocturneText.T("雷达上右键传送", "Right-click radar to teleport"), NocturneConfig.RadarTeleport);
+        Toggle(b.x, ref by, b.width, NocturneText.T("门按钮（内鬼）", "Door buttons (impostor)"), NocturneConfig.RadarDoors);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("大小，%", "Size, %"), NocturneConfig.RadarSize, 60, 180);
+        SliderInt(b.x, ref by, b.width, NocturneText.T("不透明度，%", "Opacity, %"), NocturneConfig.RadarOpacity, 30, 100);
         by += 4f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Двигать — ЛКМ по радару. Скелет карты + точки игроков.", "Drag with LMB. Map skeleton + player dots."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("拖动——在雷达上左键。地图骨架 + 玩家点。", "Drag with LMB. Map skeleton + player dots."), _muted);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Разбор матча (карта)", "Match review (map)"), RowH * 3f + 24f);
+        b = Card(x, ref y, w, NocturneText.T("对局回放（地图）", "Match review (map)"), RowH * 3f + 24f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Окно разбора", "Review window"), NocturneConfig.ReplayView);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Чистить после собрания", "Clear after meeting"), NocturneConfig.ReplayClearAfterMeeting);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Открыть разбор", "Open review"), NocturneConfig.ReplayKey);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Пути + события на карте. Виден и в лобби после раунда.", "Paths + events on a map. Visible in the lobby after a round."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("回放窗口", "Review window"), NocturneConfig.ReplayView);
+        Toggle(b.x, ref by, b.width, NocturneText.T("会议后清空", "Clear after meeting"), NocturneConfig.ReplayClearAfterMeeting);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("打开回放", "Open review"), NocturneConfig.ReplayKey);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("地图上的路径 + 事件。回合结束后在大厅也可见。", "Paths + events on a map. Visible in the lobby after a round."), _muted);
 
         Grp(2);
         bool ant = NocturneConfig.AntWalk.Value;
-        b = Card(x, ref y, w, NocturneText.T("Анимации (на себе)", "Animations (self)"), 6f * 28f + 24f + RowH * (ant ? 4f : 2f));
+        b = Card(x, ref y, w, NocturneText.T("动画（自己）", "Animations (self)"), 6f * 28f + 24f + RowH * (ant ? 4f : 2f));
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Лунная походка", "Moonwalk"), NocturneConfig.WalkNoAnim);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Муравьиный шаг", "Ant walk"), NocturneConfig.AntWalk);
+        Toggle(b.x, ref by, b.width, NocturneText.T("月球漫步", "Moonwalk"), NocturneConfig.WalkNoAnim);
+        Toggle(b.x, ref by, b.width, NocturneText.T("蚂蚁步", "Ant walk"), NocturneConfig.AntWalk);
         if (ant)
         {
-            Slider(b.x, ref by, b.width, NocturneText.T("Шаг между рывками", "Step between twitches"), NocturneConfig.AntWalkStep, 0.1f, 1.2f, "0.00");
-            Slider(b.x, ref by, b.width, NocturneText.T("Длина рывка", "Twitch length"), NocturneConfig.AntWalkTwitch, 0.03f, 0.15f, "0.00");
+            Slider(b.x, ref by, b.width, NocturneText.T("抽动间隔", "Step between twitches"), NocturneConfig.AntWalkStep, 0.1f, 1.2f, "0.00");
+            Slider(b.x, ref by, b.width, NocturneText.T("抽动长度", "Twitch length"), NocturneConfig.AntWalkTwitch, 0.03f, 0.15f, "0.00");
         }
         Color anac = NocturneStyle.Current.Accent;
         Color anon = new Color(0.32f, 0.78f, 0.45f);
         float anbw = (b.width - 6f) / 2f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("Лезть ↑", "Climb ↑"), NocturneAnimations.Active(NocturneAnim.ClimbUp) ? anon : anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("攀爬 ↑", "Climb ↑"), NocturneAnimations.Active(NocturneAnim.ClimbUp) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.ClimbUp);
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Лезть ↓", "Climb ↓"), NocturneAnimations.Active(NocturneAnim.ClimbDown) ? anon : anac))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("攀爬 ↓", "Climb ↓"), NocturneAnimations.Active(NocturneAnim.ClimbDown) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.ClimbDown);
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("В люк", "Enter vent"), NocturneAnimations.Active(NocturneAnim.EnterVent) ? anon : anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("进管", "Enter vent"), NocturneAnimations.Active(NocturneAnim.EnterVent) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.EnterVent);
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Из люка", "Exit vent"), NocturneAnimations.Active(NocturneAnim.ExitVent) ? anon : anac))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("出管", "Exit vent"), NocturneAnimations.Active(NocturneAnim.ExitVent) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.ExitVent);
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("Прыжок", "Jump"), NocturneAnimations.Active(NocturneAnim.Jump) ? anon : anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("跳跃", "Jump"), NocturneAnimations.Active(NocturneAnim.Jump) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.Jump);
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Спавн", "Spawn"), NocturneAnimations.Active(NocturneAnim.Spawn) ? anon : anac))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("出生", "Spawn"), NocturneAnimations.Active(NocturneAnim.Spawn) ? anon : anac))
             NocturneAnimations.Toggle(NocturneAnim.Spawn);
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("Туман вкл", "Fog on"), anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("开雾", "Fog on"), anac))
             NocturneAnimations.MushroomIn();
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Туман выкл", "Fog off"), anac))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("关雾", "Fog off"), anac))
             NocturneAnimations.MushroomOut();
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("Вспышка", "Alert flash"), anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("警告闪烁", "Alert flash"), anac))
             NocturneAnimations.AlertFlash();
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Звук митинга", "Meeting sting"), anac))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("会议音效", "Meeting sting"), anac))
             NocturneAnimations.MeetingSting();
         by += 28f;
-        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("Звук выброса", "Eject sfx"), anac))
+        if (SmallButton(new Rect(b.x, by, anbw, 24f), NocturneText.T("弹出音效", "Eject sfx"), anac))
             NocturneAnimations.EjectSfx();
-        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("Сброс", "Reset"), new Color(0.85f, 0.32f, 0.32f)))
+        if (SmallButton(new Rect(b.x + anbw + 6f, by, anbw, 24f), NocturneText.T("重置", "Reset"), new Color(0.85f, 0.32f, 0.32f)))
             NocturneAnimations.ResetAll();
         by += 28f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Тумблеры держат позу, «Сброс» вернёт норму. Для роликов.", "Toggles hold the pose, 'Reset' restores. For clips."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("开关维持姿势，“重置”恢复默认。用于录制。", "Toggles hold the pose, 'Reset' restores. For clips."), _muted);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Стелс", "Stealth"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("隐身", "Stealth"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Скрыть MOD-штамп", "Hide MOD stamp"), NocturneConfig.HideModStamp);
+        Toggle(b.x, ref by, b.width, NocturneText.T("隐藏 MOD 标记", "Hide MOD stamp"), NocturneConfig.HideModStamp);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Пропуск анимаций", "Skip animations"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("跳过动画", "Skip animations"), RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Интро «Shhh»", "'Shhh' intro"), NocturneConfig.SkipShhh);
+        Toggle(b.x, ref by, b.width, NocturneText.T("“Shhh”开场", "'Shhh' intro"), NocturneConfig.SkipShhh);
 
         Grp(1);
         _roleClients.Clear();
@@ -5522,17 +5522,17 @@ public sealed class NocturneMenu : MonoBehaviour
                 outfitN++;
         bool picking = _outfitPickSlot >= 0;
         float pickH = picking ? (24f + (outfitN > 0 ? outfitN * 32f : 26f) + 28f) : 0f;
-        b = Card(x, ref y, w, NocturneText.T("Избранные образы", "Favorite outfits"), 4f * 30f + 60f + pickH, true);
+        b = Card(x, ref y, w, NocturneText.T("收藏外观", "Favorite outfits"), 4f * 30f + 60f + pickH, true);
         by = b.y;
         for (int i = 0; i < 4; i++)
             FavoriteRow(b.x, ref by, b.width, i);
         if (picking)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T($"Взять образ в слот {_outfitPickSlot + 1}:", $"Copy outfit into slot {_outfitPickSlot + 1}:"), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T($"把外观复制到槽 {_outfitPickSlot + 1}：", $"Copy outfit into slot {_outfitPickSlot + 1}:"), _muted);
             by += 24f;
             if (outfitN == 0)
             {
-                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+                Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
                 by += 26f;
             }
             else
@@ -5541,20 +5541,20 @@ public sealed class NocturneMenu : MonoBehaviour
                     if (_roleClients[i] != Me())
                         OutfitPickRow(b.x, ref by, b.width, _roleClients[i]);
             }
-            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("ЗАКРЫТЬ СПИСОК", "CLOSE LIST"), new Color(0.5f, 0.55f, 0.62f)))
+            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("关闭列表", "CLOSE LIST"), new Color(0.5f, 0.55f, 0.62f)))
                 _outfitPickSlot = -1;
             by += 28f;
         }
         float cwHalf = (b.width - 8f) / 2f;
-        if (SmallButton(new Rect(b.x, by, cwHalf, 24f), NocturneText.T("ОБРАЗ ВЫБР. → МНЕ", "OUTFIT → ME"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(b.x, by, cwHalf, 24f), NocturneText.T("所选外观 → 我", "OUTFIT → ME"), NocturneStyle.Current.Accent))
         {
             string cap = NocturneOutfits.Capture(NocturneMouseTools.Selected);
-            NocturneToast.Push(NocturneText.T("Образ", "Outfit"), cap.Length > 0 && NocturneOutfits.Apply(PlayerControl.LocalPlayer, cap) ? NocturneText.T("скопирован", "copied") : NocturneText.T("нет цели", "no target"), 2f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), cap.Length > 0 && NocturneOutfits.Apply(PlayerControl.LocalPlayer, cap) ? NocturneText.T("已复制", "copied") : NocturneText.T("无目标", "no target"), 2f, NocturneNotifyKind.Info);
         }
-        if (SmallButton(new Rect(b.x + cwHalf + 8f, by, cwHalf, 24f), NocturneText.T("МОРФ В ВЫБР. (хост)", "MORPH INTO (host)"), NocturneStyle.Current.Accent))
-            NocturneToast.Push(NocturneText.T("Морф", "Morph"), NocturneMorph.Into(PlayerControl.LocalPlayer, NocturneMouseTools.Selected), 2.2f, NocturneNotifyKind.Info);
+        if (SmallButton(new Rect(b.x + cwHalf + 8f, by, cwHalf, 24f), NocturneText.T("变形为所选（房主）", "MORPH INTO (host)"), NocturneStyle.Current.Accent))
+            NocturneToast.Push(NocturneText.T("变形", "Morph"), NocturneMorph.Into(PlayerControl.LocalPlayer, NocturneMouseTools.Selected), 2.2f, NocturneNotifyKind.Info);
         by += 28f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("«ВЫБР.» — выбрать из списка. Кнопки снизу — цель мышью.", "'SEL.' — pick from list. Buttons below use mouse target."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("“所选”——从列表中选取。下方按钮使用鼠标目标。", "'SEL.' — pick from list. Buttons below use mouse target."), _muted);
 
         Grp(1);
         _roleClients.Clear();
@@ -5565,15 +5565,15 @@ public sealed class NocturneMenu : MonoBehaviour
                 qoN++;
         bool borrowed = NocturneOutfitApplier.Borrowed;
         float qoBody = 2f * RowH + 24f + (qoN > 0 ? qoN * 32f : 26f) + (borrowed ? 28f : 0f);
-        b = Card(x, ref y, w, NocturneText.T("Быстрый образ", "Quick outfit"), qoBody);
+        b = Card(x, ref y, w, NocturneText.T("快速外观", "Quick outfit"), qoBody);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сброс после матча", "Reset after match"), NocturneConfig.QuickOutfitResetMatch);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сброс после выхода из лобби", "Reset after leaving lobby"), NocturneConfig.QuickOutfitResetLobby);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Взять образ игрока на себя (временно):", "Borrow a player's outfit (temporary):"), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("对局结束后恢复", "Reset after match"), NocturneConfig.QuickOutfitResetMatch);
+        Toggle(b.x, ref by, b.width, NocturneText.T("离开大厅后恢复", "Reset after leaving lobby"), NocturneConfig.QuickOutfitResetLobby);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("借用玩家外观（临时）：", "Borrow a player's outfit (temporary):"), _muted);
         by += 24f;
         if (qoN == 0)
         {
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Нет других игроков.", "No other players."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("没有其他玩家。", "No other players."), _muted);
             by += 26f;
         }
         else
@@ -5584,28 +5584,28 @@ public sealed class NocturneMenu : MonoBehaviour
         }
         if (borrowed)
         {
-            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("ВЕРНУТЬ СВОЙ ОБРАЗ", "RESTORE MY OUTFIT"), NocturneStyle.Current.Accent))
+            if (SmallButton(new Rect(b.x, by, b.width, 24f), NocturneText.T("恢复我的外观", "RESTORE MY OUTFIT"), NocturneStyle.Current.Accent))
                 NocturneOutfitApplier.Restore();
             by += 28f;
         }
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Режим тела", "Body mode"), RowH);
+        b = Card(x, ref y, w, NocturneText.T("尸体模式", "Body mode"), RowH);
         by = b.y;
         string[] bmVals = BmVals;
         string[] bmDisp = NocturneText.IsRussian ? BmDispRu : BmDispEn;
         int bi = Mathf.Max(0, Array.IndexOf(bmVals, NocturneConfig.BodyMode.Value));
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Стиль тела", "Body style"), bmDisp[bi]))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("尸体风格", "Body style"), bmDisp[bi]))
             NocturneConfig.BodyMode.Value = bmVals[(bi + 1) % bmVals.Length];
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Цветной ник", "Colored name"), 3f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("彩色昵称", "Colored name"), 3f * RowH);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Включить цветной ник", "Enable colored name"), NocturneConfig.NameColor);
+        Toggle(b.x, ref by, b.width, NocturneText.T("启用彩色昵称", "Enable colored name"), NocturneConfig.NameColor);
         int nci = NocturneNameColor.Clamp(NocturneConfig.NameColorStyle.Value);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Стиль", "Style"), NocturneNameColor.StyleName(nci)))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("样式", "Style"), NocturneNameColor.StyleName(nci)))
             NocturneConfig.NameColorStyle.Value = NocturneNameColor.Next(nci);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Анимация", "Animation"), NocturneConfig.NameColorAnimated);
+        Toggle(b.x, ref by, b.width, NocturneText.T("动画", "Animation"), NocturneConfig.NameColorAnimated);
     }
 
     private void FavoriteRow(float x, ref float y, float w, int i)
@@ -5615,25 +5615,25 @@ public sealed class NocturneMenu : MonoBehaviour
         bool has = !string.IsNullOrWhiteSpace(data);
         var r = new Rect(x, y, w, 26f);
         HoverFill(r);
-        Lab(new Rect(r.x + 4f, r.y, 52f, 26f), NocturneText.T($"Слот {i + 1}", $"Slot {i + 1}"), _rowLabel);
-        Lab(new Rect(r.x + 58f, r.y, 88f, 26f), has ? NocturneOutfits.Summary(data) : NocturneText.T("пусто", "empty"), _muted);
+        Lab(new Rect(r.x + 4f, r.y, 52f, 26f), NocturneText.T($"槽 {i + 1}", $"Slot {i + 1}"), _rowLabel);
+        Lab(new Rect(r.x + 58f, r.y, 88f, 26f), has ? NocturneOutfits.Summary(data) : NocturneText.T("空", "empty"), _muted);
 
         var apply = new Rect(r.xMax - 208f, r.y + 1f, 66f, 24f);
         var mine = new Rect(r.xMax - 138f, r.y + 1f, 48f, 24f);
         var sel = new Rect(r.xMax - 86f, r.y + 1f, 52f, 24f);
         var clr = new Rect(r.xMax - 30f, r.y + 1f, 26f, 24f);
-        if (SmallButton(apply, NocturneText.T("НАДЕТЬ", "APPLY"), has ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)) && has)
-            NocturneToast.Push(NocturneText.T("Образ", "Outfit"), NocturneOutfits.Apply(PlayerControl.LocalPlayer, data) ? NocturneText.T("надет", "applied") : NocturneText.T("не готов", "not ready"), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(mine, NocturneText.T("МОЙ", "MINE"), new Color(0.5f, 0.55f, 0.62f)) && slot != null)
+        if (SmallButton(apply, NocturneText.T("穿戴", "APPLY"), has ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)) && has)
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneOutfits.Apply(PlayerControl.LocalPlayer, data) ? NocturneText.T("已穿戴", "applied") : NocturneText.T("未就绪", "not ready"), 2f, NocturneNotifyKind.Info);
+        if (SmallButton(mine, NocturneText.T("我的", "MINE"), new Color(0.5f, 0.55f, 0.62f)) && slot != null)
         {
             string cap = NocturneOutfits.Capture(PlayerControl.LocalPlayer);
             if (cap.Length > 0)
                 slot.Value = cap;
         }
-        if (SmallButton(sel, NocturneText.T("ВЫБР.", "SEL."), _outfitPickSlot == i ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)) && slot != null)
+        if (SmallButton(sel, NocturneText.T("所选", "SEL."), _outfitPickSlot == i ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)) && slot != null)
         {
             _outfitPickSlot = _outfitPickSlot == i ? -1 : i;
-            NocturneToast.Push(NocturneText.T("Образ", "Outfit"), _outfitPickSlot == i ? NocturneText.T($"Слот {i + 1}: выбери игрока", $"Slot {i + 1}: pick a player") : NocturneText.T("список закрыт", "list closed"), 1.6f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), _outfitPickSlot == i ? NocturneText.T($"槽 {i + 1}：选择玩家", $"Slot {i + 1}: pick a player") : NocturneText.T("列表已关闭", "list closed"), 1.6f, NocturneNotifyKind.Info);
         }
         if (SmallButton(clr, "✕", new Color(0.9f, 0.4f, 0.4f)) && slot != null)
             slot.Value = "";
@@ -5648,17 +5648,17 @@ public sealed class NocturneMenu : MonoBehaviour
         HoverFill(r);
         DrawColorDot(new Rect(r.x + 6f, r.y + 9f, 12f, 12f), pc);
         Lab(new Rect(r.x + 26f, r.y, r.width - 110f, r.height), pc.Data != null ? pc.Data.PlayerName : "?", _rowName);
-        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("ВЗЯТЬ", "TAKE"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("提取", "TAKE"), NocturneStyle.Current.Accent))
         {
             ConfigEntry<string> slot = _outfitPickSlot >= 0 && _outfitPickSlot < NocturneConfig.FavoriteOutfits.Length ? NocturneConfig.FavoriteOutfits[_outfitPickSlot] : null;
             string cap = NocturneOutfits.Capture(pc);
             if (slot != null && cap.Length > 0)
             {
                 slot.Value = cap;
-                NocturneToast.Push(NocturneText.T("Образ", "Outfit"), NocturneText.T($"Слот {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}", $"Slot {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"槽 {_outfitPickSlot + 1}：{(pc.Data != null ? pc.Data.PlayerName : "?")}", $"Slot {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
             }
             else
-                NocturneToast.Push(NocturneText.T("Образ", "Outfit"), NocturneText.T("не вышло", "failed"), 1.8f, NocturneNotifyKind.Warning);
+                NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T("失败", "failed"), 1.8f, NocturneNotifyKind.Warning);
             _outfitPickSlot = -1;
         }
         y += 32f;
@@ -5672,10 +5672,10 @@ public sealed class NocturneMenu : MonoBehaviour
         HoverFill(r);
         DrawColorDot(new Rect(r.x + 6f, r.y + 9f, 12f, 12f), pc);
         Lab(new Rect(r.x + 26f, r.y, r.width - 110f, r.height), pc.Data != null ? pc.Data.PlayerName : "?", _rowName);
-        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("ВЗЯТЬ", "TAKE"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("提取", "TAKE"), NocturneStyle.Current.Accent))
         {
             NocturneOutfitApplier.Borrow(pc);
-            NocturneToast.Push(NocturneText.T("Образ", "Outfit"), NocturneText.T($"надет: {(pc.Data != null ? pc.Data.PlayerName : "?")}", $"applied: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"已穿戴：{(pc.Data != null ? pc.Data.PlayerName : "?")}", $"applied: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
         }
         y += 32f;
     }
@@ -5689,142 +5689,142 @@ public sealed class NocturneMenu : MonoBehaviour
         float scaleH = 100f + RowH;
         float accentExtra = RowH + (NocturneConfig.AccentCustom.Value ? 44f + 2f * 50f + 6f : 0f);
         Grp(0);
-        Rect b = Card(x, ref y, w, NocturneText.T("Интерфейс", "Interface"), 3f * RowH + scaleH + 30f + gridH + accentExtra);
+        Rect b = Card(x, ref y, w, NocturneText.T("界面", "Interface"), 3f * RowH + scaleH + 30f + gridH + accentExtra);
         float by = b.y;
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Язык", "Language"), NocturneText.LangName))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("语言", "Language"), NocturneText.LangName))
             NocturneText.Toggle();
-        Toggle(b.x, ref by, b.width, NocturneText.T("Лёгкий режим (для слабых ПК)", "Lite mode (weak PCs)"), NocturneConfig.LiteMenu);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Ванильный стиль (без кастом-эффектов)", "Vanilla look (no custom effects)"), NocturneConfig.VanillaStyle);
-        Slider(b.x, ref by, b.width, NocturneText.T("Прозрачность окна", "Window opacity"), NocturneConfig.MenuOpacity, 0.45f, 1f, "0.00");
+        Toggle(b.x, ref by, b.width, NocturneText.T("轻量模式（低配 PC）", "Lite mode (weak PCs)"), NocturneConfig.LiteMenu);
+        Toggle(b.x, ref by, b.width, NocturneText.T("原版风格（无自定义效果）", "Vanilla look (no custom effects)"), NocturneConfig.VanillaStyle);
+        Slider(b.x, ref by, b.width, NocturneText.T("窗口不透明度", "Window opacity"), NocturneConfig.MenuOpacity, 0.45f, 1f, "0.00");
         int mc = Mathf.Clamp(NocturneConfig.MenuColumns.Value, 0, 3);
-        if (CycleRow(b.x, ref by, b.width, NocturneText.T("Колонки карточек", "Card columns"), mc == 0 ? NocturneText.T("авто", "auto") : mc.ToString()))
+        if (CycleRow(b.x, ref by, b.width, NocturneText.T("卡片列数", "Card columns"), mc == 0 ? NocturneText.T("自动", "auto") : mc.ToString()))
             NocturneConfig.MenuColumns.Value = (mc + 1) % 4;
-        Slider(b.x, ref by, b.width, NocturneText.T("Масштаб меню (1.00 — авто)", "Menu scale (1.00 = auto)"), NocturneConfig.MenuScale, 0.7f, 1.8f, "0.00");
-        Lab(new Rect(b.x + 12f, by, b.width - 24f, 20f), NocturneText.T("Тема (акцент)", "Theme (accent)"), _muted);
+        Slider(b.x, ref by, b.width, NocturneText.T("菜单缩放（1.00 为自动）", "Menu scale (1.00 = auto)"), NocturneConfig.MenuScale, 0.7f, 1.8f, "0.00");
+        Lab(new Rect(b.x + 12f, by, b.width - 24f, 20f), NocturneText.T("主题（强调色）", "Theme (accent)"), _muted);
         by += 24f;
         ThemeSwatches(b.x + 10f, by, b.width - 20f);
         by += gridH + 8f;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Свой акцент (по оттенку)", "Custom accent (hue)"), NocturneConfig.AccentCustom);
+        Toggle(b.x, ref by, b.width, NocturneText.T("自定义强调色（按色相）", "Custom accent (hue)"), NocturneConfig.AccentCustom);
         if (NocturneConfig.AccentCustom.Value)
         {
             HueRow(b.x, ref by, b.width);
-            Slider(b.x, ref by, b.width, NocturneText.T("Насыщенность", "Saturation"), NocturneConfig.AccentSat, 0f, 1f, "0.00");
-            Slider(b.x, ref by, b.width, NocturneText.T("Яркость", "Brightness"), NocturneConfig.AccentVal, 0.35f, 1f, "0.00");
+            Slider(b.x, ref by, b.width, NocturneText.T("饱和度", "Saturation"), NocturneConfig.AccentSat, 0f, 1f, "0.00");
+            Slider(b.x, ref by, b.width, NocturneText.T("亮度", "Brightness"), NocturneConfig.AccentVal, 0.35f, 1f, "0.00");
         }
 
         Grp(0);
-        Rect wp = Card(x, ref y, w, NocturneText.T("Свои обои главного меню", "Own main menu wallpaper"), 2f * 48f + 26f);
-        if (ActionRow(wp, NocturneIcon.Bookmark, NocturneText.T("Папка с картинкой", "Picture folder"), NocturneText.T("Открыть", "Open")))
+        Rect wp = Card(x, ref y, w, NocturneText.T("自定义主菜单壁纸", "Own main menu wallpaper"), 2f * 48f + 26f);
+        if (ActionRow(wp, NocturneIcon.Bookmark, NocturneText.T("图片文件夹", "Picture folder"), NocturneText.T("打开", "Open")))
             OpenWallpaperDir();
-        if (ActionRow(new Rect(wp.x, wp.y + 48f, wp.width, 44f), NocturneIcon.Tune, NocturneText.T("Применить картинку", "Apply picture"), NocturneText.T("Обновить", "Reload")))
+        if (ActionRow(new Rect(wp.x, wp.y + 48f, wp.width, 44f), NocturneIcon.Tune, NocturneText.T("应用图片", "Apply picture"), NocturneText.T("刷新", "Reload")))
             ReloadWallpaper();
         Lab(new Rect(wp.x + 2f, wp.y + 96f, wp.width - 4f, 22f),
-            NocturneText.T("Картинка: png, jpg. Живые обои: mp4, webm, m4v.", "Picture: png, jpg. Live: mp4, webm, m4v."), _muted);
+            NocturneText.T("图片：png、jpg。动态：mp4、webm、m4v。", "Picture: png, jpg. Live: mp4, webm, m4v."), _muted);
 
         Grp(0);
         float mbExtra = NocturneConfig.MenuBg.Value ? 50f + 2f * 48f : 0f;
-        Rect mb = Card(x, ref y, w, NocturneText.T("Фон окна мода", "Mod window background"), RowH + mbExtra + 26f);
+        Rect mb = Card(x, ref y, w, NocturneText.T("模组窗口背景", "Mod window background"), RowH + mbExtra + 26f);
         float mby = mb.y;
-        Toggle(mb.x, ref mby, mb.width, NocturneText.T("Своя картинка за меню", "Own picture behind menu"), NocturneConfig.MenuBg);
+        Toggle(mb.x, ref mby, mb.width, NocturneText.T("菜单后面的自定义图片", "Own picture behind menu"), NocturneConfig.MenuBg);
         if (NocturneConfig.MenuBg.Value)
         {
-            Slider(mb.x, ref mby, mb.width, NocturneText.T("Прозрачность", "Opacity"), NocturneConfig.MenuBgAlpha, 0.05f, 1f, "0.00");
-            if (ActionRow(new Rect(mb.x, mby, mb.width, 44f), NocturneIcon.Bookmark, NocturneText.T("Папка фона меню", "Menu background folder"), NocturneText.T("Открыть", "Open")))
+            Slider(mb.x, ref mby, mb.width, NocturneText.T("不透明度", "Opacity"), NocturneConfig.MenuBgAlpha, 0.05f, 1f, "0.00");
+            if (ActionRow(new Rect(mb.x, mby, mb.width, 44f), NocturneIcon.Bookmark, NocturneText.T("菜单背景文件夹", "Menu background folder"), NocturneText.T("打开", "Open")))
                 OpenMenuBgDir();
             mby += 48f;
-            if (ActionRow(new Rect(mb.x, mby, mb.width, 44f), NocturneIcon.Tune, NocturneText.T("Применить картинку", "Apply picture"), NocturneText.T("Обновить", "Reload")))
+            if (ActionRow(new Rect(mb.x, mby, mb.width, 44f), NocturneIcon.Tune, NocturneText.T("应用图片", "Apply picture"), NocturneText.T("刷新", "Reload")))
                 ReloadMenuBg();
             mby += 48f;
         }
         Lab(new Rect(mb.x + 2f, mby, mb.width - 4f, 22f),
-            NocturneText.T("png или jpg — рисуется за содержимым меню.", "png or jpg — drawn behind the menu content."), _muted);
+            NocturneText.T("png 或 jpg——绘制在菜单内容后面。", "png or jpg — drawn behind the menu content."), _muted);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Горячие клавиши", "Hotkeys"), 10f * RowH + 24f);
+        b = Card(x, ref y, w, NocturneText.T("快捷键", "Hotkeys"), 10f * RowH + 24f);
         by = b.y;
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Меню", "Menu"), NocturneConfig.MenuKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Код лобби", "Lobby code"), NocturneConfig.CopyCodeKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Завершить матч", "End match"), NocturneConfig.EndMatchKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Досчитать голоса", "Tally votes"), NocturneConfig.CloseVotingKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Закрыть собрание", "Close meeting"), NocturneConfig.CloseMeetingKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Радиал (удержание)", "Radial (hold)"), NocturneConfig.RadialKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Консоль событий", "Event console"), NocturneConfig.EventConsoleKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Окно чата", "Chat window"), NocturneConfig.ChatWindowKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Обычный чат", "Game chat"), NocturneConfig.OpenChatKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Спам чата", "Chat spam"), NocturneConfig.ChatSpamKey);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Клик — назначить, корзина/ПКМ — сброс, Esc — отмена.", "Click to set, trash/RMB to clear, Esc to cancel."), _muted);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("菜单", "Menu"), NocturneConfig.MenuKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("大厅代码", "Lobby code"), NocturneConfig.CopyCodeKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("结束对局", "End match"), NocturneConfig.EndMatchKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("结算票数", "Tally votes"), NocturneConfig.CloseVotingKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("关闭会议", "Close meeting"), NocturneConfig.CloseMeetingKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("径向菜单（按住）", "Radial (hold)"), NocturneConfig.RadialKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("事件控制台", "Event console"), NocturneConfig.EventConsoleKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("聊天窗口", "Chat window"), NocturneConfig.ChatWindowKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("普通聊天", "Game chat"), NocturneConfig.OpenChatKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("聊天刷屏", "Chat spam"), NocturneConfig.ChatSpamKey);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("点击分配，垃圾桶/右键清除，Esc 取消。", "Click to set, trash/RMB to clear, Esc to cancel."), _muted);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Клавиши читов", "Cheat keys"), 16f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("作弊键", "Cheat keys"), 16f * RowH);
         by = b.y;
         KeyRow(b.x, ref by, b.width, NocturneText.T("God Mode", "God Mode"), NocturneConfig.GodModeKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Мираж", "Mirage"), NocturneConfig.MirageKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Невидимость", "Invisibility"), NocturneConfig.InvisibleKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Ноклип", "No-clip"), NocturneConfig.NoClipKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Зум", "Zoom"), NocturneConfig.ZoomKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Авто-войткик", "Auto votekick"), NocturneConfig.VotekickKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Войткик всех", "Votekick everyone"), NocturneConfig.VotekickAllKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Войткик хоста", "Votekick host"), NocturneConfig.VotekickHostKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Перезайти в игру", "Rejoin last game"), NocturneConfig.RejoinLastKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Выбрать всех (вент кик)", "Select all (vent kick)"), NocturneConfig.VentKickSelectKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Вент кик", "Vent kick"), NocturneConfig.VentKickKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Выбрать всех (катать)", "Select all (rides)"), NocturneConfig.ZiplineSelectKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Зиплайн вниз", "Zipline down"), NocturneConfig.ZiplineDownKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Зиплайн вверх", "Zipline up"), NocturneConfig.ZiplineUpKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Саботаж всего", "Sabotage all"), NocturneConfig.SabotageKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Закрыть двери", "Close doors"), NocturneConfig.DoorsKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("幻影", "Mirage"), NocturneConfig.MirageKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("隐身", "Invisibility"), NocturneConfig.InvisibleKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("穿墙", "No-clip"), NocturneConfig.NoClipKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("缩放", "Zoom"), NocturneConfig.ZoomKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("自动投票踢人", "Auto votekick"), NocturneConfig.VotekickKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("投票所有人", "Votekick everyone"), NocturneConfig.VotekickAllKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("投票房主", "Votekick host"), NocturneConfig.VotekickHostKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("重新进入对局", "Rejoin last game"), NocturneConfig.RejoinLastKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("全选（穿管踢出）", "Select all (vent kick)"), NocturneConfig.VentKickSelectKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("穿管踢出", "Vent kick"), NocturneConfig.VentKickKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("全选（载入）", "Select all (rides)"), NocturneConfig.ZiplineSelectKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("滑索向下", "Zipline down"), NocturneConfig.ZiplineDownKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("滑索向上", "Zipline up"), NocturneConfig.ZiplineUpKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("破坏全部", "Sabotage all"), NocturneConfig.SabotageKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("关闭门", "Close doors"), NocturneConfig.DoorsKey);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Призраки и лобби", "Ghosts & lobby"), 10f * RowH + 22f, true);
+        b = Card(x, ref y, w, NocturneText.T("幽灵与大厅", "Ghosts & lobby"), 10f * RowH + 22f, true);
         by = b.y;
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Фантом в лобби (хост)", "Phantom in lobby (host)"), NocturneConfig.PhantomKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Оставить тело (хост)", "Leave a body (host)"), NocturneConfig.CorpseKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Призрак после старта", "Ghost after start"), NocturneConfig.GhostKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Суицид (пред)", "Suicide (impostor)"), NocturneConfig.GhostNowKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("ТП отмеченных в люк", "TP marked to vent"), NocturneConfig.VentTpKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Сменить люк", "Cycle vent"), NocturneConfig.VentCycleKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Видеть призраков", "See ghosts"), NocturneConfig.SeeGhostsKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Спавн лобби (хост)", "Spawn lobby (host)"), NocturneConfig.SpawnLobbyKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Деспавн лобби (хост)", "Despawn lobby (host)"), NocturneConfig.DespawnLobbyKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Выйти из лобби", "Leave lobby"), NocturneConfig.LeaveLobbyKey);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("Выход — двойное нажатие в течение 3 с.", "Leave — press twice within 3s."), _muted);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("大厅幻影（房主）", "Phantom in lobby (host)"), NocturneConfig.PhantomKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("留下尸体（房主）", "Leave a body (host)"), NocturneConfig.CorpseKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("开局变幽灵", "Ghost after start"), NocturneConfig.GhostKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("自杀（内鬼）", "Suicide (impostor)"), NocturneConfig.GhostNowKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("把标记者传送进管", "TP marked to vent"), NocturneConfig.VentTpKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("切换管道", "Cycle vent"), NocturneConfig.VentCycleKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("看到幽灵", "See ghosts"), NocturneConfig.SeeGhostsKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("生成大厅（房主）", "Spawn lobby (host)"), NocturneConfig.SpawnLobbyKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("移除大厅（房主）", "Despawn lobby (host)"), NocturneConfig.DespawnLobbyKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("离开大厅", "Leave lobby"), NocturneConfig.LeaveLobbyKey);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 20f), NocturneText.T("离开——3 秒内双击。", "Leave — press twice within 3s."), _muted);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Яйца (хост)", "Eggs (host)"), 9f * RowH, true);
+        b = Card(x, ref y, w, NocturneText.T("彩蛋（房主）", "Eggs (host)"), 9f * RowH, true);
         by = b.y;
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Все в яйца", "All to eggs"), NocturneConfig.FunEggKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Морф в выбранного", "Morph to target"), NocturneConfig.FunMorphKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Радуга", "Rainbow"), NocturneConfig.FunRainbowKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Цикл косметики", "Cosmetic cycle"), NocturneConfig.FunSkinCycleKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Такт", "Beat"), NocturneConfig.FunBeatKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Размер", "Size"), NocturneConfig.FunSizeKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Движение", "Motion"), NocturneConfig.FunMotionKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Анимация", "Animation"), NocturneConfig.FunAnimKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Сброс облика", "Reset look"), NocturneConfig.FunResetKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("所有人变蛋", "All to eggs"), NocturneConfig.FunEggKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("变形为所选", "Morph to target"), NocturneConfig.FunMorphKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("彩虹", "Rainbow"), NocturneConfig.FunRainbowKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("装饰循环", "Cosmetic cycle"), NocturneConfig.FunSkinCycleKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("节拍", "Beat"), NocturneConfig.FunBeatKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("尺寸", "Size"), NocturneConfig.FunSizeKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("运动", "Motion"), NocturneConfig.FunMotionKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("动画", "Animation"), NocturneConfig.FunAnimKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("重置外观", "Reset look"), NocturneConfig.FunResetKey);
 
         Grp(1);
-        b = Card(x, ref y, w, NocturneText.T("Клавиши плеера", "Player keys"), 7f * RowH);
+        b = Card(x, ref y, w, NocturneText.T("播放器快捷键", "Player keys"), 7f * RowH);
         by = b.y;
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Открыть плеер", "Open player"), NocturneConfig.MusicToggleKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Предыдущий трек", "Previous track"), NocturneConfig.MusicPrevKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Следующий трек", "Next track"), NocturneConfig.MusicNextKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Играть / Пауза", "Play / Pause"), NocturneConfig.MusicPlayPauseKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Стоп", "Stop"), NocturneConfig.MusicStopKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Громкость +", "Volume up"), NocturneConfig.MusicVolumeUpKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Громкость -", "Volume down"), NocturneConfig.MusicVolumeDownKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("打开播放器", "Open player"), NocturneConfig.MusicToggleKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("上一首", "Previous track"), NocturneConfig.MusicPrevKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("下一首", "Next track"), NocturneConfig.MusicNextKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("播放 / 暂停", "Play / Pause"), NocturneConfig.MusicPlayPauseKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("停止", "Stop"), NocturneConfig.MusicStopKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("音量 +", "Volume up"), NocturneConfig.MusicVolumeUpKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("音量 -", "Volume down"), NocturneConfig.MusicVolumeDownKey);
 
         Grp(2);
-        b = Card(x, ref y, w, NocturneText.T("Аккаунт / штрафы", "Account / penalties"), 3f * RowH + 6f, true);
+        b = Card(x, ref y, w, NocturneText.T("账号 / 惩罚", "Account / penalties"), 3f * RowH + 6f, true);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Сбросить штраф за выход", "Clear disconnect penalty"), NocturneConfig.ClearDisconnectPenalty);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Гостю доп. функции", "Guest extra features"), NocturneConfig.RemoveGuestLimits);
-        Toggle(b.x, ref by, b.width, NocturneText.T("Игнор. ограничения", "Ignore restrictions"), NocturneConfig.RemoveMinorLimits);
+        Toggle(b.x, ref by, b.width, NocturneText.T("清除退出惩罚", "Clear disconnect penalty"), NocturneConfig.ClearDisconnectPenalty);
+        Toggle(b.x, ref by, b.width, NocturneText.T("访客额外功能", "Guest extra features"), NocturneConfig.RemoveGuestLimits);
+        Toggle(b.x, ref by, b.width, NocturneText.T("忽略限制", "Ignore restrictions"), NocturneConfig.RemoveMinorLimits);
 
         Grp(0);
-        b = Card(x, ref y, w, NocturneText.T("Приватность", "Privacy"), RowH + 26f);
+        b = Card(x, ref y, w, NocturneText.T("隐私", "Privacy"), RowH + 26f);
         by = b.y;
-        Toggle(b.x, ref by, b.width, NocturneText.T("Блок телеметрии / данных", "Block telemetry / data"), NocturneConfig.BlockTelemetry);
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Применяется при запуске игры.", "Applied on game start."), _muted);
+        Toggle(b.x, ref by, b.width, NocturneText.T("阻止遥测 / 数据采集", "Block telemetry / data"), NocturneConfig.BlockTelemetry);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("启动游戏时生效。", "Applied on game start."), _muted);
     }
 
     private void DrawEmpty(Rect area, NocturneIcon icon, string msg)
@@ -5863,15 +5863,15 @@ public sealed class NocturneMenu : MonoBehaviour
     private static void ReloadMenuBg()
     {
         NocturneMenuBg.Reload();
-        NocturneToast.Push(NocturneText.T("Фон меню", "Menu background"),
-            NocturneText.T("Картинка перечитана.", "Picture reloaded."), 2.2f, NocturneNotifyKind.Success);
+        NocturneToast.Push(NocturneText.T("菜单背景", "Menu background"),
+            NocturneText.T("图片已重新加载。", "Picture reloaded."), 2.2f, NocturneNotifyKind.Success);
     }
 
     private static void ReloadWallpaper()
     {
         Patches.NocturneMainArt.ReloadManual();
-        NocturneToast.Push(NocturneText.T("Обои", "Wallpaper"),
-            NocturneText.T("Картинка перечитана.", "Picture reloaded."), 2.2f, NocturneNotifyKind.Success);
+        NocturneToast.Push(NocturneText.T("壁纸", "Wallpaper"),
+            NocturneText.T("图片已重新加载。", "Picture reloaded."), 2.2f, NocturneNotifyKind.Success);
     }
 
     private bool ActionRow(Rect body, NocturneIcon icon, string label, string btn)
@@ -6357,7 +6357,7 @@ public sealed class NocturneMenu : MonoBehaviour
 
     private void HueRow(float x, ref float y, float w)
     {
-        Lab(new Rect(x + 12f, y, w - 24f, 20f), NocturneText.T("Оттенок акцента", "Accent hue"), _muted);
+        Lab(new Rect(x + 12f, y, w - 24f, 20f), NocturneText.T("强调色色相", "Accent hue"), _muted);
         y += 22f;
 
         var track = new Rect(x + 14f, y, w - 28f, 16f);
@@ -6410,7 +6410,7 @@ public sealed class NocturneMenu : MonoBehaviour
             _scrollPending = 0f;
         }
         if (string.IsNullOrEmpty(_search) && _textFocus != "nocturneSearch")
-            Lab(new Rect(r.x + 8f, r.y, r.width - 16f, r.height), NocturneText.T("Поиск фич…", "Search features…"), _searchHint);
+            Lab(new Rect(r.x + 8f, r.y, r.width - 16f, r.height), NocturneText.T("搜索功能…", "Search features…"), _searchHint);
         if (!string.IsNullOrEmpty(_search))
         {
             var clr = new Rect(r.xMax - 24f, r.y, 22f, r.height);
@@ -6480,27 +6480,27 @@ public sealed class NocturneMenu : MonoBehaviour
         int m = _searchCards.Count;
         int k = _searchFeat.Count;
 
-        Rect bf = Card(x, ref y, w, NocturneText.T("Все фичи", "All features") + "  (" + k + ")", k > 0 ? k * RowH + 6f : 30f);
+        Rect bf = Card(x, ref y, w, NocturneText.T("所有功能", "All features") + "  (" + k + ")", k > 0 ? k * RowH + 6f : 30f);
         float byf = bf.y;
         if (k == 0)
             Lab(new Rect(bf.x + 2f, byf, bf.width - 2f, 24f),
-                NocturneText.T("Пусто. Открой разделы один раз, чтобы собрать список.", "Empty. Open the tabs once to collect the list."), _muted);
+                NocturneText.T("空。先打开各分页一次以收集列表。", "Empty. Open the tabs once to collect the list."), _muted);
         else
             for (int i = 0; i < k; i++)
                 FeatureRow(bf.x, ref byf, bf.width, _searchFeat[i]);
 
-        Rect b = Card(x, ref y, w, NocturneText.T("Быстрые", "Quick") + "  (" + n + ")", n > 0 ? n * RowH + 6f : 30f);
+        Rect b = Card(x, ref y, w, NocturneText.T("快速", "Quick") + "  (" + n + ")", n > 0 ? n * RowH + 6f : 30f);
         float by = b.y;
         if (n == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Ничего не найдено.", "Nothing found."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("未找到。", "Nothing found."), _muted);
         else
             for (int i = 0; i < n; i++)
                 QuickRow(b.x, ref by, b.width, _searchHits[i]);
 
-        Rect b2 = Card(x, ref y, w, NocturneText.T("Разделы", "Sections") + "  (" + m + ")", m > 0 ? m * RowH + 6f : 30f);
+        Rect b2 = Card(x, ref y, w, NocturneText.T("分页", "Sections") + "  (" + m + ")", m > 0 ? m * RowH + 6f : 30f);
         float by2 = b2.y;
         if (m == 0)
-            Lab(new Rect(b2.x + 2f, by2, b2.width - 2f, 24f), NocturneText.T("Пусто. Открой вкладки один раз, чтобы проиндексировать.", "Empty. Open the tabs once to index them."), _muted);
+            Lab(new Rect(b2.x + 2f, by2, b2.width - 2f, 24f), NocturneText.T("空。先打开各分页一次以建立索引。", "Empty. Open the tabs once to index them."), _muted);
         else
             for (int i = 0; i < m; i++)
                 SearchCardRow(b2.x, ref by2, b2.width, _searchCards[i]);
@@ -6542,7 +6542,7 @@ public sealed class NocturneMenu : MonoBehaviour
         HoverFill(r);
         Lab(new Rect(r.x + 10f, r.y, r.width - 190f, r.height), c.Title, _rowName);
         Lab(new Rect(r.xMax - 178f, r.y, 82f, r.height), TabName(c.Tab), _muted);
-        if (SmallButton(new Rect(r.xMax - 92f, r.y + 3f, 88f, 24f), NocturneText.T("ПЕРЕЙТИ", "GO"), NocturneStyle.Current.Accent))
+        if (SmallButton(new Rect(r.xMax - 92f, r.y + 3f, 88f, 24f), NocturneText.T("跳转", "GO"), NocturneStyle.Current.Accent))
             JumpTo(c);
         y += RowH;
     }
@@ -6550,10 +6550,10 @@ public sealed class NocturneMenu : MonoBehaviour
     private static string TabName(int tab)
     {
         if (tab == FavTab)
-            return NocturneText.T("Избранное", "Favorites");
+            return NocturneText.T("收藏", "Favorites");
         if (tab >= 0 && tab < Tabs.Length)
             return Tabs[tab].Name;
-        return NocturneText.T("Настройки", "Settings");
+        return NocturneText.T("设置", "Settings");
     }
 
     private void JumpTo(SearchCard c)
@@ -6667,7 +6667,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (NocturneStyle.Painting)
         {
             _keyBadge.normal.textColor = listening ? Color.white : p.Text;
-            Lab(badge, listening ? NocturneText.T("Нажми клавишу…", "Press a key…") : KeyDisp(entry), _keyBadge);
+            Lab(badge, listening ? NocturneText.T("按下按键……", "Press a key…") : KeyDisp(entry), _keyBadge);
         }
 
         Event e = NocturneStyle.Ev;
@@ -6888,7 +6888,7 @@ public sealed class NocturneMenu : MonoBehaviour
             Application.OpenURL(url);
         }
         catch { }
-        NocturneToast.Push(NocturneText.T("Ссылка", "Link"), NocturneText.T("Открыта в браузере · скопирована", "Opened in browser · copied"), 2.5f, NocturneNotifyKind.Info);
+        NocturneToast.Push(NocturneText.T("链接", "Link"), NocturneText.T("已在浏览器打开 · 已复制", "Opened in browser · copied"), 2.5f, NocturneNotifyKind.Info);
     }
 
     private static readonly Dictionary<KeyCode, string> _keyStr = new Dictionary<KeyCode, string>();
