@@ -16,7 +16,7 @@ internal static class NocturneText
         _langRu = !string.IsNullOrEmpty(v) && v.Trim().ToLowerInvariant() == "zh";
     }
 
-    internal static string T(string ru, string en) => IsRussian ? ru : en;
+    internal static string T(string zh, string en) => IsRussian ? zh : en;
 
     internal static string LangName => IsRussian ? "中文" : "English";
 
