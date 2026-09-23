@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>NocturneMenu</AssemblyName>
     <RootNamespace>Nocturne</RootNamespace>
-    <TargetFramework>netcoreapp6.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>12.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -13,11 +13,13 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
+  <!-- 指向仓库根目录的 libs 文件夹 -->
   <PropertyGroup>
-    <GameRefsDir Condition="'$(GameRefsDir)'=='' and Exists('$(MSBuildThisFileDirectory)..\lib\')">$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)'==''">$(MSBuildThisFileDirectory)..\libs\</GameRefsDir>
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- 游戏程序集与 BepInEx 依赖，全部来自 libs 目录 -->
     <Reference Include="Assembly-CSharp">
       <HintPath>$(GameRefsDir)Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
@@ -129,8 +131,9 @@
     <PackageReference Include="NVorbis" Version="0.10.5" />
   </ItemGroup>
 
+  <!-- 使用 NuGetPackageRoot 替代 USERPROFILE，兼容 CI 环境 -->
   <PropertyGroup>
-    <_NuGetBase>$(USERPROFILE)\.nuget\packages\</_NuGetBase>
+    <_NuGetBase>$(NuGetPackageRoot)</_NuGetBase>
   </PropertyGroup>
 
   <ItemGroup>
@@ -161,5 +164,4 @@
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(OutputPath)$(AssemblyName)_v$(Version).dll" />
     <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(MSBuildThisFileDirectory)$(AssemblyName)_v$(Version).dll" />
   </Target>
-
 </Project>
