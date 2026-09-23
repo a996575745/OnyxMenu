@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <GameRefsDir Condition="'$(GameRefsDir)'=='' and Exists('$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\')">$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)'=='' and Exists('$(MSBuildThisFileDirectory)..\lib\')">$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\</GameRefsDir>
   </PropertyGroup>
 
   <ItemGroup>
