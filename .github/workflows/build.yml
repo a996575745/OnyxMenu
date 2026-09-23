@@ -27,4 +27,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Nocturne
-          path: src/bin/Release/net6.0/Nocturne.dll
+          path: |
+            src/bin/Release/net6.0/NocturneMenu.dll
+            src/NocturneMenu_v*.dll
+          if-no-files-found: error
