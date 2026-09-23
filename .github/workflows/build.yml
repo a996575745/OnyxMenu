@@ -1,0 +1,30 @@
+name: Build OnyxMenu
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore src/Nocturne.csproj
+
+      - name: Build
+        run: dotnet build src/Nocturne.csproj -c Release --no-restore
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nocturne
+          path: src/bin/Release/net6.0/Nocturne.dll
