@@ -13,15 +13,15 @@ internal static class NocturneText
         if (v == _langRaw) return;
 
         _langRaw = v;
-        _langRu = !string.IsNullOrEmpty(v) && v.Trim().ToLowerInvariant() == "ru";
+        _langRu = !string.IsNullOrEmpty(v) && v.Trim().ToLowerInvariant() == "zh";
     }
 
-    internal static string T(string ru, string en) => IsRussian ? ru : en;
+    internal static string T(string zh, string en) => IsRussian ? zh : en;
 
     internal static string LangName => IsRussian ? "中文" : "English";
 
     internal static void Toggle()
     {
-        NocturneConfig.Language.Value = IsRussian ? "en" : "ru";
+        NocturneConfig.Language.Value = IsRussian ? "en" : "zh";
     }
 }
