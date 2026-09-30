@@ -1294,7 +1294,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (missing > 0)
         {
             Lab(new Rect(x + 2f, y, w - 4f, 22f),
-                NocturneText.T($"Ещё {missing} — откройте их разделы, чтобы подгрузить.", $"{missing} more — open their tabs to load."), _muted);
+                NocturneText.T($"还有 {missing} 项 — 打开它们所在分区即可加载。", $"{missing} more — open their tabs to load."), _muted);
             y += 24f;
         }
 
@@ -1959,7 +1959,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (NocturneStyle.Painting)
         {
             int nk = NocturneNameHistory.KnownNickCount(c.Character);
-            string note = nk > 1 ? "  " + NocturneText.T($"·{nk} ников", $"·{nk} nicks") : string.Empty;
+            string note = nk > 1 ? "  " + NocturneText.T($"·{nk} 个昵称", $"·{nk} nicks") : string.Empty;
             Lab(new Rect(r.x + 10f, r.y, r.width - 200f, r.height),
                 $"<b>{NocturneAccess.SafeName(c)}</b>   <color=#8A94AC><size=11>{ClientInfo(c)}{note}</size></color>", _rowName);
         }
@@ -2355,9 +2355,9 @@ public sealed class NocturneMenu : MonoBehaviour
         float vw = VoteW(r.width);
         float aw = AutoW(r.width);
         bool sel = NocturneVotekick.IsTarget(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - vw - aw - 8f, r.y + 3f, aw, 24f), sel ? NocturneText.T("АВТО ✓", "AUTO ✓") : NocturneText.T("АВТО", "AUTO"), sel ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
+        if (SmallButton(new Rect(r.xMax - vw - aw - 8f, r.y + 3f, aw, 24f), sel ? NocturneText.T("自动 ✓", "AUTO ✓") : NocturneText.T("自动", "AUTO"), sel ? NocturneStyle.Current.Accent : new Color(0.36f, 0.39f, 0.47f)))
             NocturneVotekick.ToggleTarget(pc.PlayerId);
-        if (SmallButton(new Rect(r.xMax - vw - 4f, r.y + 3f, vw, 24f), NocturneText.T("ЗАЯВИТЬ", "VOTE"), new Color(0.78f, 0.42f, 0.95f)))
+        if (SmallButton(new Rect(r.xMax - vw - 4f, r.y + 3f, vw, 24f), NocturneText.T("投票", "VOTE"), new Color(0.78f, 0.42f, 0.95f)))
             NocturneVotekick.VoteOne(pc);
         y += 32f;
     }
@@ -2378,7 +2378,7 @@ public sealed class NocturneMenu : MonoBehaviour
         }
 
         bool run = NocturneLobbyPranks.LoopTarget == pc.PlayerId && NocturneLobbyPranks.LoopLeft > 0;
-        string lbl = run ? NocturneText.T("СТОП ", "STOP ") + NocturneLobbyPranks.LoopLeft : NocturneText.T("УБИТЬ ×20", "KILL ×20");
+        string lbl = run ? NocturneText.T("停止 ", "STOP ") + NocturneLobbyPranks.LoopLeft : NocturneText.T("击杀 ×20", "KILL ×20");
         if (SmallButton(new Rect(r.xMax - 110f, r.y + 3f, 106f, 24f), lbl, run ? new Color(0.9f, 0.4f, 0.4f) : new Color(0.78f, 0.42f, 0.95f)))
             NocturneToast.Push(NocturneText.T("死亡循环", "Murder loop"), NocturneLobbyPranks.MurderLoop(pc, 20), 2f, NocturneNotifyKind.Info);
         y += 32f;
@@ -2398,13 +2398,13 @@ public sealed class NocturneMenu : MonoBehaviour
                 nm += "  <size=80%>†</size>";
             Lab(new Rect(r.x + 26f, r.y, r.width - 322f, r.height), nm, _rowName);
         }
-        if (SmallButton(new Rect(r.xMax - 316f, r.y + 3f, 62f, 24f), NocturneText.T("КИЛЛ", "KILL"), new Color(0.9f, 0.4f, 0.4f)))
+        if (SmallButton(new Rect(r.xMax - 316f, r.y + 3f, 62f, 24f), NocturneText.T("击杀", "KILL"), new Color(0.9f, 0.4f, 0.4f)))
             NocturneToast.Push(NocturneText.T("击杀", "Kill"), NocturneKillTools.KillOne(pc), 2f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 250f, r.y + 3f, 62f, 24f), NocturneText.T("ТЕЛЕ", "TELE"), new Color(0.78f, 0.42f, 0.95f)))
+        if (SmallButton(new Rect(r.xMax - 250f, r.y + 3f, 62f, 24f), NocturneText.T("远程", "TELE"), new Color(0.78f, 0.42f, 0.95f)))
             NocturneToast.Push(NocturneText.T("远程击杀", "Telekill"), NocturneKillTools.Telekill(pc), 2f, NocturneNotifyKind.Info);
         if (SmallButton(new Rect(r.xMax - 184f, r.y + 3f, 78f, 24f), NocturneText.T("末影", "ENDER"), new Color(0.35f, 0.75f, 0.55f)))
             NocturneToast.Push(NocturneText.T("末影人", "Enderman"), NocturneEnderman.Kill(pc), 2.5f, NocturneNotifyKind.Info);
-        if (SmallButton(new Rect(r.xMax - 102f, r.y + 3f, 98f, 24f), NocturneText.T("ВЫГНАТЬ", "EJECT"), new Color(0.5f, 0.78f, 0.92f)))
+        if (SmallButton(new Rect(r.xMax - 102f, r.y + 3f, 98f, 24f), NocturneText.T("驱逐", "EJECT"), new Color(0.5f, 0.78f, 0.92f)))
             NocturneToast.Push(NocturneText.T("驱逐", "Eject"), NocturneMeetingTools.Eject(pc), 2f, NocturneNotifyKind.Info);
         y += 32f;
     }
@@ -3391,7 +3391,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (SmallButton(new Rect(b.x + b.width - 88f, by + 1f, 86f, 24f), NocturneText.T("搜索", "SEARCH"), NocturneStyle.Current.Accent))
             NocturneConfig.LobbySearchHost.Value = (_lobbySearch ?? "").Trim();
         by += 30f;
-        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("Фильтр браузера по нику хоста. Пусто — все лобби.", "Browser filter by host name. Empty = all lobbies."), _muted);
+        Lab(new Rect(b.x + 2f, by, b.width - 2f, 22f), NocturneText.T("按房主昵称过滤浏览器。留空 = 所有大厅。", "Browser filter by host name. Empty = all lobbies."), _muted);
 
         Grp(1);
         b = Card(x, ref y, w, NocturneText.T("自动房主", "Auto-host"), 7f * RowH + 100f, true);
@@ -3597,7 +3597,7 @@ public sealed class NocturneMenu : MonoBehaviour
             ReserveSelectedColor();
         by += 30f;
         if (res.Count == 0)
-            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("Пусто. Выбор игрока — ЛКМ (нужен «Выбор мышью»).", "Empty. Select a player with LMB (needs Mouse select)."), _muted);
+            Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("空。用左键选择玩家（需要“鼠标选择”）。", "Empty. Select a player with LMB (needs Mouse select)."), _muted);
         else
             for (int i = 0; i < res.Count; i++)
             {
@@ -4393,7 +4393,7 @@ public sealed class NocturneMenu : MonoBehaviour
             Toggle(b.x, ref by, b.width, NocturneText.T("解锁（捉迷藏）", "Unlock (hide & seek)"), NocturneConfig.PlatformUnlock);
             string state = Platform.IsLeft ? NocturneText.T("左侧", "left") : NocturneText.T("右侧", "right");
             if (Platform.Locked)
-                state += NocturneText.T(" · заблокирована", " · locked");
+                state += NocturneText.T(" · 已锁定", " · locked");
             Lab(new Rect(b.x + 2f, by, b.width - 2f, 24f), NocturneText.T("当前： ", "Now: ") + state, _muted);
             by += 28f;
             float ptw = (b.width - 16f) / 3f;
@@ -4850,7 +4850,7 @@ public sealed class NocturneMenu : MonoBehaviour
         return null;
     }
 
-    private static readonly string[] ActTabsRu = { "ДЕЙСТ.", "ОБЛИК", "АТАКА" };
+    private static readonly string[] ActTabsRu = { "操作", "外观", "攻击" };
     private static readonly string[] ActTabsEn = { "ACTIONS", "LOOK", "ATTACK" };
 
     private int _cardAct;
@@ -5217,7 +5217,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (NocturneStyle.Painting)
         {
             Lab(new Rect(box.x + 8f, box.y + 1f, box.width - 190f, 22f), $"<b>{r.Code}</b>   <color=#8A94AC><size=11>{r.When}</size></color>", _rowName);
-            string info = r.Host + " · " + r.Map + " · " + r.Players + NocturneText.T(" игр.", " ppl") + " · " + r.Region + (r.Public ? NocturneText.T(" · публ.", " · public") : string.Empty);
+            string info = r.Host + " · " + r.Map + " · " + r.Players + NocturneText.T(" 人", " ppl") + " · " + r.Region + (r.Public ? NocturneText.T(" · 公开", " · public") : string.Empty);
             Lab(new Rect(box.x + 8f, box.y + 21f, box.width - 190f, 20f), info, _rowInfo);
         }
 
@@ -5768,7 +5768,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (SmallButton(sel, NocturneText.T("所选", "SEL."), _outfitPickSlot == i ? NocturneStyle.Current.Accent : new Color(0.5f, 0.55f, 0.62f)) && slot != null)
         {
             _outfitPickSlot = _outfitPickSlot == i ? -1 : i;
-            NocturneToast.Push(NocturneText.T("外观", "Outfit"), _outfitPickSlot == i ? NocturneText.T($"Слот {i + 1}: выбери игрока", $"Slot {i + 1}: pick a player") : NocturneText.T("列表已关闭", "list closed"), 1.6f, NocturneNotifyKind.Info);
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), _outfitPickSlot == i ? NocturneText.T($"槽位 {i + 1}：选择玩家", $"Slot {i + 1}: pick a player") : NocturneText.T("列表已关闭", "list closed"), 1.6f, NocturneNotifyKind.Info);
         }
         if (SmallButton(clr, "✕", new Color(0.9f, 0.4f, 0.4f)) && slot != null)
             slot.Value = "";
@@ -5790,7 +5790,7 @@ public sealed class NocturneMenu : MonoBehaviour
             if (slot != null && cap.Length > 0)
             {
                 slot.Value = cap;
-                NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"Слот {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}", $"Slot {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
+                NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"槽位 {_outfitPickSlot + 1}：{(pc.Data != null ? pc.Data.PlayerName : "?")}", $"Slot {_outfitPickSlot + 1}: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
             }
             else
                 NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T("失败", "failed"), 1.8f, NocturneNotifyKind.Warning);
@@ -5810,7 +5810,7 @@ public sealed class NocturneMenu : MonoBehaviour
         if (SmallButton(new Rect(r.xMax - 100f, r.y + 3f, 96f, 24f), NocturneText.T("获取", "TAKE"), NocturneStyle.Current.Accent))
         {
             NocturneOutfitApplier.Borrow(pc);
-            NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"надет: {(pc.Data != null ? pc.Data.PlayerName : "?")}", $"applied: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
+            NocturneToast.Push(NocturneText.T("外观", "Outfit"), NocturneText.T($"已应用：{(pc.Data != null ? pc.Data.PlayerName : "?")}", $"applied: {(pc.Data != null ? pc.Data.PlayerName : "?")}"), 2f, NocturneNotifyKind.Success);
         }
         y += 32f;
     }
@@ -5896,7 +5896,7 @@ public sealed class NocturneMenu : MonoBehaviour
         KeyRow(b.x, ref by, b.width, NocturneText.T("幻影", "Mirage"), NocturneConfig.MirageKey);
         KeyRow(b.x, ref by, b.width, NocturneText.T("隐身", "Invisibility"), NocturneConfig.InvisibleKey);
         KeyRow(b.x, ref by, b.width, NocturneText.T("穿墙", "No-clip"), NocturneConfig.NoClipKey);
-        KeyRow(b.x, ref by, b.width, NocturneText.T("Зум", "Zoom"), NocturneConfig.ZoomKey);
+        KeyRow(b.x, ref by, b.width, NocturneText.T("缩放", "Zoom"), NocturneConfig.ZoomKey);
         KeyRow(b.x, ref by, b.width, NocturneText.T("自动投票踢出", "Auto votekick"), NocturneConfig.VotekickKey);
         KeyRow(b.x, ref by, b.width, NocturneText.T("投票踢出所有人", "Votekick everyone"), NocturneConfig.VotekickAllKey);
         KeyRow(b.x, ref by, b.width, NocturneText.T("投票踢出房主", "Votekick host"), NocturneConfig.VotekickHostKey);
