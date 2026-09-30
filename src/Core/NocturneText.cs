@@ -18,7 +18,7 @@ internal static class NocturneText
 
     internal static string T(string ru, string en) => IsRussian ? ru : en;
 
-    internal static string LangName => IsRussian ? "Русский" : "English";
+    internal static string LangName => IsRussian ? "中文" : "English";
 
     internal static void Toggle()
     {
