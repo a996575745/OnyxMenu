@@ -803,7 +803,7 @@ public sealed class NocturneMenu : MonoBehaviour
             Color oc = _brand.normal.textColor;
             _brand.normal.textColor = Color.white;
             GUI.color = new Color(1f, 1f, 1f, hc.a * 0.55f);
-            Lab(new Rect(brandR.x - bx, 0f, brandR.width, brandR.height), "Nocturne", _brand);
+            Lab(new Rect(brandR.x - bx, 0f, brandR.width, brandR.height), "Nocturne - 96辅助游戏论坛", _brand);
             _brand.normal.textColor = oc;
             GUI.color = hc;
             GUI.EndGroup();
