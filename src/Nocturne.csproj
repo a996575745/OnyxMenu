@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>NocturneMenu</AssemblyName>
     <RootNamespace>Nocturne</RootNamespace>
-    <TargetFramework>netcoreapp6.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>12.0</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <GameRefsDir Condition="'$(GameRefsDir)'=='' and Exists('$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\')">$(MSBuildThisFileDirectory)..\Новая папка (2)\lib\</GameRefsDir>
+    <GameRefsDir Condition="'$(GameRefsDir)'==''">$(MSBuildThisFileDirectory)..\libs\</GameRefsDir>
   </PropertyGroup>
 
   <ItemGroup>
